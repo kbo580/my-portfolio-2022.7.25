@@ -1,0 +1,340 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.thum {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.thum img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, p, ul, li, ol, dl, dt, dd, figure, input, textarea {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  list-style: none;
+  outline: 0;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.en-title {
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  padding-bottom: 100px;
+}
+
+.sec-heading {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding: 60px 20px 0;
+  margin-bottom: 50px;
+}
+.sec-heading::before {
+  content: "";
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.sec-heading--left {
+  text-align: left;
+}
+.sec-heading--right {
+  text-align: right;
+}
+
+.sec-sub-heading {
+  font-size: 1.5rem;
+  position: relative;
+  border-bottom: 3px solid #333;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+.sec-sub-heading::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffd54d;
+  bottom: -3px;
+  width: 30%;
+}
+
+.small-title {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  line-height: 1;
+}
+
+.btn {
+  display: block;
+  padding: 13px 26px;
+  line-height: 1;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  background-color: transparent;
+}
+.btn--more {
+  font-size: 0.875rem;
+  border: 1px solid #000;
+  width: 200px;
+  border-radius: 4px;
+}
+.btn--more::after {
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+}
+.btn--pageChange {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 20px;
+  width: 200px;
+  border: 2px solid #333333;
+  position: relative;
+}
+.btn--pageChange::after {
+  content: "";
+  width: 100%;
+  background-color: #FFD54D;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 8px;
+  left: 8px;
+  display: block;
+}
+
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+.header {
+  height: 70px;
+}
+.header__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.burger {
+  font-size: 1.875rem;
+}
+
+/* -------------------------------------------- */
+/* mv */
+/* -------------------------------------------- */
+.mv {
+  background-color: #000;
+}
+
+.site-title {
+  color: #fff;
+  letter-spacing: 0.15em;
+  padding: 60px 0;
+}
+
+.color--yellow {
+  color: #FFD54D;
+}
+
+/* -------------------------------------------- */
+/* works */
+/* -------------------------------------------- */
+.works {
+  text-align: center;
+}
+.works__item-wrapper {
+  margin-top: 40px;
+  position: relative;
+}
+.works__item-list {
+  border: 1px solid #DEDEDE;
+  border-radius: 4px;
+}
+.works__item {
+  text-align: left;
+  padding-bottom: 30px;
+}
+.works__item-title {
+  font-size: 1.125rem;
+  padding: 20px;
+}
+.works__item-content {
+  padding: 20px;
+  line-height: 1.6;
+}
+.works__item-btn {
+  margin-top: 40px;
+}
+
+.bbb {
+  background-color: #ccc;
+  padding: 30px 0 50px;
+}
+
+.slideBtn {
+  width: 25px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.slideBtn--left {
+  left: -12px;
+  border-radius: 8px 0 0 8px;
+}
+.slideBtn--left::after {
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  transform: rotate(-45deg);
+  width: 6px;
+  height: 6px;
+  margin-top: 15px;
+}
+.slideBtn--right {
+  right: -12px;
+  border-radius: 0 8px 8px 0;
+}
+.slideBtn--right::after {
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  width: 6px;
+  height: 6px;
+  margin-top: 15px;
+}
+
+.practice__wrapper {
+  margin-top: 80px;
+}
+.practice__list {
+  padding: 30px 20px 50px;
+  position: relative;
+}
+.practice__list--odd {
+  background-color: #EFEFEF;
+}
+.practice__list--even {
+  background-color: #DFDFDF;
+}
+.practice__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.practice__explain {
+  margin-top: 10px;
+}
+.practice__image {
+  margin-top: 40px;
+}
+
+.fa-solid {
+  margin-left: 8px;
+}
+
+/* -------------------------------------------- */
+/* footer */
+/* -------------------------------------------- */
+.footer {
+  height: 70px;
+  background-color: #7B7A7A;
+  font-size: 0.75rem;
+}
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.footer__copy {
+  color: #fff;
+}
+
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* header */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* ▼タブレット用デザインとして付け足すデザイン */
+/* -------------------------------------------- */
+/* ------------------------------------ */
+/* ▼PC用デザインとして付け足すデザイン */
+/* ------------------------------------ */
