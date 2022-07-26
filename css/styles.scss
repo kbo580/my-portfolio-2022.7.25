@@ -9,9 +9,7 @@
 
 $accentColor: #FFD54D;
 
-.mt-70{
-  margin-top: 70px;
-}
+
 
 .thum{
   aspect-ratio: 16 / 9;
@@ -45,6 +43,12 @@ body {
   font-size: rem(14);
 }
 
+@media (min-width: 768px){
+  body{
+    font-size: rem(16);
+  }
+}
+
 main{
   position: relative;
   z-index: 0;
@@ -71,7 +75,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
-  background-color: rgba(241,92,168,0.2);
   padding: 0 40px;
 }
 
@@ -177,7 +180,7 @@ section{
 
 .btn{
   display: block;
-  padding: 13px 26px;
+  padding: 1em 2em;
   line-height: 1;
   text-align: center;
   margin-left: auto; 
@@ -224,6 +227,27 @@ section{
       left: 8px;
       // transition: .4s;
     }
+  }
+}
+.mt-70{
+  margin-top: 70px;
+}
+
+@media (min-width: 768px){
+  .btn{
+
+    &--more{
+      font-size: rem(16);
+      width: 230px;
+    }
+  }
+ 
+  .mt-70{
+    margin-top: 100px;
+  }
+
+  .mla{
+    margin-left: initial;
   }
 }
 
@@ -360,15 +384,6 @@ section{
   }
 }
 
-.aaa{
- 
-}
-
-.bbb{
-  background-color: #ccc;
-  padding: 30px 0 50px;
-}
-
 .slideBtn{
   width: 25px;
   height: 40px;
@@ -475,10 +490,6 @@ section{
     &__explain{
       margin-top: 10px;
     }
-  
-    &__image{
-      // margin-top: 40px;
-    }
   }
 }
 
@@ -525,6 +536,8 @@ section{
 .about-body{
 
   &__wrapper{
+    width: 100%;
+    // border: 1px solid #000;
     background-color: #F7F7F7;
     position: relative;
     z-index: -2;
@@ -541,14 +554,74 @@ section{
   }
 
   &__content{
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
 
 @media (min-width: 768px){
+  .about{
 
+    &__wrapper{
+      display: flex;
+      flex-direction: row-reverse;
+      position: relative;
+      justify-content: space-between;
+
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+  }
+
+  .about-image{
+
+    &__wrapper{
+      width: 50%;
+      padding: 30px 0 30px;
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+    }
+  
+    &__image{
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 10px;
+    }
+  
+    &__content-frame{
+      width: 100%;
+      padding: 10px 24px 0;
+    }
+  
+    &__text{
+      font-size: rem(20);
+      padding: 1em 0.8em;
+      min-height: 100px;
+    }
+  }
+
+  .about-body{
+
+    &__wrapper{
+      width: 53%;
+      padding: 80px 50px 80px 110px;
+    }
+  
+    &__title{
+      font-size: rem(24);
+    }
+  
+    &__content-list{
+      margin-top: 30px;
+    }
+  
+  }
 }
+
 /* -------------------------------------------- */
 /* contact */
 /* -------------------------------------------- */
@@ -559,7 +632,9 @@ section{
 }
 
 @media (min-width: 768px){
-
+  .contact{
+    text-align: center;
+  }
 }
 
 /* -------------------------------------------- */
