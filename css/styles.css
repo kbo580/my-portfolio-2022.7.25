@@ -40,11 +40,6 @@ body {
     font-size: 1rem;
   }
 }
-main {
-  position: relative;
-  z-index: 0;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -59,9 +54,14 @@ img {
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
+@media (min-width: 768px) {
+  .inner {
+    padding: 0 40px;
+  }
+}
 section {
   padding-bottom: 100px;
 }
@@ -72,19 +72,16 @@ section {
   line-height: 1;
   letter-spacing: 0.1em;
   position: relative;
-  padding: 60px 20px 0;
+  padding-top: 60px;
   margin-bottom: 50px;
 }
-.sec-heading::before {
-  content: "";
-  width: 100%;
-  height: 100px;
+.sec-heading__bg {
   background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  height: 100px;
 }
 .sec-heading--left {
   text-align: left;
@@ -120,10 +117,10 @@ section {
   }
   .sec-heading {
     font-size: 5.625rem;
-    padding: 130px 80px 0;
+    padding-top: 130px;
     margin-bottom: 100px;
   }
-  .sec-heading::before {
+  .sec-heading__bg {
     height: 210px;
   }
   .sec-heading--ja {
@@ -299,6 +296,8 @@ section {
 .works__item-wrapper {
   margin-top: 40px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .works__item-list {
   border: 1px solid #DEDEDE;
@@ -362,10 +361,12 @@ section {
 .practice__wrapper {
   margin-top: 80px;
 }
+.practice__list-wrapper {
+  margin-top: 40px;
+}
 .practice__list {
   padding: 30px 20px 50px;
   position: relative;
-  margin-top: 40px;
 }
 .practice__list--odd {
   background-color: #EFEFEF;
@@ -390,11 +391,44 @@ section {
 }
 
 @media (min-width: 768px) {
+  .works__item-wrapper {
+    margin-top: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .works__item-list {
+    width: 31.66%;
+  }
+  .works__item-title {
+    font-size: 1.25rem;
+    padding: 30px 20px;
+  }
+  .slideBtn {
+    width: 40px;
+    height: 70px;
+  }
+  .slideBtn--left {
+    left: -20px;
+  }
+  .slideBtn--left::after {
+    width: 10px;
+    height: 10px;
+    margin-top: 30px;
+  }
+  .slideBtn--right {
+    right: -20px;
+  }
+  .slideBtn--right::after {
+    width: 10px;
+    height: 10px;
+    margin-top: 30px;
+  }
   .practice__wrapper {
     margin-top: 80px;
   }
-  .practice__flex-con {
+  .practice__list-wrapper {
     display: flex;
+    margin-top: 60px;
   }
   .practice__list {
     padding: 50px 20px 50px;
@@ -410,10 +444,15 @@ section {
 /* -------------------------------------------- */
 /* about */
 /* -------------------------------------------- */
-.about-image__wrapper {
+.about__wrapper {
   width: 100%;
+}
+
+.about-image__wrapper {
   background-color: #000;
   padding: 30px 0 20px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .about-image__image {
   width: 100px;
@@ -438,9 +477,7 @@ section {
 .about-body__wrapper {
   width: 100%;
   background-color: #F7F7F7;
-  position: relative;
-  z-index: -2;
-  padding: 60px 20px;
+  padding: 60px 0;
 }
 .about-body__title {
   font-size: 1.25rem;
@@ -456,30 +493,24 @@ section {
 @media (min-width: 768px) {
   .about__wrapper {
     display: flex;
-    flex-direction: row-reverse;
     position: relative;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 40px;
   }
   .about-image__wrapper {
     width: 50%;
     padding: 30px 0 30px;
     position: absolute;
     top: 50%;
-    left: 40px;
+    right: 0;
     transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: auto;
   }
   .about-image__image {
     width: 120px;
     height: 120px;
-    margin: 0 auto 10px;
   }
   .about-image__content-frame {
-    width: 100%;
-    padding: 10px 24px 0;
+    padding: 10px 90px 0;
   }
   .about-image__text {
     font-size: 1.25rem;
@@ -488,7 +519,7 @@ section {
   }
   .about-body__wrapper {
     width: 53%;
-    padding: 80px 50px 80px 110px;
+    padding: 80px 60px 80px 80px;
   }
   .about-body__title {
     font-size: 1.5rem;
@@ -502,8 +533,6 @@ section {
 /* -------------------------------------------- */
 .contact {
   background-color: #fff;
-  position: relative;
-  z-index: -2;
 }
 
 @media (min-width: 768px) {
