@@ -13,10 +13,19 @@ $(function(){
     $('body').removeClass('active');
   });
 
-  $('.q').on('click', function(){
-    $(this).toggleClass('active');
-    $('.header-nav--sp').toggleClass('active');
-    $('body').toggleClass('active');
+  // スクロールで固定されるヘッダー
+  var headerHight = $('header').outerHeight(true);
+  $(window).on('scroll', function(){
+    var section = $('.works').offset().top;
+    if($(this).scrollTop()>= section - headerHight){ 
+      $('header').addClass('fadein');
+      $('.header__logo').addClass('fontChang');
+      
+    }
+    else{
+      $('header').removeClass('fadein');
+      $('.header__logo').removeClass('fontChang');
+    }
   });
 
 });
