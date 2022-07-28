@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.swiper-area{
+  position: relative;
+  max-width: 1280px;
+}
+
+.mainswiper{
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* スライダー */
+.slider{
+  position: relative;
+  // height: 100%;
+  // width: 100%;
+}
+
+/*矢印*/
+.prev-arrow, 
+.next-arrow {
+  position:  absolute;
+  z-index: 1;
+  top: 40%;
+  cursor: pointer;
+  outline: none;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-arrow {
+  left: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.next-arrow {
+  right: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.prev-arrow::before{
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  transform: rotate(-45deg);
+  width: 6px;
+  height: 6px;
+}
+
+.next-arrow::before{
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  width: 6px;
+  height: 6px;
+}
+
+/* ドット */
+.slick-dots{
+	position:absolute;
+	bottom:1% !important;
+  text-align: right !important;
+
+  li.slick-active button:before {
+    // color: $accentColor;
+  }
+
+  li button:before{
+    color: $accentColor
+  }
+}

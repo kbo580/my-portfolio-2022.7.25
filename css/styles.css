@@ -441,16 +441,6 @@ body.active {
   margin-right: 6px;
 }
 
-.swiper-area {
-  position: relative;
-  max-width: 1280px;
-}
-
-.mainswiper {
-  max-width: 100%;
-  overflow: hidden;
-}
-
 .practice__wrapper {
   margin-top: 80px;
 }
@@ -481,6 +471,16 @@ body.active {
 
 .fa-solid {
   margin-left: 8px;
+}
+
+.swiper-area {
+  position: relative;
+  max-width: 1280px;
+}
+
+.mainswiper {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 /* スライダー */
@@ -729,3 +729,4 @@ body.active {
 /* ------------------------------------ */
 /* ▼PC用デザインとして付け足すデザイン */
 /* ------------------------------------ */
+/*# sourceMappingURL=styles.css.map */

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 *{
   box-sizing: border-box;
 }
@@ -35,6 +36,7 @@ img{
   max-width:100%;
   vertical-align: bottom;
 }
+
 
 /* -------------------------------------------- */
 /* 共通部分 */
@@ -517,15 +519,7 @@ body.active{
 
 }
 
-.swiper-area{
-  position: relative;
-  max-width: 1280px;
-}
 
-.mainswiper{
-  max-width: 100%;
-  overflow: hidden;
-}
 
 .practice{
 
@@ -566,6 +560,16 @@ body.active{
 
 .fa-solid{
   margin-left: 8px;
+}
+
+.swiper-area{
+  position: relative;
+  max-width: 1280px;
+}
+
+.mainswiper{
+  max-width: 100%;
+  overflow: hidden;
 }
 
 /* スライダー */
@@ -633,6 +637,8 @@ body.active{
     color: $accentColor
   }
 }
+
+
 
 @media (min-width: 768px){
   .works{
