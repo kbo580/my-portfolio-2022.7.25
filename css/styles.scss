@@ -434,7 +434,7 @@ body.active{
 .site-title{
   color: #fff;
   letter-spacing: 0.15em;
-  padding: 60px 0;
+  padding: 130px 0 60px;
   font-size: rem(33);
 }
 
@@ -444,7 +444,7 @@ body.active{
 
 @media (min-width: 768px){
   .site-title{
-    padding: 140px 0;
+    padding: 240px 0 140px;
     font-size: rem(80);
   }
 }
