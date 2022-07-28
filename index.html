@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <link rel="stylesheet" href="css/styles.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -16,27 +21,38 @@
     <div class="header__wrapper inner">
       <a href="#" class="header__logo en-title">Yuta Kobayashi's<br>Portfolio</a>
 
-      <!-- <div class="burger" id="show">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> -->
-
-      <div class="burger">
-        <i class="fa-solid fa-bars"></i>
+      <div class="burger" id="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
 
-      <nav class="header-nav">
-        <ul class="header-nav__list">
-          <li class="header-nav__item"><a href="#" class="header-nav__link">home</a></li>
-          <li class="header-nav__item"><a href="#" class="header-nav__link">works</a></li>
-          <li class="header-nav__item"><a href="#" class="header-nav__link">profile</a></li>
-          <li class="header-nav__item"><a href="#" class="header-nav__link">contact</a></li>
-          <li class="header-nav__item"><a href="#" class="header-nav__link">blog</a></li>
+      <!-- sp用ナビメニュー -->
+      <nav class="header-nav header-nav--sp">
+        <ul class="header-nav--sp__list">
+          <li class="header-nav--sp__item"><a href="#" class="header-nav--sp__link">home</a></li>
+          <li class="header-nav--sp__item"><a href="#" class="header-nav--sp__link">works</a></li>
+          <li class="header-nav--sp__item"><a href="#" class="header-nav--sp__link">profile</a></li>
+          <li class="header-nav--sp__item"><a href="#" class="header-nav--sp__link">contact</a></li>
+          <li class="header-nav--sp__item"><a href="#" class="header-nav--sp__link">blog</a></li>
         </ul>
       </nav>
+      <!-- /sp用ナビメニュー -->
+
+      <!-- pc用ナビメニュー -->
+      <nav class="header-nav header-nav--pc">
+        <ul class="header-nav--pc__list">
+          <li class="header-nav--pc__item"><a href="#" class="header-nav--pc__link">home</a></li>
+          <li class="header-nav--pc__item"><a href="#" class="header-nav--pc__link">works</a></li>
+          <li class="header-nav--pc__item"><a href="#" class="header-nav--pc__link">profile</a></li>
+          <li class="header-nav--pc__item"><a href="#" class="header-nav--pc__link">contact</a></li>
+          <li class="header-nav--pc__item"><a href="#" class="header-nav--pc__link">blog</a></li>
+        </ul>
+      </nav>
+      <!-- /pc用ナビメニュー -->
     </div>
     <!-- /header__wrapper -->
+    <!-- <div class="q">menu</div> -->
   </header>
 
   <main>
@@ -50,12 +66,12 @@
 
     <section class="works">
       <div class="inner">
-      <h2 class="sec-heading en-title sec-heading--left sec-heading__bg"><p class="sec-heading--ja">制作物</p>works</h2>
+        <h2 class="sec-heading en-title sec-heading--left sec-heading__bg"><p class="sec-heading--ja">制作物</p>works</h2>
 
         <h3 class="sec-sub-heading">架空案件</h3>
         <p class="works__explain">架空の案件を想定して作成したサイトです。</p>
 
-        <ul class="works__item-wrapper">
+        <!-- <ul class="works__item-wrapper">
           <li class="works__item-list">
             <ul class="works__item">
               <li class="works__item-title">タイトルが入るタイトルが入る</li>
@@ -63,37 +79,89 @@
               <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
               <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
             </ul>
-            <!-- /works__item -->
           </li>
-          <!-- /works__item-list -->
 
           <li class="works__item-list">
             <ul class="works__item">
               <li class="works__item-title">タイトルが入るタイトルが入る</li>
-              <li class="works__item-img thum"><img src="images/k-create-top-image.png" alt="画像"></li>
+              <li class="works__item-img thum"><img src="images/huvest-top.png" alt="画像"></li>
               <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
               <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
             </ul>
-            <!-- /works__item -->
           </li>
-          <!-- /works__item-list -->
+
+          <li class="works__item-list">
+            <ul class="works__item">
+              <li class="works__item-title">タイトルが入るタイトルが入る</li>
+              <li class="works__item-img thum"><img src="images/clinic-top.png" alt="画像"></li>
+              <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
+              <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
+            </ul>
+          </li>
           
-          <li class="works__item-list">
-            <ul class="works__item">
-              <li class="works__item-title">タイトルが入るタイトルが入る</li>
-              <li class="works__item-img thum"><img src="images/k-create-top-image.png" alt="画像"></li>
-              <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
-              <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
-            </ul>
-            <!-- /works__item -->
-          </li>
-          <!-- /works__item-list -->
-
-
           <span class="slideBtn slideBtn--left"></span>
           <span class="slideBtn slideBtn--right"></span>
-        </ul>
+        </ul> -->
         <!-- /works__item-wrapper -->
+
+        <div class="swiper-area">
+
+          <div class="swiper">
+            <div class="swiper-wrapper works__item-wrapper">
+            
+              <div class="swiper-slide">
+                <ul class="works__item">
+                  <li class="works__item-title">タイトルが入るタイトルが入る</li>
+                  <li class="works__item-img thum"><img src="images/k-create-top-image.png" alt="画像"></li>
+                  <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
+                  <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
+                </ul>
+                <!-- /works__item -->
+              </div>
+              <!-- /swiper-slide -->
+  
+              <div class="swiper-slide">
+                <ul class="works__item">
+                  <li class="works__item-title">タイトルが入るタイトルが入る</li>
+                  <li class="works__item-img thum"><img src="images/huvest-top.png" alt="画像"></li>
+                  <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
+                  <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
+                </ul>
+                <!-- /works__item -->
+              </div>
+              <!-- /swiper-slide -->
+  
+              <div class="swiper-slide">
+                <ul class="works__item">
+                  <li class="works__item-title">タイトルが入るタイトルが入る</li>
+                  <li class="works__item-img thum"><img src="images/clinic-top.png" alt="画像"></li>
+                  <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
+                  <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
+                </ul>
+                <!-- /works__item -->
+              </div>
+              <!-- /swiper-slide -->
+              
+              <div class="swiper-slide">
+                <ul class="works__item">
+                  <li class="works__item-title">タイトルが入るタイトルが入る</li>
+                  <li class="works__item-img thum"><img src="images/LPサイト-top-screen.png" alt="画像"></li>
+                  <li class="works__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
+                  <li class="works__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
+                </ul>
+                <!-- /works__item -->
+              </div>
+              <!-- /swiper-slide -->
+              
+            </div>
+            <!-- /swiper-wrapper works__item-wrapper -->
+  
+          </div>
+          <!-- /swiper -->
+          <div class="swiper-button-prev slideBtn slideBtn--left"></div>
+          <div class="swiper-button-next slideBtn slideBtn--right"></div>
+        </div>
+        <!-- /swiper-container -->
 
         <a href="" class="btn btn--pageChange mt-70">制作物一覧へ</a>
       </div>
@@ -103,12 +171,28 @@
         <h3 class="sec-sub-heading">その他の制作物</h3>
 
         <div class="practice__list-wrapper">
+          
           <ul class="practice__list practice__list--odd">
             <li class="practice__title">練習用コーディング</li>
             <li class="practice__explain">コーディングの練習で作成したサイトです。</li>
-            <li class="practice__image thum">
-              <img src="images/LPサイト-top-screen.png" alt="画像">
+            <li class="sliderarea">
+              <ul class="slider practice__image thum">
+  
+                <li class="slider-item">
+                  <img src="images/huvest-top.png" alt="模写コーディングその１">
+                </li>
+  
+                <li class="slider-item">
+                  <img src="images/LPサイト-top-screen.png" alt="模写コーディングその２">
+                </li>
+  
+                <li class="slider-item">
+                  <img src="images/k-create-top-image.png" alt="模写コーディングその３">
+                </li>
+              </ul>
+              <!-- /slider -->
             </li>
+            <!-- /sliderarea -->
             <li><a href="" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
@@ -116,9 +200,24 @@
           <ul class="practice__list practice__list--even">
             <li class="practice__title">バナー制作</li>
             <li class="practice__explain">バナー制作の練習です</li>
-            <li class="practice__image thum">
-              <img src="images/k-create-banner-300×250.jpg" alt="画像">
+            <li class="sliderarea">
+              <ul class="slider practice__image thum">
+  
+                <li class="slider-item">
+                  <img src="images/k-create-banner-300×250.jpg" alt="画像">
+                </li>
+  
+                <li class="slider-item">
+                  <img src="images/LPサイト-top-screen.png" alt="模写コーディングその２">
+                </li>
+  
+                <li class="slider-item">
+                  <img src="images/k-create-top-image.png" alt="模写コーディングその３">
+                </li>
+              </ul>
+              <!-- /slider -->
             </li>
+            <!-- /sliderarea -->
             <li><a href="" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
@@ -199,6 +298,9 @@
     
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
