@@ -143,13 +143,12 @@ section {
 /* -------------------------------------------- */
 .q {
   position: fixed;
-  top: 0;
+  top: 10px;
+  right: 20px;
   z-index: 100;
   cursor: pointer;
-  border: 1px solid #000;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 60px;
+  height: 50px;
 }
 
 .en-title {
@@ -262,14 +261,14 @@ section {
 }
 
 .header-nav--sp {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   width: 80%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: -150%;
-  z-index: 1;
+  z-index: 1000;
   transition: 0.5s;
   overflow-y: scroll;
 }
@@ -390,9 +389,13 @@ body.active {
   display: flex;
   width: 100%;
 }
+.works__item-list {
+  margin: 20px 0;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.16);
+}
 .works__item {
-  border-radius: 4px;
-  border: 1px solid #DEDEDE;
   text-align: left;
   padding-bottom: 30px;
 }
@@ -634,9 +637,10 @@ body.active {
 }
 
 .about-body__wrapper {
-  width: 100%;
   background-color: #F7F7F7;
-  padding: 60px 0;
+  padding: 60px 20px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .about-body__title {
   font-size: 1.25rem;
@@ -679,6 +683,8 @@ body.active {
   .about-body__wrapper {
     width: 53%;
     padding: 80px 60px 80px 80px;
+    margin-left: initial;
+    margin-right: initial;
   }
   .about-body__title {
     font-size: 1.5rem;

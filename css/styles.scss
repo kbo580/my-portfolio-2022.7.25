@@ -165,13 +165,13 @@ section{
 /* -------------------------------------------- */
 .q{
   position: fixed;
-  top: 0;
+  top: 10px;
+  right: 20px;
   z-index: 100;
   cursor: pointer;
-  border: 1px solid #000;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  // border: 1px solid #000;
+  width: 60px;
+  height: 50px;
 }
 
 .en-title{
@@ -298,7 +298,7 @@ section{
 }
   
 .header-nav--sp{
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .8);
   color: #fff;
   width: 80%;
   height: 100vh;
@@ -306,7 +306,7 @@ section{
   top: 0;
   left: -150%;
   // left: 0%;
-  z-index: 1;
+  z-index: 1000;
   transition: .5s;
   overflow-y: scroll;
 
@@ -449,11 +449,13 @@ body.active{
   
   &__item-list{
     // padding: 0 15px;
+    margin: 20px 0;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    box-shadow: 0px 5px 6px  rgba(0, 0, 0, 0.16);
   }
   
   &__item{
-    border-radius: 4px;
-    border: 1px solid #DEDEDE;
     text-align: left;
     padding-bottom: 30px;
   }
@@ -519,8 +521,6 @@ body.active{
 
 }
 
-
-
 .practice{
 
   &__wrapper{
@@ -575,8 +575,6 @@ body.active{
 /* スライダー */
 .slider{
   position: relative;
-  // height: 100%;
-  // width: 100%;
 }
 
 /*矢印*/
@@ -769,10 +767,12 @@ body.active{
 .about-body{
 
   &__wrapper{
-    width: 100%;
+    // width: 100%;
     // border: 1px solid #000;
     background-color: #F7F7F7;
-    padding: 60px 0;
+    padding: 60px 20px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 
   &__title{
@@ -834,6 +834,8 @@ body.active{
     &__wrapper{
       width: 53%;
       padding: 80px 60px 80px 80px;
+      margin-left: initial;
+      margin-right: initial;
     }
   
     &__title{
