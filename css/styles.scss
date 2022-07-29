@@ -47,7 +47,15 @@ body {
   letter-spacing: 0.1em;
   line-height: 1.5;
   font-size: rem(14);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+footer {
+  margin-top: auto;
+}
+
 
 @media (min-width: 768px){
   body{
@@ -62,6 +70,7 @@ body {
   width: 100%;
   padding: 0 20px;
   position: relative;
+  // background-color: rgba(0, 0, 0, 0.16);
 }
 
 @media (min-width: 768px){
@@ -76,10 +85,6 @@ section{
 }
 
 .sec-heading{
-  text-transform: uppercase;
-  font-size: rem(40);
-  line-height: 1; //微調整
-  letter-spacing: 0.1em;
   position: relative;
   padding-top: 60px;
   margin-bottom: 50px;
@@ -124,6 +129,7 @@ section{
   }
 }
 
+
 @media (min-width: 768px){
   section{
     padding-bottom: 150px;
@@ -163,6 +169,18 @@ section{
 /* -------------------------------------------- */
 /* パーツ類 */
 /* -------------------------------------------- */
+.heading-common{
+  text-transform: uppercase;
+  font-size: rem(40);
+  line-height: 1; //微調整
+  letter-spacing: 0.1em;
+}
+
+/* ページタイトル */
+.page-heading{
+  padding: 120px 0 50px;
+  text-align: center;
+}
 
 .en-title{
   font-family: 'Montserrat', sans-serif;
@@ -232,11 +250,30 @@ section{
     height: 100%;
   }
 }
+
 .mt-70{
   margin-top: 70px;
 }
 
+/*  パンクズ  */
+.breadcrumbs{
+  background-color: #CED7DC;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 @media (min-width: 768px){
+  .heading-common{
+    font-size: rem(90);
+  }
+
+  /* ページタイトル */
+  .page-heading{
+    padding: 200px 0 100px;
+  }
+
   .btn{
 
     &--more{
@@ -252,8 +289,13 @@ section{
   .mla{
     margin-left: initial;
   }
-}
 
+  /*  パンクズ  */
+  .breadcrumbs{
+    height: 50px;
+    margin-bottom: 100px;
+  }
+}
 
 /* -------------------------------------------- */
 /* header */
@@ -266,6 +308,19 @@ section{
   left: 0;
   width: 100%;
   z-index: 1;
+  box-shadow: 0px 4px 6px #ddd;
+
+  &.fadein{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6px #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: fadein .4s ease;
+    height: 50px;
+    z-index: 100000;
+  }
 
   &__wrapper{
     height: 100%;
@@ -273,20 +328,33 @@ section{
     justify-content: space-between;
     align-items: center;
   }
+}
 
-  &__logo{
-    font-size: rem(18);
-    font-weight: bold;
-    line-height: 1.5;
-    letter-spacing: 0.1em;
-    &.fontChang{
-      font-size: rem(14);
-      
-    }
+@keyframes fadein{
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0);
   }
 }
 
-.header-nav{
+.logo{
+  font-size: rem(18);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+
+  &.fontChang{
+    font-size: rem(14);
+  }
+
+  &__link{
+    display: inline-block;
+  }
+}
+
+.gnav{
   font-size: rem(16);
   font-weight: bold;
   text-transform: uppercase;
@@ -296,8 +364,7 @@ section{
   }
 }
 
-  
-.header-nav--sp{
+.gnav--sp{
   background-color: rgba(0, 0, 0, .8);
   color: #fff;
   width: 80%;
@@ -322,7 +389,7 @@ section{
   }
 }
 
-.header-nav--pc{
+.gnav--pc{
   display: none;
 }
 
@@ -332,27 +399,6 @@ section{
   cursor: pointer;
   position: relative;
   z-index: 1000;
-}
-
-header.fadein{
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 4px 6px #ddd;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  animation: fadein .4s ease;
-  height: 50px;
-  z-index: 100000;
-}
-
-@keyframes fadein{
-  0%{
-    transform: translateY(-100px);
-  }
-  100%{
-    transform: translateY(0);
-  }
 }
 
 .bar{
@@ -393,25 +439,24 @@ body.active{
   overflow-y: hidden;
 }
 
-
 @media (min-width: 768px) {
   .header{
     height: 100px;
+  }
 
-    &__logo{
-      font-size: rem(28);
-    }
+  .logo{
+    font-size: rem(28);
   }
 
   .burger{
     display: none;
   }
 
-  .header-nav--sp{
+  .gnav--sp{
     // display: none;
   }
 
-  .header-nav--pc{
+  .gnav--pc{
     display: block;
 
     &__list{
@@ -422,7 +467,6 @@ body.active{
       margin-left: 30px;
     }
   }
-
 }
 
 /* -------------------------------------------- */
@@ -450,12 +494,10 @@ body.active{
   }
 }
 
-
-
 /* -------------------------------------------- */
-/* works */
+/* topページのworks */
 /* -------------------------------------------- */
-.works{
+.works-top{
   text-align: center;
 
   &__explain{
@@ -467,11 +509,9 @@ body.active{
     position: relative;
     display: flex;
     width: 100%;
-    // flex-direction: column;
   }
   
   &__item-list{
-    // padding: 0 15px;
     margin: 20px 0;
     border: 1px solid #dedede;
     border-radius: 6px;
@@ -659,10 +699,8 @@ body.active{
   }
 }
 
-
-
 @media (min-width: 768px){
-  .works{
+  .works-top{
   
     &__item-wrapper{
       width: 100%;
@@ -812,7 +850,6 @@ body.active{
   }
 }
 
-
 @media (min-width: 768px){
   .about{
 
@@ -838,7 +875,6 @@ body.active{
     &__image{
       width: 120px;
       height: 120px;
-      // margin: 0 auto 10px;
     }
   
     &__content-frame{
@@ -868,21 +904,20 @@ body.active{
     &__content-list{
       margin-top: 30px;
     }
-  
   }
 }
 
 /* -------------------------------------------- */
 /* contact */
 /* -------------------------------------------- */
-.contact{
+.contact-top{
   background-color: #fff;
   // position: relative;
   // z-index: -2;
 }
 
 @media (min-width: 768px){
-  .contact{
+  .contact-top{
     text-align: center;
   }
 }
@@ -918,23 +953,171 @@ body.active{
 
 
 /* -------------------------------------------- */
-/* header */
+/* works(アーカイブ) */
 /* -------------------------------------------- */
+.works{
+  // border: 1px solid #000;
 
+  &__wrapper{
+    
+  }
 
+  &__item-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+
+    &::after{
+      content: "";
+      display: block;
+      width: 31%;
+    }
+  }
+
+  &__item{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    // border: 1px solid #000;
+    text-align: center;
+    
+    &:not(:first-child){
+      margin-top: 40px;
+    }
+  }
+  
+  &__item-title{
+    margin-top: 20px;
+  }
+  
+  &__item--link{
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  &--thum{
+    aspect-ratio: 4 / 3;
+    img{
+      transition: all .4s;
+    }
+  }
+}
+
+@media (min-width: 768px){
+  .works{
+    &__item{
+      width: 48%;
+    }
+  }
+}
+
+@media (min-width: 992px){
+  .works{
+  
+    &__item{
+      width: 31%;
+    }
+  }
+}
 
 /* -------------------------------------------- */
-/* header */
+/* 404page */
 /* -------------------------------------------- */
+.nf-page{
+
+  &__wrapper{
+
+  }
+
+  &__text{
+    font-size: rem(48);
+    font-size: rem(20);
+    font-weight: bold;
+  }
+
+  &__to-link{
+    margin-top: 40px;
+  }
+
+  &__link{
+    color: #1B0DAB;;
+    transition: all .4s;
+    text-decoration: underline;
+
+    &:hover{
+      opacity: .7;
+    }
+  }
+}
+
+@media (min-width: 768px){
+  .nf-page{
+    
+    &__text{
+      font-size: rem(48);
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* contact */
+/* -------------------------------------------- */
+.contact{
+  &__wrapper{
+    max-width: 600px;
+  }
+}
+.form-parts{
+  border: 1px solid #000;
+
+  &__label{
+  
+  }
+
+  &__body{
+    width: 100%;
+    font-size: rem(14);
+    padding: 1em 20px;
+    display: inline-block;
+    border-radius: 6px;
+    // outline: solid 1px red;
+    border: 1px solid #707070;
+
+  }
+}
+
+.label-body{
+  color: #fff;
+  border-radius: 6px;
+  font-size: rem(12);
+  padding: 0.5em 1em;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.must{
+  background-color: #F58694;
+}
+
+.free{
+  background-color: #7FBFFF;
+}
+
+.label-title{
+
+}
 
 
+@media (min-width: 768px){
+
+}
 
 
 /* -------------------------------------------- */
 /* ▼タブレット用デザインとして付け足すデザイン */
 /* -------------------------------------------- */
-@media (min-width: 600px) {
-
+@media (min-width: 768px){
 
 }
 /* ------------------------------------ */
