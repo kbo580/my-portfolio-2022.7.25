@@ -874,7 +874,11 @@ body.active {
 }
 
 .form-parts {
-  border: 1px solid #000;
+  margin-top: 40px;
+}
+.form-parts__label {
+  display: flex;
+  align-items: center;
 }
 .form-parts__body {
   width: 100%;
@@ -883,6 +887,10 @@ body.active {
   display: inline-block;
   border-radius: 6px;
   border: 1px solid #707070;
+  margin-top: 10px;
+}
+.form-parts__body:focus {
+  background-color: #efefef;
 }
 
 .label-body {
@@ -902,6 +910,52 @@ body.active {
   background-color: #7FBFFF;
 }
 
+.textarea {
+  width: 100%;
+  height: 200px;
+}
+
+.acceptance {
+  margin-top: 40px;
+}
+
+.form-btn {
+  width: 200px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: 1px solid #707070;
+}
+.form-btn:hover {
+  opacity: 0.6;
+}
+
+/* contact form7用 */
+/* エラーメッセージを見やすくする */
+span.wpcf7-not-valid-tip {
+  padding-top: 0.5em;
+  font-weight: 600;
+}
+span.wpcf7-not-valid-tip::before {
+  content: "※";
+}
+
+.wpcf7 form .wpcf7-response-output {
+  color: #DD3232;
+  font-weight: bold;
+  margin: 0;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  form {
+    margin-top: 50px;
+  }
+}
 /* -------------------------------------------- */
 /* ▼タブレット用デザインとして付け足すデザイン */
 /* -------------------------------------------- */
