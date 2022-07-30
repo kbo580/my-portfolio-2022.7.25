@@ -957,6 +957,55 @@ span.wpcf7-not-valid-tip::before {
   }
 }
 /* -------------------------------------------- */
+/* single */
+/* -------------------------------------------- */
+.single__wrapper {
+  border: 1px solid #000;
+  padding: 40px 0;
+}
+.single__top {
+  border: 1px solid #000;
+}
+.single__explain {
+  max-width: 800px;
+  margin: 30px auto 0;
+}
+.single__attention {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+/* pc */
+.single-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+.single-table__head {
+  padding: 10px 0;
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  /* sp */
+  .single-table__list, .single-table__head, .single-table__body {
+    display: block;
+  }
+  .single-table__list {
+    margin-top: 10px;
+  }
+  .single-table__head {
+    padding: 0;
+    font-size: 1rem;
+  }
+}
+/* -------------------------------------------- */
+/* contact */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/* contact */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
 /* ▼タブレット用デザインとして付け足すデザイン */
 /* -------------------------------------------- */
 /* ------------------------------------ */
