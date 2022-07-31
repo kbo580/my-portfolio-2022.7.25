@@ -182,7 +182,7 @@ section{
 
 /* ページタイトル */
 .page-heading{
-  padding: 120px 0 50px;
+  padding: 120px 20px 50px;
   text-align: center;
 }
 
@@ -265,6 +265,9 @@ section{
   height: 40px;
   display: flex;
   align-items: center;
+}
+
+.breadcrumbs-mb{
   margin-bottom: 50px;
 }
 
@@ -275,7 +278,7 @@ section{
 
   /* ページタイトル */
   .page-heading{
-    padding: 200px 0 100px;
+    padding: 200px 40px 100px;
   }
 
   .btn{
@@ -297,6 +300,9 @@ section{
   /*  パンクズ  */
   .breadcrumbs{
     height: 50px;
+  }
+
+  .breadcrumbs-mb{
     margin-bottom: 100px;
   }
 }
@@ -1257,6 +1263,29 @@ span.wpcf7-not-valid-tip {
   }
 }
 
+.pagination{
+  display: flex;
+  justify-content: space-between;
+  min-width: 270px;
+  width: 60%;
+  margin: 40px auto 0;
+}
+
+.to-works,
+.prev,
+.next{
+  a{
+    display: block;
+    transition: all .3s;
+    padding: 0 0.5em;
+    border-radius: 4px;
+    &:hover{
+      background: $accentColor;
+      color: #333;
+    }
+  }
+}
+
 @media (min-width: 768px){
   .single{
 
@@ -1303,14 +1332,158 @@ span.wpcf7-not-valid-tip {
       flex: 1;
     }
   }
+
+  .pagination{
+    margin: 80px auto 0;
+  }
 }
 
 /* -------------------------------------------- */
-/* contact */
+/* profile */
 /* -------------------------------------------- */
+.prof-sec{
+  padding: 50px 0;
+}
+
+.prof-heading{
+  color: #E6E5EF;
+  position: absolute;
+  font-size: rem(40);
+  bottom: 0;
+  z-index: -1;
+}
+
+.posi-left{
+  left: 0px;
+}
+
+.posi-right{
+  right: 0px;
+}
+
+.profile{
+  &-container{
+    border: 1px solid #000;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background-color: skyblue;
+  }
+
+}
+
+.about-me{
+
+}
+
+.career{
+  &__list{
+    position: relative;
+    padding: 0 0 0 1.8em;
+
+    &::before{
+      content: " ";
+      width: 2px;
+      background: #333;
+      display: block;
+      position: absolute;
+      top: 25px;
+      left: 0.7em;
+      bottom: 2px;
+    }
+
+    &:last-child::before{
+      height: 60%;
+    }
+  }
+
+  &__timeline{
+    display: block;
+    color: #808080;
+
+    &::before{
+      content: "";
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background: $accentColor;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__content{
+    padding: 1.5em 0;
+  }
+}
+
+.skills{
+  .skill-set-list{
+    width: 100%;
+    margin-bottom: 32px;
+  
+    &__name{
+      margin-bottom: 8px;
+      font-weight: bold;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    &__image{
+      background: url(../images/wordpress_icon_130782.png) center/cover;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+  
+    &__explain{
+      // color: #333333;
+    }
+  }
+}
+
+.wicd{
+
+}
+
 
 @media (min-width: 768px){
+  .prof-sec{
+    padding: 100px 0;
+  }
+  .profile{
+    &-wrapper{
+      
+    }
+  }
+  .prof-heading{
+    font-size: rem(120);
+  }
 
+  .posi-left{
+    left: -10%;
+  }
+  
+  .posi-right{
+    right: -10%;
+  }
+
+  .skill-set-list{
+    width: 48%;
+    margin-bottom: 40px;
+
+    &__name{
+      margin-bottom: 12px;
+    }
+
+    &__image{
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 /* -------------------------------------------- */
 /* contact */
