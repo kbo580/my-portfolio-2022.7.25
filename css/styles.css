@@ -96,6 +96,10 @@ section {
   line-height: 1;
 }
 
+.sec-sub-heading-wrapper {
+  text-align: center;
+}
+
 .sec-sub-heading {
   font-size: 1.5rem;
   position: relative;
@@ -448,9 +452,6 @@ body.active {
 /* -------------------------------------------- */
 /* topページのworks */
 /* -------------------------------------------- */
-.works-top {
-  text-align: center;
-}
 .works-top__explain {
   margin-top: 20px;
 }
@@ -524,6 +525,7 @@ body.active {
 .practice__list {
   padding: 30px 20px 50px;
   position: relative;
+  text-align: center;
 }
 .practice__list--odd {
   background-color: #EFEFEF;
@@ -960,43 +962,88 @@ span.wpcf7-not-valid-tip::before {
 /* single */
 /* -------------------------------------------- */
 .single__wrapper {
-  border: 1px solid #000;
   padding: 40px 0;
 }
-.single__top {
-  border: 1px solid #000;
+.single-top {
+  padding-bottom: 30px;
 }
-.single__explain {
+.single-top__thum {
+  border: 2px solid #ddd;
+}
+.single-top__explain {
   max-width: 800px;
   margin: 30px auto 0;
 }
-.single__attention {
+.single-top__attention {
   max-width: 600px;
   margin: 40px auto 0;
 }
-/* pc */
-.single-table {
-  width: 100%;
-  max-width: 900px;
-  margin: 30px auto 0;
+.single-point__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
 }
-.single-table__head {
-  padding: 10px 0;
-  text-align: left;
-  font-size: 1.25rem;
+.single-point__image {
+  width: 100%;
+}
+.single-point__list {
+  background-color: #FAFAFA;
+  width: 100%;
+  margin-top: 30px;
+}
+.single-point__item {
+  padding: 20px 16px;
+}
+.single-point__heading {
+  border-bottom: 1px solid #FFD54D;
+  display: inline-block;
+  font-size: 1rem;
+}
+.single-point__content {
+  margin-top: 20px;
 }
 
-@media (max-width: 767px) {
-  /* sp */
-  .single-table__list, .single-table__head, .single-table__body {
-    display: block;
+.single-content {
+  margin: 40px auto 0;
+  max-width: 900px;
+  width: 100%;
+}
+.single-content__list {
+  margin-top: 20px;
+}
+.single-content__title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .single__wrapper {
+    padding: 80px 0;
   }
-  .single-table__list {
-    margin-top: 10px;
+  .single-point__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
   }
-  .single-table__head {
-    padding: 0;
-    font-size: 1rem;
+  .single-point__image {
+    width: 38%;
+  }
+  .single-point__list {
+    margin-top: 0;
+    width: 60%;
+  }
+  .single-content {
+    margin-top: 60px;
+  }
+  .single-content__list {
+    display: flex;
+  }
+  .single-content__title {
+    font-size: 1.25rem;
+    min-width: 280px;
+  }
+  .single-content__text-wrapper {
+    padding-top: 2px;
+    flex: 1;
   }
 }
 /* -------------------------------------------- */

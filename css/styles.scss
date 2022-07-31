@@ -113,6 +113,10 @@ section{
   line-height: 1;
 }
 
+.sec-sub-heading-wrapper{
+  text-align: center;
+}
+
 .sec-sub-heading{
   font-size: rem(24);
   position: relative;
@@ -498,7 +502,6 @@ body.active{
 /* topページのworks */
 /* -------------------------------------------- */
 .works-top{
-  text-align: center;
 
   &__explain{
     margin-top: 20px;
@@ -597,6 +600,7 @@ body.active{
   &__list{
     padding: 30px 20px 50px;
     position: relative;
+    text-align: center;
 
     &--odd{
       background-color: #EFEFEF;
@@ -1172,72 +1176,131 @@ span.wpcf7-not-valid-tip {
 /* -------------------------------------------- */
 .single{
   &__wrapper{
-    border: 1px solid #000;
     padding: 40px 0;
   }
 
-  &__top{
-    border: 1px solid #000;
+  &-top{
+    padding-bottom: 30px;
+
+    &__thum{
+      border: 2px solid #ddd;
+    }
+
+    &__explain{
+      max-width: 800px;
+      margin: 30px auto 0;
+    }
+
+    &__attention{
+      max-width: 600px;
+      margin: 40px auto 0;
+    }
   }
 
-  &__explain{
-    max-width: 800px;
-    margin: 30px auto 0;
+  &-detail{
+
   }
 
+  &-point{
+    &__wrapper{
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+  
+    &__image{
+      width: 100%;
+    }
+  
+    &__list{
+      background-color: #FAFAFA;
+      width: 100%;
+      margin-top: 30px;
+    }
 
-  &__attention{
-    max-width: 600px;
-    margin: 40px auto 0;
+    &__item{
+      padding: 20px 16px;
+    }
+
+    &__heading{
+      border-bottom: 1px solid $accentColor;
+      display: inline-block;
+      font-size: rem(16);
+    }
+
+    &__content{
+      margin-top: 20px;
+    }
+  }
+}
+
+.single-content{
+  margin: 40px auto 0;
+  max-width: 900px;
+  width: 100%;
+
+  &__list{
+    margin-top: 20px;
   }
 
-  &__detail{
+  &__title{
+    font-size: rem(16);
+    font-weight: bold;
+  }
+
+  &__text-wrapper{
     
   }
 
-  &__point{
+  &__text{
 
   }
 }
 
 @media (min-width: 768px){
   .single{
+
+    &__wrapper{
+      padding: 80px 0;
+    }
+
     &__top{
 
     }
-  }
-}
 
-// 説明
-/* pc */
-.single-table{
-  width: 100%;
-  max-width: 900px;
-  margin: 30px auto 0;
+    &-point{
+      &__wrapper{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 60px;
+      }
   
-  &__head{
-    padding: 10px 0;
-    text-align: left;
-    font-size: rem(20);
-  }
-}
-
-@media (max-width: 767px){
-  /* sp */
-  .single-table{
-    &__list,
-    &__head,
-    &__body{
-      display: block;
+      &__image{
+        width: 38%;
+      }
+    
+      &__list{
+        margin-top: 0;
+        width: 60%;
+      }
     }
+  }
+
+  .single-content{
+    margin-top: 60px;
   
     &__list{
-      margin-top: 10px;
+      display: flex;
     }
-  
-    &__head{
-      padding: 0;
-      font-size: rem(16);
+    
+    &__title{
+      font-size: rem(20);
+      min-width: 280px;
+    }
+    
+    &__text-wrapper{
+      padding-top: 2px;
+      flex: 1;
     }
   }
 }
