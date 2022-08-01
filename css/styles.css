@@ -42,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #FFFEF8;
 }
 
 footer {
@@ -66,6 +67,10 @@ footer {
     padding: 0 40px;
   }
 }
+.section {
+  padding-bottom: 100px;
+}
+
 .sec-heading {
   position: relative;
   padding-top: 60px;
@@ -112,6 +117,9 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .section {
+    padding-bottom: 150px;
+  }
   .sec-heading {
     font-size: 5.625rem;
     padding-top: 130px;
@@ -1087,11 +1095,18 @@ span.wpcf7-not-valid-tip::before {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
+.prof-sec-first {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  padding-bottom: 150px;
+  margin-bottom: -140px;
+}
+
 .prof-heading {
   color: #E6E5EF;
   position: absolute;
   font-size: 2.5rem;
-  bottom: 0;
+  bottom: 0%;
   z-index: -1;
 }
 
@@ -1219,12 +1234,6 @@ span.wpcf7-not-valid-tip::before {
   .prof-heading {
     font-size: 7.5rem;
   }
-  .posi-left {
-    left: -10%;
-  }
-  .posi-right {
-    right: -10%;
-  }
   .skills-wrapper {
     justify-content: space-between;
     flex-direction: row;
@@ -1239,25 +1248,31 @@ span.wpcf7-not-valid-tip::before {
   }
   /* できること */
   .wicd-title {
-    font-size: 5.625rem;
-  }
-  .wicd__wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    font-size: 4.375rem;
   }
   .wicd__lists {
-    width: 22%;
+    width: 47%;
   }
   .wicd-item__title {
     font-weight: bold;
     font-size: 1.5rem;
   }
 }
-body {
-  background-color: #FFFEF8;
+@media (min-width: 992px) {
+  .posi-left {
+    left: -10%;
+  }
+  .posi-right {
+    right: -10%;
+  }
+  /* できること */
+  .wicd-title {
+    font-size: 5.625rem;
+  }
+  .wicd__lists {
+    width: 22%;
+  }
 }
-
 /* -------------------------------------------- */
 /* contact */
 /* -------------------------------------------- */
