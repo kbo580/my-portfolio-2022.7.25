@@ -66,10 +66,6 @@ footer {
     padding: 0 40px;
   }
 }
-section {
-  padding-bottom: 100px;
-}
-
 .sec-heading {
   position: relative;
   padding-top: 60px;
@@ -116,9 +112,6 @@ section {
 }
 
 @media (min-width: 768px) {
-  section {
-    padding-bottom: 150px;
-  }
   .sec-heading {
     font-size: 5.625rem;
     padding-top: 130px;
@@ -227,6 +220,14 @@ section {
 
 .mt-70 {
   margin-top: 70px;
+}
+
+.bg-color {
+  background: #FFFEF8;
+}
+
+.bg-gradient {
+  background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
 }
 
 /*  パンクズ  */
@@ -1082,6 +1083,8 @@ span.wpcf7-not-valid-tip::before {
 /* -------------------------------------------- */
 .prof-sec {
   padding: 50px 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .prof-heading {
@@ -1100,14 +1103,27 @@ span.wpcf7-not-valid-tip::before {
   right: 0px;
 }
 
-.profile-container {
-  border: 1px solid #000;
+.profile-wrapper {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
-  background-color: skyblue;
+}
+.profile-wrapper-wcid {
+  position: relative;
 }
 
+/* about me */
+.about-body__content-list {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* 経歴 */
+.career__lists {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+}
 .career__list {
   position: relative;
   padding: 0 0 0 1.8em;
@@ -1141,29 +1157,64 @@ span.wpcf7-not-valid-tip::before {
   left: 0;
 }
 .career__content {
-  padding: 1.5em 0;
+  padding: 1.3em 0;
 }
 
-.skills .skill-set-list {
-  width: 100%;
-  margin-bottom: 32px;
+/* スキル */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-.skills .skill-set-list__name {
-  margin-bottom: 8px;
+.skills-list {
+  width: 100%;
+  margin-top: 30px;
+}
+.skills-list__name {
   font-weight: bold;
   display: flex;
   align-items: flex-end;
 }
-.skills .skill-set-list__image {
+.skills-list__image {
   background: url(../images/wordpress_icon_130782.png) center/cover;
   width: 40px;
   height: 40px;
   display: inline-block;
   margin-right: 8px;
 }
+.skills-list__explain {
+  margin-top: 10px;
+}
+
+/* できること */
+.wicd__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.wicd__lists {
+  width: 100%;
+}
+.wicd-item__image-wrapper {
+  aspect-ratio: 4/3;
+}
+.wicd-item__title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.wicd-item__text {
+  margin-top: 10px;
+}
+
 @media (min-width: 768px) {
   .prof-sec {
-    padding: 100px 0;
+    padding: 100px 0 150px;
+  }
+  .prof-sec-first {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+    padding-bottom: 340px;
+    margin-bottom: -300px;
   }
   .prof-heading {
     font-size: 7.5rem;
@@ -1174,18 +1225,39 @@ span.wpcf7-not-valid-tip::before {
   .posi-right {
     right: -10%;
   }
-  .skill-set-list {
+  .skills-wrapper {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .skills-list {
     width: 48%;
-    margin-bottom: 40px;
+    margin-top: 40px;
   }
-  .skill-set-list__name {
-    margin-bottom: 12px;
-  }
-  .skill-set-list__image {
+  .skills-list__image {
     width: 50px;
     height: 50px;
   }
+  /* できること */
+  .wicd-title {
+    font-size: 5.625rem;
+  }
+  .wicd__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .wicd__lists {
+    width: 22%;
+  }
+  .wicd-item__title {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 }
+body {
+  background-color: #FFFEF8;
+}
+
 /* -------------------------------------------- */
 /* contact */
 /* -------------------------------------------- */

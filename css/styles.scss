@@ -12,6 +12,7 @@
 }
 
 $accentColor: #FFD54D;
+$backgroundColor: #FFFEF8;
 
 /* -------------------------------------------- */
 /* リセット*/
@@ -81,7 +82,7 @@ footer {
 
 // セクション関連
 section{
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
 }
 
 .sec-heading{
@@ -136,7 +137,7 @@ section{
 
 @media (min-width: 768px){
   section{
-    padding-bottom: 150px;
+    // padding-bottom: 150px;
   }
 
   .sec-heading{
@@ -257,6 +258,14 @@ section{
 
 .mt-70{
   margin-top: 70px;
+}
+
+.bg-color{
+  background: $backgroundColor;
+}
+
+.bg-gradient{
+  background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
 }
 
 /*  パンクズ  */
@@ -1343,6 +1352,10 @@ span.wpcf7-not-valid-tip {
 /* -------------------------------------------- */
 .prof-sec{
   padding: 50px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.prof-sec-first{
 }
 
 .prof-heading{
@@ -1362,21 +1375,38 @@ span.wpcf7-not-valid-tip {
 }
 
 .profile{
-  &-container{
-    border: 1px solid #000;
+  &-wrapper{
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    background-color: skyblue;
+    
+    &-wcid{
+      position: relative;
+
+    }
   }
 
 }
 
+/* about me */
 .about-me{
-
+// background-color: skyblue;
 }
 
+.about-body__content-list{
+  max-width: 600px;
+  width: 100%;
+}
+
+/* 経歴 */
 .career{
+  // background-color: #fc2;
+  &__lists{
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+  }
+
   &__list{
     position: relative;
     padding: 0 0 0 1.8em;
@@ -1415,17 +1445,24 @@ span.wpcf7-not-valid-tip {
   }
 
   &__content{
-    padding: 1.5em 0;
+    padding: 1.3em 0;
   }
 }
 
+/* スキル */
 .skills{
-  .skill-set-list{
+  // background-color: red;
+  &-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &-list{
     width: 100%;
-    margin-bottom: 32px;
+    margin-top: 30px;
   
     &__name{
-      margin-bottom: 8px;
       font-weight: bold;
       display: flex;
       align-items: flex-end;
@@ -1441,22 +1478,58 @@ span.wpcf7-not-valid-tip {
   
     &__explain{
       // color: #333333;
+      margin-top: 10px;
     }
   }
 }
 
+/* できること */
 .wicd{
+  // background-color: #fc2;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__lists{
+    width: 100%;
+  }
+
+  &-item{
+
+    &__image-wrapper{
+      aspect-ratio: 4 / 3;
+    }
+  
+    &__title{
+      font-weight: bold;
+      font-size: rem(20);
+    }
+
+    &__text{
+      margin-top: 10px;
+    }
+  }
 
 }
 
 
 @media (min-width: 768px){
   .prof-sec{
-    padding: 100px 0;
+    padding: 100px 0 150px;
   }
+  
+  .prof-sec-first{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+    padding-bottom: 340px;
+    margin-bottom: -300px;
+  
+  }
+
   .profile{
     &-wrapper{
-      
+
     }
   }
   .prof-heading{
@@ -1471,19 +1544,66 @@ span.wpcf7-not-valid-tip {
     right: -10%;
   }
 
-  .skill-set-list{
-    width: 48%;
-    margin-bottom: 40px;
+  .skills{
 
-    &__name{
-      margin-bottom: 12px;
+    &-wrapper{
+      justify-content: space-between;
+      flex-direction: row;
     }
-
-    &__image{
-      width: 50px;
-      height: 50px;
+    &-list{
+      width: 48%;
+      margin-top: 40px;
+    
+    
+      &__image{
+        width: 50px;
+        height: 50px;
+      }
+    
+      &__explain{
+        // color: #333333;
+      }
     }
   }
+
+  /* できること */
+  .wicd{
+    &-title{
+      font-size: rem(90);
+    }
+
+    &__wrapper{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    &__lists{
+      width: 22%;
+    }
+
+    &-item{
+
+      &__image-wrapper{
+
+      }
+    
+      &__title{
+        font-weight: bold;
+        font-size: rem(24);
+      }
+
+      &__text{
+
+      }
+    }
+
+  }
+
+}
+
+body{
+  background-color: $backgroundColor;
 }
 /* -------------------------------------------- */
 /* contact */
