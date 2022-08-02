@@ -850,6 +850,30 @@ body.active{
   }
 }
 
+/* タイピング */
+.TextTyping  {
+	letter-spacing: 0.2em;
+  word-break : break-all;
+}
+
+.TextTyping span {
+	display: inline-block;
+  color: #fff;
+}
+
+
+.TextTyping::after {
+  content: "|";
+	animation: typinganime .8s ease infinite;
+  color: #fff;
+}
+
+@keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
+}
+
+
 .about-body{
 
   &__wrapper{

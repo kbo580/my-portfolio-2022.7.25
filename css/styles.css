@@ -728,6 +728,41 @@ body.active {
   font-family: "DotGothic16", sans-serif;
 }
 
+/* タイピング */
+.TextTyping {
+  letter-spacing: 0.2em;
+  word-break: break-all;
+}
+
+.TextTyping span {
+  display: inline-block;
+  color: #fff;
+}
+
+.TextTyping::after {
+  content: "|";
+  -webkit-animation: typinganime 0.8s ease infinite;
+          animation: typinganime 0.8s ease infinite;
+  color: #fff;
+}
+
+@-webkit-keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .about-body__wrapper {
   background-color: #F7F7F7;
   padding: 60px 20px;
