@@ -13,6 +13,10 @@
 
 $accentColor: #FFD54D;
 $backgroundColor: #FFFEF8;
+$mvColor: #3f4c88;
+$mvColor: #262f57;
+// $mvColor: #2e795c;
+// $mvColor: #842f3f;
 
 /* -------------------------------------------- */
 /* リセット*/
@@ -515,12 +519,29 @@ body.active{
 /* -------------------------------------------- */
 .mv{
   background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+
+  &::before{
+    content: "";
+    background-color: $mvColor;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 35% 0, 50% 100%, 0% 100%);
+    
+  }
 }
 
 .site-title{
   color: #fff;
   letter-spacing: 0.15em;
-  padding: 60px 0;
+  // padding: 60px 0;
   font-size: rem(33);
 }
 
@@ -530,7 +551,7 @@ body.active{
 
 @media (min-width: 768px){
   .site-title{
-    padding: 140px 0;
+    // padding: 140px 0;
     font-size: rem(80);
   }
 }

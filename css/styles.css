@@ -457,12 +457,26 @@ body.active {
 /* -------------------------------------------- */
 .mv {
   background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.mv::before {
+  content: "";
+  background-color: #262f57;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-clip-path: polygon(0 0, 35% 0, 50% 100%, 0% 100%);
+          clip-path: polygon(0 0, 35% 0, 50% 100%, 0% 100%);
 }
 
 .site-title {
   color: #fff;
   letter-spacing: 0.15em;
-  padding: 60px 0;
   font-size: 2.0625rem;
 }
 
@@ -472,7 +486,6 @@ body.active {
 
 @media (min-width: 768px) {
   .site-title {
-    padding: 140px 0 140px;
     font-size: 5rem;
   }
 }
