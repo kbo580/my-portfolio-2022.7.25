@@ -35,6 +35,24 @@ const mainswiper = new Swiper('.swiper', {
   effect: 'slide'
 });
 
+//swiper
+// const mvswiper = new Swiper('.mvswiper', {
+//   loop: true,
+//   centeredSlides:true,
+// slidesPerView:1.2,
+
+
+//   slidesPerView: 1,
+
+//   speed: 5000,
+//   autoplay: {
+//     delay: 0,
+//     disableOnInteraction: false,
+//   },
+
+//   effect: 'slide'
+// });
+
 //slick
 $(function(){
 
