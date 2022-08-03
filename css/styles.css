@@ -76,18 +76,25 @@ footer {
   padding-top: 60px;
   margin-bottom: 50px;
 }
-.sec-heading__bg {
+.sec-heading::after, .sec-heading::before {
+  content: "";
   background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
+  width: 100%;
+  height: 100px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);
   padding-right: calc(50vw - 50%);
-  height: 100px;
 }
-.sec-heading--left {
+.sec-heading.--left {
   text-align: left;
 }
-.sec-heading--right {
+.sec-heading.--right {
   text-align: right;
 }
 
@@ -125,7 +132,7 @@ footer {
     padding-top: 130px;
     margin-bottom: 100px;
   }
-  .sec-heading__bg {
+  .sec-heading::after {
     height: 210px;
   }
   .sec-heading--ja {
@@ -286,17 +293,16 @@ footer {
 /* -------------------------------------------- */
 .header {
   height: 70px;
-  background-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
-  box-shadow: 0px 4px 6px #ddd;
+  color: #fff;
 }
 .header.fadein {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 4px 6px #ddd;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
   position: fixed;
   top: 0;
   left: 0;
@@ -335,9 +341,11 @@ footer {
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
+  opacity: 0;
 }
 .logo.fontChang {
   font-size: 0.875rem;
+  opacity: 1;
 }
 .logo__link {
   display: inline-block;
@@ -390,7 +398,7 @@ footer {
   width: 100%;
   height: 3px;
   border-radius: 6px;
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -454,7 +462,7 @@ body.active {
 .site-title {
   color: #fff;
   letter-spacing: 0.15em;
-  padding: 130px 0 60px;
+  padding: 60px 0;
   font-size: 2.0625rem;
 }
 
@@ -464,7 +472,7 @@ body.active {
 
 @media (min-width: 768px) {
   .site-title {
-    padding: 240px 0 140px;
+    padding: 140px 0 140px;
     font-size: 5rem;
   }
 }
@@ -489,6 +497,7 @@ body.active {
 .works-top__item {
   text-align: left;
   padding-bottom: 30px;
+  background-color: #fff;
 }
 .works-top__item-title {
   font-size: 1.125rem;

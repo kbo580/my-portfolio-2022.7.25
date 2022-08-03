@@ -72,7 +72,6 @@ footer {
   width: 100%;
   padding: 0 20px;
   position: relative;
-  // background-color: rgba(0, 0, 0, 0.16);
 }
 
 @media (min-width: 768px){
@@ -91,20 +90,36 @@ footer {
   padding-top: 60px;
   margin-bottom: 50px;
 
-  &__bg{
+  &::after,
+  &::before{
+    content: "";
     background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
+    width: 100%;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding-left: calc(50vw - 50%);
     padding-right: calc(50vw - 50%);
-    height: 100px;
+  }
+  
+  &::before{
+    // clip-path: polygon(0 0%, 100% 0, 100% 40%, 0% 100%);
   }
 
-  &--left{
+  &::after{
+    // clip-path: polygon(0 0%, 100% 0, 100% 40%, 0% 100%);
+
+  }
+
+  &.--left{
     text-align: left;
   }
-
-  &--right{
+  &.--right{
     text-align: right;
   }
 }
@@ -146,7 +161,7 @@ footer {
     padding-top: 130px;
     margin-bottom: 100px;
 
-    &__bg{
+    &::after{
       height: 210px;
     }
   }
@@ -327,17 +342,16 @@ footer {
 /* -------------------------------------------- */
 .header{
   height: 70px;
-  background-color: #fff;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
-  box-shadow: 0px 4px 6px #ddd;
+  color: #fff;
 
   &.fadein{
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 6px #ddd;
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
     position: fixed;
     top: 0;
     left: 0;
@@ -369,9 +383,11 @@ footer {
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
+  opacity: 0;
 
   &.fontChang{
     font-size: rem(14);
+    opacity: 1;
   }
 
   &__link{
@@ -430,7 +446,7 @@ footer {
   width: 100%;
   height: 3px;
   border-radius: 6px;
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -504,7 +520,7 @@ body.active{
 .site-title{
   color: #fff;
   letter-spacing: 0.15em;
-  padding: 130px 0 60px;
+  padding: 60px 0;
   font-size: rem(33);
 }
 
@@ -514,7 +530,7 @@ body.active{
 
 @media (min-width: 768px){
   .site-title{
-    padding: 240px 0 140px;
+    padding: 140px 0;
     font-size: rem(80);
   }
 }
@@ -545,6 +561,7 @@ body.active{
   &__item{
     text-align: left;
     padding-bottom: 30px;
+    background-color: #fff;
   }
 
   &__item-title{
