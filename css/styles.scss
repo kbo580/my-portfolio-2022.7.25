@@ -341,11 +341,8 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   color: #fff;
-  // color: #000;
-  background-color: rgba(0, 0, 0, 1);
-  // border: 1px solid #fc2;
 
   &.fadein{
     background-color: rgba(38, 47, 87 , 0.5);
@@ -512,13 +509,11 @@ body.active{
 /* mv */
 /* -------------------------------------------- */
 .mv{
-  background-color: #000;
-  // background: url(../images/huvest-top-image.png) center / cover no-repeat;
-  height: 600px;
+  background: url(../images/huvest-top-image.png) center left/ cover no-repeat;
+  height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 100px 0;
 
   &::before{
     content: "";
@@ -534,15 +529,15 @@ body.active{
   }
 
   &::after{
-    // content: "";
-    // display: block;
-    // width: 100%;
-    // height: 100%;
-    // background-color: rgba(0, 0, 0, .6);
-    // position: absolute;
-    // left: 0;
-    // top: 0;
-    // z-index: 1;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
   }
 }
 
@@ -550,7 +545,9 @@ body.active{
   color: #fff;
   letter-spacing: 0.15em;
   font-size: rem(33);
-  z-index: 3;
+  z-index: 2;
+  padding: 270px 0 140px;
+  position: relative;
 }
 
 .color--yellow{
@@ -558,10 +555,7 @@ body.active{
 }
 
 #slider {
-  // width: 100%;
-  // // height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
-  //   // z-index: -1;
-  //   position: relative;
+  // height: 100%;
 }
 
 .flex{
@@ -574,6 +568,7 @@ body.active{
   position:absolute;
   bottom:10px;
   left:50%;
+  z-index: 2;
 }
 
 .scrolldown span{
@@ -626,10 +621,11 @@ body.active{
 
 @media (min-width: 768px){
   .mv{
-    height: 700px;
+    // height: 700px;
   }
   .site-title{
     font-size: rem(80);
+    padding-top: 300px;
   }
 }
 

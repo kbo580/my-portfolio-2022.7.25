@@ -84,17 +84,18 @@ $(function(){
 
 // //Vegas全体の設定
 
-// $('#slider').vegas({
-//   slides: [
-//     { src:'./images/k-create-top-image.png'},
-//     { src: './images/huvest-top-image.png' },
-//     ],
+$('#slider').vegas({
+  slides: [
+    { src:'./images/k-create-top-image.png'},
+    { src: './images/huvest-top-image.png' },
+    { src: './images/LPサイト-top-screen.png' },
+    { src: './images/blog-image.png' },
+    ],
 
-// 		transition: 'slideLeft2',
-// 		transitionDuration: 2000,//切り替わりのアニメーション時間をミリ秒単位で設定
-// 		delay: 5000,
-// 		// slides: responsiveImage,//画像設定を読む
-// 	});
+		transition: 'slideLeft2',
+		transitionDuration: 5000,//切り替わりのアニメーション時間をミリ秒単位で設定
+		delay: 10000,
+	});
 
 
 
