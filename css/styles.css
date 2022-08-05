@@ -459,7 +459,7 @@ body.active {
 /* -------------------------------------------- */
 .mv {
   background: url(../images/huvest-top-image.png) center left/cover no-repeat;
-  height: 100vh;
+  height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   position: relative;
@@ -505,7 +505,7 @@ body.active {
 /* スクロール */
 .scrolldown {
   position: absolute;
-  bottom: 80px;
+  bottom: 0px;
   left: 50%;
   z-index: 1;
 }
@@ -589,13 +589,12 @@ body.active {
 }
 
 @media (min-width: 768px) {
+  .mv {
+    height: calc(100vh - 100px);
+  }
   .site-title {
     font-size: 5rem;
     padding-top: 240px;
-  }
-  /* スクロール */
-  .scrolldown {
-    bottom: 140px;
   }
 }
 /* -------------------------------------------- */
@@ -678,10 +677,10 @@ body.active {
   text-align: center;
 }
 .practice__list--odd {
-  background-color: #EFEFEF;
+  background-color: #f7f7f7;
 }
 .practice__list--even {
-  background-color: #DFDFDF;
+  background-color: #fbfbfb;
 }
 .practice__title {
   font-size: 1.25rem;
@@ -838,6 +837,7 @@ body.active {
   padding: 30px 0 20px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  z-index: 2;
 }
 .about-image__image {
   width: 100px;
@@ -895,10 +895,10 @@ body.active {
   }
 }
 .about-body__wrapper {
-  background-color: #F7F7F7;
   padding: 60px 20px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  z-index: 1;
 }
 .about-body__title {
   font-size: 1.25rem;
@@ -943,6 +943,7 @@ body.active {
     padding: 80px 60px 80px 80px;
     margin-left: initial;
     margin-right: initial;
+    background-color: #F7F7F7;
   }
   .about-body__title {
     font-size: 1.5rem;
