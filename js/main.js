@@ -92,11 +92,14 @@ $('#slider').vegas({
     { src: './images/blog-image.png' },
     ],
 
+    delay: 7000,
+    timer: false,
+    shuffle: true,
+    firstTransition: 'fade',
+    firstTransitionDuration: 5000,
+    transitionDuration: 2000,
 		transition: 'fade',
-		transitionDuration: 5000,
-		delay: 6000,
 	});
-
 
 
 
