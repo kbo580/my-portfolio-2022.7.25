@@ -13,10 +13,10 @@
 
 $accentColor: #FFD54D;
 $backgroundColor: #FFFEF8;
-$mvColor: #3f4c88;
-$mvColor: #262f57;
-// $mvColor: #2e795c;
-// $mvColor: #842f3f;
+$mainColor: #3f4c88;
+$mainColor: #262f57;
+// $mainColor: #2e795c;
+// $mainColor: #842f3f;
 
 /* -------------------------------------------- */
 /* リセット*/
@@ -56,6 +56,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: $backgroundColor;
+  position: relative;
 }
 
 footer {
@@ -194,8 +195,10 @@ footer {
 
 /* ページタイトル */
 .page-heading{
-  padding: 120px 20px 50px;
+  padding: 60px 20px;
   text-align: center;
+  background-color: $mainColor;
+  color: #fff;
 }
 
 .en-title{
@@ -284,6 +287,10 @@ footer {
   background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
 }
 
+.first-letter--change{
+  color: $accentColor;
+}
+
 /*  パンクズ  */
 .breadcrumbs{
   background-color: #CED7DC;
@@ -303,7 +310,7 @@ footer {
 
   /* ページタイトル */
   .page-heading{
-    padding: 200px 40px 100px;
+    padding: 140px 40px;
   }
 
   .btn{
@@ -337,13 +344,10 @@ footer {
 /* -------------------------------------------- */
 .header{
   height: 70px;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 2;
   color: #fff;
-
+  background-color: #000;
+  
   &.fadein{
     background-color: rgba(38, 47, 87 , 0.5);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
@@ -353,7 +357,7 @@ footer {
     width: 100%;
     animation: fadein .4s ease;
     height: 50px;
-    z-index: 100000;
+    z-index: 10000;
   }
 
   &__wrapper{
@@ -378,11 +382,9 @@ footer {
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  opacity: 0;
 
   &.fontChang{
     font-size: rem(14);
-    opacity: 1;
   }
 
   &__link{
@@ -409,7 +411,7 @@ footer {
   top: 0;
   left: -150%;
   // left: 0%;
-  z-index: 1000;
+  z-index: 2;
   transition: .5s;
   overflow-y: scroll;
 
@@ -517,14 +519,14 @@ body.active{
 
   &::before{
     content: "";
-    background-color: $mvColor;
+    background-color: $mainColor;
     width: 100%;
     height: 100%;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     clip-path: polygon(0 0, 40% 0, 60% 100%, 0% 100%);
   }
 
@@ -533,11 +535,10 @@ body.active{
     display: block;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .55);
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
   }
 }
 
@@ -545,17 +546,9 @@ body.active{
   color: #fff;
   letter-spacing: 0.15em;
   font-size: rem(33);
-  z-index: 2;
-  padding: 270px 0 140px;
+  z-index: 1;
+  padding: 210px 0 140px;
   position: relative;
-}
-
-.color--yellow{
-  color: $accentColor;
-}
-
-#slider {
-  // height: 100%;
 }
 
 .flex{
@@ -566,9 +559,9 @@ body.active{
 /* スクロール */
 .scrolldown{
   position:absolute;
-  bottom:10px;
+  bottom: 80px;
   left:50%;
-  z-index: 2;
+  z-index: 1;
 }
 
 .scrolldown span{
@@ -621,11 +614,16 @@ body.active{
 
 @media (min-width: 768px){
   .mv{
-    // height: 700px;
+
   }
   .site-title{
     font-size: rem(80);
-    padding-top: 300px;
+    padding-top: 240px;
+  }
+
+  /* スクロール */
+  .scrolldown{
+    bottom:140px;
   }
 }
 
@@ -1083,7 +1081,7 @@ body.active{
 /* -------------------------------------------- */
 .footer{
   height: 70px;
-  background-color: #7B7A7A;
+  background-color: $mainColor;
   font-size: rem(12);
 
   &__wrapper{

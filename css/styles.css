@@ -43,6 +43,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #FFFEF8;
+  position: relative;
 }
 
 footer {
@@ -165,8 +166,10 @@ footer {
 
 /* ページタイトル */
 .page-heading {
-  padding: 120px 20px 50px;
+  padding: 60px 20px;
   text-align: center;
+  background-color: #262f57;
+  color: #fff;
 }
 
 .en-title {
@@ -250,6 +253,10 @@ footer {
   background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
 }
 
+.first-letter--change {
+  color: #FFD54D;
+}
+
 /*  パンクズ  */
 .breadcrumbs {
   background-color: #CED7DC;
@@ -268,7 +275,7 @@ footer {
   }
   /* ページタイトル */
   .page-heading {
-    padding: 200px 40px 100px;
+    padding: 140px 40px;
   }
   .btn--more {
     font-size: 1rem;
@@ -293,12 +300,9 @@ footer {
 /* -------------------------------------------- */
 .header {
   height: 70px;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 2;
   color: #fff;
+  background-color: #000;
 }
 .header.fadein {
   background-color: rgba(38, 47, 87, 0.5);
@@ -310,7 +314,7 @@ footer {
   -webkit-animation: fadein 0.4s ease;
           animation: fadein 0.4s ease;
   height: 50px;
-  z-index: 100000;
+  z-index: 10000;
 }
 .header__wrapper {
   height: 100%;
@@ -341,11 +345,9 @@ footer {
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
-  opacity: 0;
 }
 .logo.fontChang {
   font-size: 0.875rem;
-  opacity: 1;
 }
 .logo__link {
   display: inline-block;
@@ -368,7 +370,7 @@ footer {
   position: fixed;
   top: 0;
   left: -150%;
-  z-index: 1000;
+  z-index: 2;
   transition: 0.5s;
   overflow-y: scroll;
 }
@@ -471,7 +473,7 @@ body.active {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
   -webkit-clip-path: polygon(0 0, 40% 0, 60% 100%, 0% 100%);
           clip-path: polygon(0 0, 40% 0, 60% 100%, 0% 100%);
 }
@@ -480,24 +482,19 @@ body.active {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.55);
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
 }
 
 .site-title {
   color: #fff;
   letter-spacing: 0.15em;
   font-size: 2.0625rem;
-  z-index: 2;
-  padding: 270px 0 140px;
+  z-index: 1;
+  padding: 210px 0 140px;
   position: relative;
-}
-
-.color--yellow {
-  color: #FFD54D;
 }
 
 .flex {
@@ -508,9 +505,9 @@ body.active {
 /* スクロール */
 .scrolldown {
   position: absolute;
-  bottom: 10px;
+  bottom: 80px;
   left: 50%;
-  z-index: 2;
+  z-index: 1;
 }
 
 .scrolldown span {
@@ -594,7 +591,11 @@ body.active {
 @media (min-width: 768px) {
   .site-title {
     font-size: 5rem;
-    padding-top: 300px;
+    padding-top: 240px;
+  }
+  /* スクロール */
+  .scrolldown {
+    bottom: 140px;
   }
 }
 /* -------------------------------------------- */
@@ -963,7 +964,7 @@ body.active {
 /* -------------------------------------------- */
 .footer {
   height: 70px;
-  background-color: #7B7A7A;
+  background-color: #262f57;
   font-size: 0.75rem;
 }
 .footer__wrapper {
