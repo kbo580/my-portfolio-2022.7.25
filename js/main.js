@@ -92,9 +92,9 @@ $('#slider').vegas({
     { src: './images/blog-image.png' },
     ],
 
-		transition: 'slideLeft2',
-		transitionDuration: 5000,//切り替わりのアニメーション時間をミリ秒単位で設定
-		delay: 10000,
+		transition: 'fade',
+		transitionDuration: 5000,
+		delay: 6000,
 	});
 
 
