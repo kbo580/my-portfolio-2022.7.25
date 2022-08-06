@@ -68,16 +68,11 @@ footer {
     padding: 0 40px;
   }
 }
-.section {
-  padding-bottom: 100px;
-}
-
 .sec-heading {
   position: relative;
   padding-top: 60px;
-  margin-bottom: 50px;
 }
-.sec-heading::after, .sec-heading::before {
+.sec-heading::after {
   content: "";
   background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
   width: 100%;
@@ -87,10 +82,12 @@ footer {
   top: 0;
   left: 0;
   z-index: -1;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
+}
+.sec-heading__bg {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0 155px;
+  margin-bottom: 0;
 }
 .sec-heading.--left {
   text-align: left;
@@ -105,53 +102,40 @@ footer {
   line-height: 1;
 }
 
-.sec-sub-heading-wrapper {
+.sec-sub-heading {
+  font-size: 1.375rem;
+  position: relative;
   text-align: center;
 }
-
-.sec-sub-heading {
-  font-size: 1.5rem;
-  position: relative;
-  border-bottom: 3px solid #333;
-  display: inline-block;
-}
-.sec-sub-heading::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  border-bottom: solid 3px #ffd54d;
-  bottom: -3px;
-  width: 30%;
+.sec-sub-heading.--daikei {
+  background-color: #FFFEF8;
+  padding: 1.25em 0;
+  max-width: 480px;
+  width: 70%;
+  margin: -88px auto 0;
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
 @media (min-width: 768px) {
-  .section {
-    padding-bottom: 150px;
-  }
   .sec-heading {
     font-size: 5.625rem;
     padding-top: 130px;
-    margin-bottom: 100px;
   }
   .sec-heading::after {
     height: 210px;
+  }
+  .sec-heading__bg {
+    padding: 130px 0 230px;
   }
   .sec-heading--ja {
     font-size: 1.25rem;
   }
   .sec-sub-heading {
     font-size: 2rem;
-    position: relative;
-    border-bottom: 3px solid #333;
-    display: inline-block;
   }
-  .sec-sub-heading::after {
-    content: " ";
-    position: absolute;
-    display: block;
-    border-bottom: solid 3px #ffd54d;
-    bottom: -3px;
-    width: 30%;
+  .sec-sub-heading.--daikei {
+    margin: -128px auto 0;
   }
 }
 /* -------------------------------------------- */
@@ -162,6 +146,10 @@ footer {
   font-size: 2.5rem;
   line-height: 1;
   letter-spacing: 0.1em;
+}
+
+.page--padding {
+  padding: 50px 0 100px;
 }
 
 /* ページタイトル */
@@ -257,6 +245,13 @@ footer {
   color: #FFD54D;
 }
 
+.over--inner {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
 /*  パンクズ  */
 .breadcrumbs {
   background-color: #CED7DC;
@@ -272,6 +267,9 @@ footer {
 @media (min-width: 768px) {
   .heading-common {
     font-size: 5.625rem;
+  }
+  .page--padding {
+    padding: 100px 0 150px;
   }
   /* ページタイトル */
   .page-heading {
@@ -600,25 +598,32 @@ body.active {
 /* -------------------------------------------- */
 /* topページのworks */
 /* -------------------------------------------- */
+.works-top {
+  padding-bottom: 100px;
+}
+.works-top__wrapper {
+  padding-bottom: 70px;
+}
 .works-top__explain {
-  margin-top: 20px;
+  padding-top: 20px;
+  text-align: center;
 }
 .works-top__item-wrapper {
-  margin-top: 40px;
+  margin-top: 30px;
   position: relative;
   display: flex;
   width: 100%;
 }
 .works-top__item-list {
-  margin: 20px 0;
-  border: 1px solid #dedede;
-  border-radius: 6px;
-  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.16);
+  padding: 10px 0;
 }
 .works-top__item {
   text-align: left;
   padding-bottom: 30px;
   background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #dedede;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .works-top__item-title {
   font-size: 1.125rem;
@@ -628,6 +633,7 @@ body.active {
   padding: 20px 20px 0 20px;
   line-height: 1.6;
 }
+
 .slideBtn {
   width: 25px;
   height: 40px;
@@ -768,13 +774,17 @@ body.active {
 }
 
 @media (min-width: 768px) {
+  .works-top {
+    padding-bottom: 100px;
+  }
   .works-top__item-wrapper {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 50px;
     justify-content: space-between;
   }
   .works-top__item-list {
     width: 31.66%;
+    padding: 10px;
   }
   .works-top__item-title {
     font-size: 1.25rem;
@@ -1450,4 +1460,18 @@ span.wpcf7-not-valid-tip::before {
 /* ------------------------------------ */
 /* ▼PC用デザインとして付け足すデザイン */
 /* ------------------------------------ */
+.wrap {
+  background-color: #ddd;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: #ddd;
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
 /*# sourceMappingURL=styles.css.map */

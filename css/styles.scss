@@ -64,7 +64,6 @@ footer {
   margin-top: auto;
 }
 
-
 @media (min-width: 768px){
   body{
     font-size: rem(16);
@@ -88,20 +87,16 @@ footer {
 
 // セクション関連
 .section{
-  padding-bottom: 100px;
+
 }
 
 .sec-heading{
   position: relative;
   padding-top: 60px;
-  margin-bottom: 50px;
 
-  &::after,
-  &::before{
+  &::after{
     content: "";
     background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
-    // background: linear-gradient(to bottom, $mainColor, $backgroundColor);
-
     width: 100%;
     height: 100px;
     display: block;
@@ -109,10 +104,13 @@ footer {
     top: 0;
     left:0;
     z-index: -1;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: calc(50vw - 50%);
-    padding-right: calc(50vw - 50%);
+  }
+
+  &__bg{
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0 155px;
+    margin-bottom: 0;
   }
 
   &.--left{
@@ -129,39 +127,38 @@ footer {
   line-height: 1;
 }
 
-.sec-sub-heading-wrapper{
-  text-align: center;
-}
-
 .sec-sub-heading{
-  font-size: rem(24);
+  font-size: rem(22);
   position: relative;
-  border-bottom: 3px solid #333;
-  display: inline-block;
-
-  &::after{
-    content: " ";
-    position: absolute;
-    display: block;
-    border-bottom: solid 3px #ffd54d;
-    bottom: -3px;
-    width: 30%;
+  text-align: center;
+  
+  &.--daikei{
+    background-color: $backgroundColor;
+    padding: 1.25em 0;
+    max-width: 480px;
+    width: 70%;
+    margin: -88px auto 0;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
   }
 }
 
 
 @media (min-width: 768px){
+
   .section{
-    padding-bottom: 150px;
+
   }
 
   .sec-heading{
     font-size: rem(90);
     padding-top: 130px;
-    margin-bottom: 100px;
 
     &::after{
       height: 210px;
+    }
+
+    &__bg{
+      padding: 130px 0 230px;
     }
   }
 
@@ -171,17 +168,9 @@ footer {
 
   .sec-sub-heading{
     font-size: rem(32);
-    position: relative;
-    border-bottom: 3px solid #333;
-    display: inline-block;
-  
-    &::after{
-      content: " ";
-      position: absolute;
-      display: block;
-      border-bottom: solid 3px #ffd54d;
-      bottom: -3px;
-      width: 30%;
+
+    &.--daikei{
+      margin: -128px auto 0;
     }
   }
 }
@@ -194,6 +183,10 @@ footer {
   font-size: rem(40);
   line-height: 1; //微調整
   letter-spacing: 0.1em;
+}
+
+.page--padding{
+  padding: 50px 0 100px;
 }
 
 /* ページタイトル */
@@ -263,8 +256,6 @@ footer {
       transition: all .4s;
     }
   }
-
-  
 }
 
 .thum{
@@ -296,6 +287,13 @@ footer {
   color: $accentColor;
 }
 
+.over--inner{
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
 /*  パンクズ  */
 .breadcrumbs{
   background-color: #CED7DC;
@@ -313,10 +311,15 @@ footer {
     font-size: rem(90);
   }
 
+  .page--padding{
+    padding: 100px 0 150px;
+  }
+
   /* ページタイトル */
   .page-heading{
     padding: 140px 40px;
   }
+
 
   .btn{
 
@@ -517,7 +520,6 @@ body.active{
 /* -------------------------------------------- */
 .mv{
   background: url(../images/huvest-top-image.png) center left/ cover no-repeat;
-  // height: 100vh;
   height: calc(100vh - 70px);
   display: flex;
   align-items: center;
@@ -632,29 +634,35 @@ body.active{
 /* topページのworks */
 /* -------------------------------------------- */
 .works-top{
+  padding-bottom: 100px;
 
+  &__wrapper{
+    padding-bottom: 70px;
+  }
+  
   &__explain{
-    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
   }
 
   &__item-wrapper{
-    margin-top: 40px;
+    margin-top: 30px;
     position: relative;
     display: flex;
     width: 100%;
   }
   
   &__item-list{
-    margin: 20px 0;
-    border: 1px solid #dedede;
-    border-radius: 6px;
-    box-shadow: 0px 5px 6px  rgba(0, 0, 0, 0.16);
+    padding: 10px 0;
   }
   
   &__item{
     text-align: left;
     padding-bottom: 30px;
     background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #dedede;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
   }
 
   &__item-title{
@@ -662,17 +670,9 @@ body.active{
     padding: 20px;
   }
 
-  &__item-img{
-    
-  }
-
   &__item-content{
     padding: 20px 20px 0 20px;
     line-height: 1.6;
-  }
-
-  &__item-btn{
-    // margin-top: 40px;
   }
 }
 
@@ -836,19 +836,17 @@ body.active{
 
 @media (min-width: 768px){
   .works-top{
-  
+    padding-bottom: 100px;
+
     &__item-wrapper{
       width: 100%;
-      margin-top: 60px;
+      margin-top: 50px;
       justify-content: space-between;
     }
     
     &__item-list{
       width: 31.66%;
-    }
-
-    &__item{
-      
+      padding: 10px;
     }
   
     &__item-title{
@@ -1753,3 +1751,37 @@ span.wpcf7-not-valid-tip {
 
   
 }
+
+
+.test{
+  // border: 1px solid #000;
+}
+
+.wrap{
+  // border: 1px solid #000;
+  background-color: #ddd;
+  
+}
+
+.title{
+  font-size: rem(24);
+  text-align: center;
+  background-color: #ddd;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+// .text{
+//   text-align: center;
+//   padding-top: 20px;
+// }
+
+// .works-top__item-wrapper{
+//   margin-top: 60px;
+// }
+
+// .works-top__item-list{
+//   padding: 0;
+// }
