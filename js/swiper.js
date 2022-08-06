@@ -14,15 +14,15 @@ const mainswiper = new Swiper('.swiper', {
   },
 
   slidesPerView: 1,
-  spaceBetween: 30,
+  spaceBetween: 10,
   breakpoints: {
     768: {
       slidesPerView: 2,
-      spaceBetween: 30
+      spaceBetween: 10
     },
     992: {
       slidesPerView: 3,
-      spaceBetween: 30
+      spaceBetween: 10
     }
   },
 
