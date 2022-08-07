@@ -86,10 +86,6 @@ footer {
 }
 
 // セクション関連
-.section{
-
-}
-
 .sec-heading{
   position: relative;
   padding-top: 60px;
@@ -145,11 +141,6 @@ footer {
 
 
 @media (min-width: 768px){
-
-  .section{
-
-  }
-
   .sec-heading{
     font-size: rem(90);
     padding-top: 130px;
@@ -187,7 +178,7 @@ footer {
   letter-spacing: 0.1em;
 }
 
-.page--padding{
+.padding-container{
   padding: 50px 0 100px;
 }
 
@@ -239,6 +230,7 @@ footer {
     width: 200px;
     border: 2px solid #333333;
     position: relative;
+
     &:hover::after {
       top: 0;
       left: 0;
@@ -304,16 +296,12 @@ footer {
   align-items: center;
 }
 
-.breadcrumbs-mb{
-  margin-bottom: 50px;
-}
-
 @media (min-width: 768px){
   .heading-common{
     font-size: rem(90);
   }
 
-  .page--padding{
+  .padding-container{
     padding: 100px 0 150px;
   }
 
@@ -321,7 +309,6 @@ footer {
   .page-heading{
     padding: 140px 40px;
   }
-
 
   .btn{
 
@@ -342,10 +329,6 @@ footer {
   /*  パンクズ  */
   .breadcrumbs{
     height: 50px;
-  }
-
-  .breadcrumbs-mb{
-    margin-bottom: 100px;
   }
 }
 

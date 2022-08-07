@@ -149,7 +149,7 @@ footer {
   letter-spacing: 0.1em;
 }
 
-.page--padding {
+.padding-container {
   padding: 50px 0 100px;
 }
 
@@ -261,15 +261,11 @@ footer {
   align-items: center;
 }
 
-.breadcrumbs-mb {
-  margin-bottom: 50px;
-}
-
 @media (min-width: 768px) {
   .heading-common {
     font-size: 5.625rem;
   }
-  .page--padding {
+  .padding-container {
     padding: 100px 0 150px;
   }
   /* ページタイトル */
@@ -289,9 +285,6 @@ footer {
   /*  パンクズ  */
   .breadcrumbs {
     height: 50px;
-  }
-  .breadcrumbs-mb {
-    margin-bottom: 100px;
   }
 }
 /* -------------------------------------------- */
