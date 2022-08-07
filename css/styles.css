@@ -86,7 +86,7 @@ footer {
 .sec-heading__bg {
   background-color: #000;
   color: #fff;
-  padding: 80px 0 155px;
+  padding: 80px 0 100px;
   margin-bottom: 0;
 }
 .sec-heading.--left {
@@ -109,10 +109,10 @@ footer {
 }
 .sec-sub-heading.--daikei {
   background-color: #FFFEF8;
-  padding: 1.25em 0;
+  padding: 16px 0;
   max-width: 480px;
   width: 70%;
-  margin: -88px auto 0;
+  margin: -65px auto 0;
   -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
           clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
@@ -136,6 +136,7 @@ footer {
   }
   .sec-sub-heading.--daikei {
     margin: -128px auto 0;
+    padding: 40px 0;
   }
 }
 /* -------------------------------------------- */
