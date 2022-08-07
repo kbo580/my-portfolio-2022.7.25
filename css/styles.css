@@ -191,6 +191,7 @@ footer {
   display: inline-block;
   line-height: 1;
   margin-left: 8px;
+  font-size: 1rem;
 }
 .btn--more:hover {
   background-color: #262f57;
