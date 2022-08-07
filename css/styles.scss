@@ -179,7 +179,8 @@ footer {
 }
 
 .padding-container{
-  padding: 50px 0 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 /* ページタイトル */
@@ -310,7 +311,8 @@ footer {
   }
 
   .padding-container{
-    padding: 100px 0 150px;
+    padding-top: 100px;
+    padding-bottom: 150px;
   }
 
   /* ページタイトル */
@@ -936,7 +938,7 @@ body.active{
 
   &__content-frame{
     width: 100%;
-    padding: 10px 24px 0;
+    padding: 10px 6.25vw;
   }
 
   &__text{
@@ -1023,10 +1025,6 @@ body.active{
     &__image{
       width: 120px;
       height: 120px;
-    }
-  
-    &__content-frame{
-      padding: 10px 90px 0;
     }
   
     &__text{
@@ -1486,17 +1484,18 @@ span.wpcf7-not-valid-tip {
 .prof-heading{
   color: #E6E5EF;
   position: absolute;
-  font-size: rem(40);
+  // font-size: rem(40);
+  font-size: calc(2.5rem + ((1vw - 3.75px) * 8.8398));
   bottom: 0%;
   z-index: -1;
 }
 
 .posi-left{
-  left: 0px;
+  left: 0;
 }
 
 .posi-right{
-  right: 0px;
+  right: 0;
 }
 
 .profile{
@@ -1638,6 +1637,7 @@ span.wpcf7-not-valid-tip {
 
 
 @media (min-width: 768px){
+
   .prof-sec{
     padding: 100px 0 150px;
   }
@@ -1696,8 +1696,21 @@ span.wpcf7-not-valid-tip {
   }
 
 }
-
 @media (min-width: 992px){
+ /* できること */
+  .wicd{
+    &-title{
+      font-size: rem(90);
+    }
+
+
+    &__lists{
+      width: 22%;
+    }
+  }
+}
+
+@media (min-width: 1200px){
   .posi-left{
     left: -10%;
   }
@@ -1706,17 +1719,7 @@ span.wpcf7-not-valid-tip {
     right: -10%;
   }
 
- /* できること */
-  .wicd{
-    &-title{
-      font-size: rem(90);
-    }
-  
 
-    &__lists{
-      width: 22%;
-    }
-  }
 }
 
 

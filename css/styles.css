@@ -150,7 +150,8 @@ footer {
 }
 
 .padding-container {
-  padding: 50px 0 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 /* ページタイトル */
@@ -273,7 +274,8 @@ footer {
     font-size: 5.625rem;
   }
   .padding-container {
-    padding: 100px 0 150px;
+    padding-top: 100px;
+    padding-bottom: 150px;
   }
   /* ページタイトル */
   .page-heading {
@@ -857,7 +859,7 @@ body.active {
 }
 .about-image__content-frame {
   width: 100%;
-  padding: 10px 24px 0;
+  padding: 10px 6.25vw;
 }
 .about-image__text {
   font-size: 1rem;
@@ -940,9 +942,6 @@ body.active {
   .about-image__image {
     width: 120px;
     height: 120px;
-  }
-  .about-image__content-frame {
-    padding: 10px 90px 0;
   }
   .about-image__text {
     font-size: 1.25rem;
@@ -1284,17 +1283,17 @@ span.wpcf7-not-valid-tip::before {
 .prof-heading {
   color: #E6E5EF;
   position: absolute;
-  font-size: 2.5rem;
+  font-size: calc(2.5rem + (1vw - 3.75px) * 8.8398);
   bottom: 0%;
   z-index: -1;
 }
 
 .posi-left {
-  left: 0px;
+  left: 0;
 }
 
 .posi-right {
-  right: 0px;
+  right: 0;
 }
 
 .profile-wrapper {
@@ -1438,18 +1437,20 @@ span.wpcf7-not-valid-tip::before {
   }
 }
 @media (min-width: 992px) {
-  .posi-left {
-    left: -10%;
-  }
-  .posi-right {
-    right: -10%;
-  }
   /* できること */
   .wicd-title {
     font-size: 5.625rem;
   }
   .wicd__lists {
     width: 22%;
+  }
+}
+@media (min-width: 1200px) {
+  .posi-left {
+    left: -10%;
+  }
+  .posi-right {
+    right: -10%;
   }
 }
 /* -------------------------------------------- */
