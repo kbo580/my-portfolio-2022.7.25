@@ -210,16 +210,23 @@ footer {
     width: 200px;
     border-radius: 4px;
     background-color: #fff;
+    transition:all  .6s;
+    position: relative;
 
     &::after{
-      content: "";
+      content: "\f0da";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
       display: inline-block;
-      border-top: 2px solid #000;
-      border-right: 2px solid #000;
-      transform: rotate(45deg);
-      width: 6px;
-      height: 6px;
+      line-height: 1;
       margin-left: 8px;
+    }
+
+    &:hover{
+      background-color: $mainColor;
+      color: #fff;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
     }
   }
 
