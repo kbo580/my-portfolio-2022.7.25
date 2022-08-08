@@ -109,7 +109,7 @@ footer {
 }
 .sec-sub-heading.--daikei {
   background-color: #FFFEF8;
-  padding: 16px 0;
+  padding: 18px 0;
   max-width: 480px;
   width: 70%;
   margin: -65px auto 0;
@@ -342,7 +342,7 @@ footer {
   }
 }
 .logo {
-  font-size: 1.125rem;
+  font-size: calc(1.125rem + (1vw - 3.75px) * 1.2121);
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -439,9 +439,6 @@ body.active {
   .header {
     height: 100px;
   }
-  .logo {
-    font-size: 1.75rem;
-  }
   .burger {
     display: none;
   }
@@ -453,6 +450,11 @@ body.active {
   }
   .gnav--pc__item:not(:first-child) {
     margin-left: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .logo {
+    font-size: 1.75rem;
   }
 }
 /* -------------------------------------------- */
@@ -1283,7 +1285,7 @@ span.wpcf7-not-valid-tip::before {
 .prof-heading {
   color: #E6E5EF;
   position: absolute;
-  font-size: calc(2.5rem + (1vw - 3.75px) * 8.8398);
+  font-size: calc(2.5rem + (1vw - 3.75px) * 9.697);
   bottom: 0%;
   z-index: -1;
 }
@@ -1409,9 +1411,6 @@ span.wpcf7-not-valid-tip::before {
     padding-bottom: 340px;
     margin-bottom: -300px;
   }
-  .prof-heading {
-    font-size: 7.5rem;
-  }
   .skills-wrapper {
     justify-content: space-between;
     flex-direction: row;
@@ -1446,6 +1445,9 @@ span.wpcf7-not-valid-tip::before {
   }
 }
 @media (min-width: 1200px) {
+  .prof-heading {
+    font-size: 7.5rem;
+  }
   .posi-left {
     left: -10%;
   }

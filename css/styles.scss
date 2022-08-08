@@ -131,7 +131,7 @@ footer {
   &.--daikei{
     background-color: $backgroundColor;
     // padding: 1.25em 0;
-    padding: 16px 0;
+    padding: 18px 0;
     max-width: 480px;
     width: 70%;
     margin: -65px auto 0;
@@ -381,7 +381,8 @@ footer {
 }
 
 .logo{
-  font-size: rem(18);
+  // font-size: rem(18);
+  font-size: calc(1.125rem + ((1vw - 3.75px) * 1.2121));
   font-weight: bold;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -485,9 +486,9 @@ body.active{
     height: 100px;
   }
 
-  .logo{
-    font-size: rem(28);
-  }
+  // .logo{
+  //   font-size: rem(28);
+  // }
 
   .burger{
     display: none;
@@ -507,6 +508,12 @@ body.active{
     &__item:not(:first-child){
       margin-left: 30px;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo{
+    font-size: rem(28);
   }
 }
 
@@ -1485,7 +1492,7 @@ span.wpcf7-not-valid-tip {
   color: #E6E5EF;
   position: absolute;
   // font-size: rem(40);
-  font-size: calc(2.5rem + ((1vw - 3.75px) * 8.8398));
+  font-size: calc(2.5rem + ((1vw - 3.75px) * 9.697));
   bottom: 0%;
   z-index: -1;
 }
@@ -1655,7 +1662,8 @@ span.wpcf7-not-valid-tip {
     }
   }
   .prof-heading{
-    font-size: rem(120);
+    // font-size: rem(120);
+    
   }
 
   .skills{
@@ -1711,6 +1719,10 @@ span.wpcf7-not-valid-tip {
 }
 
 @media (min-width: 1200px){
+  .prof-heading{
+    font-size: rem(120);
+    
+  }
   .posi-left{
     left: -10%;
   }
