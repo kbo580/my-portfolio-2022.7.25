@@ -433,6 +433,22 @@ footer {
 
 .gnav--pc{
   display: none;
+
+  &__list{
+    display: flex;
+  }
+
+  &__item:not(:first-child){
+    margin-left: 30px;
+  }
+
+  &__link{
+    transition: color .4s;
+
+    &:hover{
+      color: $accentColor;
+    }
+  }
 }
 
 .burger{
@@ -486,28 +502,12 @@ body.active{
     height: 100px;
   }
 
-  // .logo{
-  //   font-size: rem(28);
-  // }
-
   .burger{
     display: none;
   }
 
-  .gnav--sp{
-    // display: none;
-  }
-
   .gnav--pc{
     display: block;
-
-    &__list{
-      display: flex;
-    }
-
-    &__item:not(:first-child){
-      margin-left: 30px;
-    }
   }
 }
 
@@ -519,9 +519,10 @@ body.active{
 
 /* -------------------------------------------- */
 /* mv */
-/* -------------------------------------------- */
+/* --------------------------------------------- */
 .mv{
   background: url(../images/huvest-top-image.png) center left/ cover no-repeat;
+  height: 100vh;
   height: calc(100vh - 70px);
   display: flex;
   align-items: center;
@@ -570,7 +571,7 @@ body.active{
 .scrolldown{
   position:absolute;
   bottom: 0px;
-  left:50%;
+  left: 50%;
   z-index: 1;
 }
 

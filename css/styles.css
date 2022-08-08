@@ -388,6 +388,18 @@ footer {
 .gnav--pc {
   display: none;
 }
+.gnav--pc__list {
+  display: flex;
+}
+.gnav--pc__item:not(:first-child) {
+  margin-left: 30px;
+}
+.gnav--pc__link {
+  transition: color 0.4s;
+}
+.gnav--pc__link:hover {
+  color: #FFD54D;
+}
 
 .burger {
   width: 30px;
@@ -445,12 +457,6 @@ body.active {
   .gnav--pc {
     display: block;
   }
-  .gnav--pc__list {
-    display: flex;
-  }
-  .gnav--pc__item:not(:first-child) {
-    margin-left: 30px;
-  }
 }
 @media (min-width: 1200px) {
   .logo {
@@ -459,9 +465,10 @@ body.active {
 }
 /* -------------------------------------------- */
 /* mv */
-/* -------------------------------------------- */
+/* --------------------------------------------- */
 .mv {
   background: url(../images/huvest-top-image.png) center left/cover no-repeat;
+  height: 100vh;
   height: calc(100vh - 70px);
   display: flex;
   align-items: center;
