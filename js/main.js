@@ -103,9 +103,30 @@ $(function(){
   });
 
 
-// //Vegas全体の設定
 
-$('#slider').vegas({
+
+    //バナー一覧のモーダル
+  $('#modal-wrapper').hide();
+
+  $('.banners__item > a').on('click', function(){
+    var src = $(this).find('img').attr('src');
+    var alt = $(this).find('img').attr('alt');
+    $('#modal-image-wrapper > img').attr('src', src).attr('alt', alt);
+    $('#modal-wrapper').fadeIn(600);
+    $('body').addClass('fixed');
+    // window.addEventListener( 'touchmove' , movefun , { passive: false } );
+    return false;
+  });
+
+  $('#modal-wrapper').on('click', function(){
+    $('#modal-wrapper').fadeOut(600); 
+    $('body').removeClass('fixed');
+    // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
+  });
+
+  // //Vegas全体の設定
+
+  $('#slider').vegas({
   slides: [
     { src:'./images/k-create-top-image.png'},
     { src: './images/huvest-top-image.png' },
@@ -121,8 +142,6 @@ $('#slider').vegas({
     transitionDuration: 2000,
 		transition: 'fade',
 	});
-
-
 
 
 
