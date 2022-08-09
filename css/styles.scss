@@ -1182,7 +1182,6 @@ body.active{
 /* works(アーカイブ) */
 /* -------------------------------------------- */
 .works{
-  // border: 1px solid #000;
 
   &__wrapper{
     
@@ -1193,6 +1192,7 @@ body.active{
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
+    margin-top: 30px;
 
     &::after{
       content: "";
@@ -1228,6 +1228,16 @@ body.active{
   }
 }
 
+@media (min-width: 768px){
+  .works{
+    &__text{
+      text-align: center;
+    }
+    &__item-list{
+      margin-top: 50px;
+    }
+  }
+}
 /* -------------------------------------------- */
 /* 404page */
 /* -------------------------------------------- */
@@ -1802,7 +1812,7 @@ span.wpcf7-not-valid-tip {
 .banners{
 
   &__list{
-    gap: 16px;
+    
   }
   
   &__image-wrapper{

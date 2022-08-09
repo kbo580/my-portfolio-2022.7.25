@@ -1068,6 +1068,7 @@ body.active {
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
+  margin-top: 30px;
 }
 .works__item-list::after {
   content: "";
@@ -1096,6 +1097,14 @@ body.active {
   transition: all 0.4s;
 }
 
+@media (min-width: 768px) {
+  .works__text {
+    text-align: center;
+  }
+  .works__item-list {
+    margin-top: 50px;
+  }
+}
 /* -------------------------------------------- */
 /* 404page */
 /* -------------------------------------------- */
@@ -1517,9 +1526,6 @@ span.wpcf7-not-valid-tip::before {
 /* -------------------------------------------- */
 /* banners */
 /* -------------------------------------------- */
-.banners__list {
-  gap: 16px;
-}
 .banners__image-wrapper {
   aspect-ratio: 6/5;
   width: 100%;
