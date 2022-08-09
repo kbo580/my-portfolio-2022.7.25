@@ -1,6 +1,6 @@
 $(function(){
-  // $('#nav').hide();
 
+  //ハンバーガーメニュー
   $('#burger').on('click', function(){
     $(this).toggleClass('active');
     $('.gnav--sp').toggleClass('active');
@@ -13,20 +13,41 @@ $(function(){
     $('body').removeClass('active');
   });
 
+
+  //スクロールで使う変数
+  var mvHight = $('.mv').outerHeight(true);
+  var pageHeadingHight = $('.page-heading').outerHeight(true);
+
   // スクロールで固定されるヘッダー
   $(window).on('scroll', function(){
-    if($(this).scrollTop() > 400){ 
+    var scrollTop = $(this).scrollTop();
+    if(scrollTop > mvHight || scrollTop > pageHeadingHight){ 
       $('.header').addClass('fadein');
       $('.logo').addClass('fontChang');
-      
     }
+
     else{
       $('.header').removeClass('fadein');
       $('.logo').removeClass('fontChang');
     }
   });
 
-   // worksのitemにカーソルが乗った時の動き
+  //「topへ戻る」関連
+  $('#top').hide();
+  $(window).scroll(function(){
+    if($(this).scrollTop()>mvHight){
+      $('#top').fadeIn(400);
+    }
+    else{
+      $('#top').fadeOut(400);
+    }
+  });
+
+  $('#top').click(function(){ 
+    $('html,body').animate({'scrollTop':0},600);
+  });
+
+  // worksのitemにカーソルが乗った時の動き
   $('.works__item--link').hover(function(){
     $(this).find('.works__item-image').css('transform','scale(1.1, 1.1)');
   },function(){
