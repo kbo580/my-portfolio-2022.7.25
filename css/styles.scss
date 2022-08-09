@@ -396,6 +396,7 @@ footer {
   }
 }
 
+/* ヘッダーナビ */
 .gnav{
   font-size: rem(16);
   font-weight: bold;
@@ -406,6 +407,7 @@ footer {
   }
 }
 
+/* スマホ用ナビ */
 .gnav--sp{
   background-color: rgba(0, 0, 0, .8);
   color: #fff;
@@ -431,19 +433,50 @@ footer {
   }
 }
 
+/* PC用ナビ */
 .gnav--pc{
   display: none;
 
   &__list{
     display: flex;
+    // align-items: center;
+
+    .current a::after,
+    a:hover::after {
+      transform: scale(1, 1);
+    }
   }
 
-  &__item:not(:first-child){
-    margin-left: 30px;
+  &__item{
+
+    &.current a,
+    & a:hover{
+      color: $accentColor;
+    }
+
+    &:not(:first-child){
+      margin-left: 30px;
+    }
   }
 
   &__link{
     transition: color .4s;
+    display: block;
+    padding:8px 0px;
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      width: 90%;
+      height: 2px;
+      background: $accentColor;
+      transition: all .3s;
+      transform: scale(0, 1);
+      transform-origin: center top;
+    }
 
     &:hover{
       color: $accentColor;

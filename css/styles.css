@@ -354,6 +354,7 @@ footer {
   display: inline-block;
 }
 
+/* ヘッダーナビ */
 .gnav {
   font-size: 1rem;
   font-weight: bold;
@@ -363,6 +364,7 @@ footer {
   left: 0;
 }
 
+/* スマホ用ナビ */
 .gnav--sp {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -385,17 +387,40 @@ footer {
   margin-top: 40px;
 }
 
+/* PC用ナビ */
 .gnav--pc {
   display: none;
 }
 .gnav--pc__list {
   display: flex;
 }
+.gnav--pc__list .current a::after,
+.gnav--pc__list a:hover::after {
+  transform: scale(1, 1);
+}
+.gnav--pc__item.current a, .gnav--pc__item a:hover {
+  color: #FFD54D;
+}
 .gnav--pc__item:not(:first-child) {
   margin-left: 30px;
 }
 .gnav--pc__link {
   transition: color 0.4s;
+  display: block;
+  padding: 8px 0px;
+  position: relative;
+}
+.gnav--pc__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: #FFD54D;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
 }
 .gnav--pc__link:hover {
   color: #FFD54D;
