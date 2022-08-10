@@ -23,14 +23,16 @@ $(function(){
     var scrollTop = $(this).scrollTop();
     if(scrollTop > mvHight || scrollTop > pageHeadingHight){ 
       $('.header').addClass('fadein');
-      $('.mv').addClass('marginTop');
       $('.logo').addClass('fontChang');
+      $('.mv').addClass('marginTop');
+      $('.page-heading').addClass('marginTop');
     }
 
     else{
       $('.header').removeClass('fadein');
-      $('.mv').removeClass('marginTop');
       $('.logo').removeClass('fontChang');
+      $('.mv').removeClass('marginTop');
+      $('.page-heading').removeClass('marginTop');
     }
   });
 
