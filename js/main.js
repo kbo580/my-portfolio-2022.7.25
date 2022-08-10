@@ -1,14 +1,14 @@
 $(function(){
 
   //ハンバーガーメニュー
-  $('#burger').on('click', function(){
+  $('.burger').on('click', function(){
     $(this).toggleClass('active');
     $('.gnav--sp').toggleClass('active');
     $('body').toggleClass('active');
   });
   
   $('.gnav--sp__link').on('click', function () {
-    $('#burger').removeClass('active');
+    $('.burger').removeClass('active');
     $('.gnav--sp').removeClass('active');
     $('body').removeClass('active');
   });
@@ -23,11 +23,13 @@ $(function(){
     var scrollTop = $(this).scrollTop();
     if(scrollTop > mvHight || scrollTop > pageHeadingHight){ 
       $('.header').addClass('fadein');
+      $('.mv').addClass('marginTop');
       $('.logo').addClass('fontChang');
     }
 
     else{
       $('.header').removeClass('fadein');
+      $('.mv').removeClass('marginTop');
       $('.logo').removeClass('fontChang');
     }
   });
