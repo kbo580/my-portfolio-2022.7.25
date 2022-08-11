@@ -1564,6 +1564,10 @@ span.wpcf7-not-valid-tip::before {
   width: 100%;
 }
 
+.about-body-list li::before {
+  content: "・";
+}
+
 /* 経歴 */
 .career__lists {
   width: 100%;

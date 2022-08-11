@@ -1679,6 +1679,12 @@ span.wpcf7-not-valid-tip {
   width: 100%;
 }
 
+.about-body-list li{
+  &::before{
+    content: "・";
+  }
+}
+
 /* 経歴 */
 .career{
 
@@ -1778,6 +1784,7 @@ span.wpcf7-not-valid-tip {
 
     &__image-wrapper{
       aspect-ratio: 4 / 3;
+      // border: 1px solid #000;
     }
   
     &__title{
