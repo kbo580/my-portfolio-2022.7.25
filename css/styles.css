@@ -675,11 +675,12 @@ body.active {
 /* スクロール */
 .scrolldown {
   position: absolute;
-  bottom: 0px;
-  left: 50%;
+  bottom: 50px;
+  left: 20px;
   z-index: 1;
 }
 
+/* スクロールバーの文字 */
 .scrolldown span {
   position: absolute;
   left: 10px;
@@ -692,22 +693,23 @@ body.active {
   writing-mode: vertical-rl;
 }
 
+/* スクロールバーの光 */
 .scrolldown:before {
   content: "";
   position: absolute;
   bottom: 0;
   left: -4px;
   width: 10px;
-  height: 10px;
+  height: 16px;
   border-radius: 50%;
   background: #FFD54D;
-  -webkit-animation: circlemove 1.6s ease-in-out infinite, cirlemovehide 1.6s ease-out infinite;
-          animation: circlemove 1.6s ease-in-out infinite, cirlemovehide 1.6s ease-out infinite;
+  -webkit-animation: circlemove 2s ease-in-out infinite, cirlemovehide 2s ease-out infinite;
+          animation: circlemove 2s ease-in-out infinite, cirlemovehide 2s ease-out infinite;
 }
 
 @-webkit-keyframes circlemove {
   0% {
-    bottom: 45px;
+    bottom: 120px;
   }
   100% {
     bottom: -5px;
@@ -716,7 +718,7 @@ body.active {
 
 @keyframes circlemove {
   0% {
-    bottom: 45px;
+    bottom: 120px;
   }
   100% {
     bottom: -5px;
@@ -750,13 +752,14 @@ body.active {
     opacity: 0;
   }
 }
+/* スクロールバーの棒 */
 .scrolldown:after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 2px;
-  height: 50px;
+  height: 120px;
   background: #eee;
 }
 
@@ -767,6 +770,11 @@ body.active {
   .site-title {
     font-size: 5rem;
     padding-top: 240px;
+  }
+  /* スクロール */
+  .scrolldown {
+    bottom: 0px;
+    left: 50%;
   }
 }
 /* -------------------------------------------- */
