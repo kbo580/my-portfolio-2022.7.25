@@ -106,9 +106,6 @@ $(function(){
     $('.TextTyping span:nth-child(14)').append('<br>');
   });
 
-
-
-
     //バナー一覧のモーダル
   $('#modal-wrapper').hide();
 

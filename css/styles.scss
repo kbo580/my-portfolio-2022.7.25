@@ -85,7 +85,17 @@ footer {
   }
 }
 
-// セクション関連
+/* -------------------------------------------- */
+/* 見出し関連 */
+/* -------------------------------------------- */
+/* 見出しの共通部分 */
+.heading-common{
+  font-size: rem(40);
+  line-height: 1; //微調整
+  letter-spacing: 0.1em;
+}
+
+/* セクションの見出し */
 .sec-heading{
   position: relative;
   // padding-top: 60px;
@@ -129,24 +139,63 @@ footer {
   line-height: 1;
 }
 
-.sec-sub-heading{
-  font-size: rem(22);
+/* セクションの小見出し(h3) */
+.sub-heading__wrapper{
   position: relative;
   text-align: center;
-  
-  &.--daikei{
-    background-color: $backgroundColor;
-    // padding: 1.25em 0;
-    padding: 18px 0;
-    max-width: 480px;
-    width: 70%;
-    margin: -65px auto 0;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.sub-heading{
+  font-size: rem(22);
+  text-align: center;
+
+  &.--top{
+    position: relative;
+    text-align: center;
+    
+    &.--daikei{
+      background-color: $backgroundColor;
+      // padding: 1.25em 0;
+      padding: 18px 0;
+      max-width: 480px;
+      width: 70%;
+      margin: -65px auto 0;
+      clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
+  }
+
+  &-en{
+    color: #ddd;
+    letter-spacing: 0.15em;
+    font-size: rem(60);
+  }
+
+  &.--ja{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
   }
 }
 
+/* 下層ページのページタイトル */
+.page-heading{
+  padding: 60px 20px;
+  text-align: center;
+  background-color: $mainColor;
+  color: #fff;
+}
+
+
 
 @media (min-width: 768px){
+  /* 見出しの共通部分 */
+  .heading-common{
+    font-size: rem(90);
+  }
+
+  /* セクションの見出し */
   .sec-heading{
     font-size: rem(90);
     padding-top: 130px;
@@ -165,43 +214,43 @@ footer {
     font-size: rem(20);
   }
 
-  .sec-sub-heading{
+  /* セクションの小見出し(h3) */
+  .sub-heading{
     font-size: rem(32);
 
-    &.--daikei{
-      margin: -128px auto 0;
-      padding: 40px 0;
+    &.--top{
+      position: relative;
+      text-align: center;
+      
+      &.--daikei{
+        margin: -128px auto 0;
+        padding: 40px 0;
+      }
+    }
+  
+    &-en{
+      font-size: rem(108);
     }
   }
+
+  /* 下層ページのページタイトル */
+  .page-heading{
+    padding: 140px 40px;
+  }
+
+
 }
 
 /* -------------------------------------------- */
 /* パーツ類 */
 /* -------------------------------------------- */
-.heading-common{
-  text-transform: uppercase;
-  font-size: rem(40);
-  line-height: 1; //微調整
-  letter-spacing: 0.1em;
-}
-
 .padding-container{
   padding-top: 50px;
   padding-bottom: 100px;
 }
 
-/* ページタイトル */
-.page-heading{
-  padding: 60px 20px;
-  text-align: center;
-  background-color: $mainColor;
-  color: #fff;
-}
 
-.en-title{
-  font-family: 'Montserrat', sans-serif;
-}
-
+/* ボタン */
 .btn{
   display: block;
   padding: 1em 2em;
@@ -214,7 +263,7 @@ footer {
   
   &--more{
     font-size: rem(14);
-    border: 1px solid #000;
+    border: 2px solid #000;
     width: 200px;
     border-radius: 4px;
     background-color: #fff;
@@ -234,8 +283,7 @@ footer {
     &:hover{
       background-color: $mainColor;
       color: #fff;
-      border-top: 2px solid #fff;
-      border-right: 2px solid #fff;
+      border: 2px solid transparent;
     }
   }
 
@@ -294,6 +342,7 @@ footer {
   }
 }
 
+/* サムネイル */
 .thum{
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -307,8 +356,55 @@ footer {
   }
 }
 
-.item--responsive{
+/*  パンクズ  */
+.breadcrumbs{
+  background-color: #CED7DC;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
 
+@media (min-width: 768px){
+  .padding-container{
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+
+  .btn{
+
+    &--more{
+      font-size: rem(16);
+      width: 230px;
+    }
+  }
+
+  /* Topへ戻るボタン */
+  .top{
+    right: 4%;
+  }
+
+  .item--responsive{
+    width: 48%;
+  }
+
+  /*  パンクズ  */
+  .breadcrumbs{
+    height: 50px;
+  }
+}
+
+@media (min-width: 992px){
+  .item--responsive{
+    width: 31%;
+  }
+}
+
+/* -------------------------------------------- */
+/* 補助クラス */
+/* -------------------------------------------- */
+.en-text{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 
 .mt-70{
@@ -339,46 +435,7 @@ footer {
   padding-right: calc(50vw - 50%);
 }
 
-/*  パンクズ  */
-.breadcrumbs{
-  background-color: #CED7DC;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
 @media (min-width: 768px){
-  .heading-common{
-    font-size: rem(90);
-  }
-
-  .padding-container{
-    padding-top: 100px;
-    padding-bottom: 150px;
-  }
-
-  /* ページタイトル */
-  .page-heading{
-    padding: 140px 40px;
-  }
-
-  .btn{
-
-    &--more{
-      font-size: rem(16);
-      width: 230px;
-    }
-  }
-
-  /* Topへ戻るボタン */
-  .top{
-    right: 4%;
-  }
-
-  .item--responsive{
-    width: 48%;
-  }
-
   .mt-70{
     margin-top: 100px;
   }
@@ -391,18 +448,8 @@ footer {
   .mla{
     margin-left: initial;
   }
-
-  /*  パンクズ  */
-  .breadcrumbs{
-    height: 50px;
-  }
 }
 
-@media (min-width: 992px){
-  .item--responsive{
-    width: 31%;
-  }
-}
 
 /* -------------------------------------------- */
 /* header */
@@ -1407,12 +1454,13 @@ span.wpcf7-not-valid-tip {
 /* single */
 /* -------------------------------------------- */
 .single{
+
   &__wrapper{
     padding: 40px 0;
   }
 
   &-top{
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 
     &__thum{
       border: 2px solid #ddd;
@@ -1430,7 +1478,7 @@ span.wpcf7-not-valid-tip {
   }
 
   &-detail{
-
+    background-color: #FAFAFB;
   }
 
   &-point{
@@ -1516,13 +1564,19 @@ span.wpcf7-not-valid-tip {
 
 @media (min-width: 768px){
   .single{
+    &__heading{
+  
+      &-en{
+        font-size: rem(108);
+      }
+    }
 
     &__wrapper{
       padding: 80px 0;
     }
 
-    &__top{
-
+    &-top{
+      padding-bottom: 80px;
     }
 
     &-point{
