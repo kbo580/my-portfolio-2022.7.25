@@ -459,6 +459,7 @@ footer {
   width: 100%;
   color: #fff;
   background-color: #000;
+  display: none;
   
   &.fadein{
     background-color: rgba(38, 47, 87 , 0.5);
@@ -663,51 +664,101 @@ body.active{
 /* mv */
 /* --------------------------------------------- */
 .mv{
-  background: url(../images/huvest-top-image.png) center left/ cover no-repeat;
   height: 100vh;
-  height: calc(100vh - 70px);
-  display: flex;
-  align-items: center;
   position: relative;
-
-  &::before{
-    content: "";
-    background-color: $mainColor;
+  background-color: $mainColor;
+  width: 100%;
+  
+  &__bg-area{
     width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    // clip-path: polygon(0 0, 40% 0, 60% 100%, 0% 100%);
-    clip-path: polygon(0 0, 30% 0, 70% 100%, 0% 100%);
+    // z-index: 300;
+    // position: absolute;
+    // top:0;
+    // left: 0;
+    // height: 100%;
+    // background-color: #000;
   }
 
+  //右側の紺の部品
   &::after{
     content: "";
     display: block;
-    width: 100%;
+    width: 16%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .55);
+    background-color: $mainColor;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
+    z-index: 2;
   }
+
+  //黄色のバー
+  &__bar{
+    background-color: #E6B422;
+    position: absolute;
+    z-index: 3;
+    
+    //横
+    &.--cross{
+      left: 0;
+      height: 14px;
+      width: 100%;
+
+      &::after{
+        content: "";
+        width: 100%;
+        height: 6px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+
+    //縦
+    &.--vertical{
+      width: 14px;
+      height: 100%;
+      top: 0;
+      right: 45px;
+
+      &::after{
+        content: "";
+        width: 6px;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        right: -20px
+      }
+    }
+  } 
 }
 
 .site-title{
   color: #fff;
   letter-spacing: 0.15em;
-  font-size: rem(33);
-  z-index: 1;
-  padding: 210px 0 140px;
+  font-size: 33px;
+  font-size: min(max(33px, calc(2.0625rem + ((1vw - 3.75px) * 5.1934))), 80px);
+  padding: 200px 0px;
   position: relative;
-}
+  z-index: 1;
+  
 
-.flex{
-  display: flex;
-  justify-content: space-between;
+  &::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.8)), url(../images/clinic-top.png) center / cover no-repeat;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+  }
 }
 
 /* スクロール */
@@ -769,13 +820,51 @@ body.active{
   background:#eee;
   }
 
-@media (min-width: 768px){
-  .mv{
-    height: calc(100vh - 100px);
+  @media (min-width: 500px){
+
+    .mv{
+      &::after{
+        width: 8%;
+      }
+    }
   }
+
+  @media (min-width: 768px){
+  .mv{
+
+    &::after{
+      width: 20%;
+    }
+    
+    //黄色のバー
+    &__bar{
+      
+      //横
+      &.--cross{
+        height: 24px;
+  
+        &::after{
+          height: 10px;
+          bottom: -40px;
+        }
+      }
+  
+      //縦
+      &.--vertical{
+        width: 24px;
+        right: 20%;
+  
+        &::after{
+          width: 10px;
+          right: -40px
+        }
+      }
+    } 
+  }
+
   .site-title{
-    font-size: rem(80);
-    padding-top: 240px;
+    padding: 150px 0px;
+    // padding: 150px 0px 150px 150px;
   }
 
   /* スクロール */
