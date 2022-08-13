@@ -130,18 +130,18 @@ $(function(){
   $('#slider').vegas({
   slides: [
     { src:'./images/k-create-top-image.png'},
-    { src: './images/huvest-top-image.png' },
-    { src: './images/LPサイト-top-screen.png' },
-    { src: './images/blog-image.png' },
+    // { src: './images/huvest-top-image.png' },
+    // { src: './images/LPサイト-top-screen.png' },
+    // { src: './images/blog-image.png' },
     ],
 
-    delay: 7000,
-    timer: false,
-    shuffle: true,
-    firstTransition: 'fade',
-    firstTransitionDuration: 5000,
-    transitionDuration: 2000,
-		transition: 'fade',
+    // delay: 7000,
+    // timer: false,
+    // shuffle: true,
+    // firstTransition: 'fade',
+    // firstTransitionDuration: 5000,
+    // transitionDuration: 2000,
+		// transition: 'fade',
 	});
 
 
