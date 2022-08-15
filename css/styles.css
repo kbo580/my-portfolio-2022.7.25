@@ -693,6 +693,51 @@ body.active {
   top: 0;
 }
 
+.mvSwiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.mvSwiper {
+  width: 100%;
+  height: 100%;
+}
+.mvSwiper .swiper-wrapper .swiper-slide {
+  overflow: hidden;
+}
+.mvSwiper .swiper-wrapper .swiper-slide-prev img,
+.mvSwiper .swiper-wrapper .swiper-slide-active img,
+.mvSwiper .swiper-wrapper .swiper-slide-duplicate-active img {
+  -webkit-animation: zoom 10s linear 0s 1 normal both;
+          animation: zoom 10s linear 0s 1 normal both;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+}
 .site-title {
   color: #fff;
   letter-spacing: 0.15em;

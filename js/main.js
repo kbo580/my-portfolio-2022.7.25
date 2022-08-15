@@ -1,4 +1,6 @@
-$(function(){
+jQuery(function($){
+  
+  $(function(){
 
   //ハンバーガーメニュー
   $('.burger').on('click', function(){
@@ -125,32 +127,41 @@ $(function(){
   });
 
   // //Vegas全体の設定
+  // $('#slider').vegas({
+  // slides: [
+  //   { src: '../images/k-create-top-image.png'},
+  //   { src: '../images/huvest-top-image.png' },
+  //   { src: '../images/LPサイト-top-screen.png' },
+  //   { src: '../images/blog-image.png' },
+  //   ],
 
-  $('#slider').vegas({
-  slides: [
-    { src:'./images/k-create-top-image.png'},
-    { src: './images/huvest-top-image.png' },
-    { src: './images/LPサイト-top-screen.png' },
-    { src: './images/blog-image.png' },
-    ],
+  //   delay: 7000,
+  //   timer: false,
+  //   shuffle: true,
+  //   firstTransition: 'fade',
+  //   firstTransitionDuration: 5000,
+  //   transitionDuration: 2000,
+	// 	transition: 'fade',
+	// });
 
-    delay: 7000,
-    timer: false,
-    shuffle: true,
-    firstTransition: 'fade',
-    firstTransitionDuration: 5000,
-    transitionDuration: 2000,
-		transition: 'fade',
-	});
-
-
-
-
-
-
-
-
-
+  //slick
+  $('.slider').slick({
+		arrows: true,
+		prevArrow: '<div class="prev-arrow slideBtn"></div>',
+		nextArrow: '<div class="next-arrow slideBtn"></div>',
+		dots: true,
+  });
 
 
+
+
+
+
+
+
+
+
+
+
+});
 });
