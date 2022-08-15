@@ -153,7 +153,7 @@ footer {
 
 /* 下層ページのページタイトル */
 .page-heading {
-  padding: 60px 20px;
+  padding: 110px 20px 60px;
   text-align: center;
   background-color: #262f57;
   color: #fff;
@@ -196,7 +196,7 @@ footer {
   }
   /* 下層ページのページタイトル */
   .page-heading {
-    padding: 140px 40px;
+    padding: 200px 40px 140px;
   }
 }
 /* -------------------------------------------- */
@@ -403,8 +403,11 @@ footer {
   height: 70px;
   width: 100%;
   color: #fff;
-  background-color: #000;
-  display: none;
+  background-color: rgba(38, 47, 87, 0.8);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
 }
 .header.fadein {
   background-color: rgba(38, 47, 87, 0.5);
@@ -651,6 +654,7 @@ body.active {
 }
 .mv__bar.--cross {
   left: 0;
+  bottom: 15%;
   height: 14px;
   width: 100%;
 }
@@ -693,6 +697,7 @@ body.active {
   font-size: 33px;
   font-size: min(max(33px, 2.0625rem + (1vw - 3.75px) * 5.1934), 80px);
   padding: 200px 0px;
+  padding: 270px 0px 200px;
   position: relative;
   z-index: 2;
 }
