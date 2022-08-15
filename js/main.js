@@ -13,7 +13,6 @@ $(function(){
     $('body').removeClass('active');
   });
 
-
   //スクロールで使う変数
   var mvHight = $('.mv').outerHeight(true);
   var pageHeadingHight = $('.page-heading').outerHeight(true);

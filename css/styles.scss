@@ -98,22 +98,9 @@ footer {
 /* セクションの見出し */
 .sec-heading{
   position: relative;
-  // padding-top: 60px;
   padding: 40px 0;
   color: #fff;
   background: linear-gradient(to bottom, #3f4c88,$mainColor);
-
-  &::after{
-    // content: "";
-    // background: linear-gradient(to bottom, #C2E9FB, #A1C4FD);
-    // width: 100%;
-    // height: 120px;
-    // display: block;
-    // position: absolute;
-    // top: 0;
-    // left:0;
-    // z-index: -1;
-  }
 
   &__works{
     background: linear-gradient(rgba(0, 0, 0, 0.5))  ,url(../images/mv.jpeg) center/ cover no-repeat;
@@ -237,8 +224,6 @@ footer {
   .page-heading{
     padding: 200px 40px 140px;
   }
-
-
 }
 
 /* -------------------------------------------- */
@@ -248,7 +233,6 @@ footer {
   padding-top: 50px;
   padding-bottom: 100px;
 }
-
 
 /* ボタン */
 .btn{
@@ -267,7 +251,7 @@ footer {
     width: 200px;
     border-radius: 4px;
     background-color: #fff;
-    transition:all  .6s;
+    transition: background .6s, color .6s, border .6s;
     position: relative;
 
     &::after{
@@ -283,7 +267,7 @@ footer {
     &:hover{
       background-color: $mainColor;
       color: #fff;
-      border: 2px solid transparent;
+      border: 2px solid $mainColor;
     }
   }
 
@@ -532,7 +516,7 @@ footer {
   left: -150%;
   // left: 0%;
   z-index: 2;
-  transition: .5s;
+  transition: all .5s;
   overflow-y: scroll;
 
   &__list{
@@ -586,7 +570,7 @@ footer {
       width: 90%;
       height: 2px;
       background: $accentColor;
-      transition: all .3s;
+      transition: transform .3s;
       transform: scale(0, 1);
       transform-origin: center top;
     }
@@ -614,7 +598,7 @@ footer {
   top: 50%;
   left: 50%;
   transform:translate(-50%,0);
-  transition: all .4s;
+  transition: transform .4s, opacity .4s;
 }
 
 .bar:nth-of-type(1){
@@ -630,13 +614,11 @@ footer {
 }
 
 .burger.active .bar:nth-of-type(1){
-  transform: rotate(-45deg);
-  left: 0%;
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 .burger.active .bar:nth-of-type(3){
-  transform: rotate(45deg);
-  left: 0%;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 body.active{
@@ -654,7 +636,6 @@ body.active{
 
   .gnav--pc{
     display: block;
-    // display: none;
   }
 }
 
@@ -1371,7 +1352,7 @@ body.active{
   &--thum{
     aspect-ratio: 4 / 3;
     img{
-      transition: all .4s;
+      transition: transform .4s;
     }
   }
 }
@@ -1407,7 +1388,7 @@ body.active{
 
   &__link{
     color: #1B0DAB;;
-    transition: all .4s;
+    transition: opacity .4s;
     text-decoration: underline;
 
     &:hover{
@@ -1494,7 +1475,7 @@ body.active{
   font-size: rem(16);
   border-radius: 6px;
   cursor: pointer;
-  transition: all .4s;
+  transition: opacity .4s;
   border: 1px solid #707070;;
   &:hover{
     opacity: .6;
@@ -1634,12 +1615,12 @@ span.wpcf7-not-valid-tip {
 .next{
   a{
     display: block;
-    transition: all .3s;
+    transition: background .4s;
     padding: 0 0.5em;
     border-radius: 4px;
+
     &:hover{
       background: $accentColor;
-      color: #333;
     }
   }
 }
@@ -1988,7 +1969,7 @@ span.wpcf7-not-valid-tip {
     width: 100%;
     height: auto;
     overflow: hidden;
-    transition: all .4s;
+    transition: opacity .4s;
     margin-bottom: 16px;
     border: 1px solid #dfdfdf;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -2029,7 +2010,6 @@ span.wpcf7-not-valid-tip {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: all .4s;
 }
 
 .close::before,

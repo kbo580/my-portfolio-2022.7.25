@@ -224,8 +224,8 @@ footer {
   width: 200px;
   border-radius: 4px;
   background-color: #fff;
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
+  -webkit-transition: background 0.6s, color 0.6s, border 0.6s;
+  transition: background 0.6s, color 0.6s, border 0.6s;
   position: relative;
 }
 .btn--more::after {
@@ -240,7 +240,7 @@ footer {
 .btn--more:hover {
   background-color: #262f57;
   color: #fff;
-  border: 2px solid transparent;
+  border: 2px solid #262f57;
 }
 .btn--pageChange {
   font-weight: bold;
@@ -490,8 +490,8 @@ footer {
   top: 0;
   left: -150%;
   z-index: 2;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   overflow-y: scroll;
 }
 .gnav--sp__list {
@@ -540,8 +540,10 @@ footer {
   width: 90%;
   height: 2px;
   background: #FFD54D;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
   -webkit-transform: scale(0, 1);
           transform: scale(0, 1);
   -webkit-transform-origin: center top;
@@ -569,8 +571,10 @@ footer {
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
+  transition: opacity 0.4s, -webkit-transform 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s, -webkit-transform 0.4s;
 }
 
 .bar:nth-of-type(1) {
@@ -588,15 +592,13 @@ footer {
 }
 
 .burger.active .bar:nth-of-type(1) {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  left: 0%;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
 }
 
 .burger.active .bar:nth-of-type(3) {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  left: 0%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
 }
 
 body.active {
@@ -1276,8 +1278,10 @@ body.active {
   aspect-ratio: 4/3;
 }
 .works--thum img {
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 @media (min-width: 768px) {
@@ -1301,8 +1305,8 @@ body.active {
 }
 .nf-page__link {
   color: #1B0DAB;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
   text-decoration: underline;
 }
 .nf-page__link:hover {
@@ -1376,8 +1380,8 @@ body.active {
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
   border: 1px solid #707070;
 }
 .form-btn:hover {
@@ -1496,8 +1500,8 @@ span.wpcf7-not-valid-tip::before {
 .prev a,
 .next a {
   display: block;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
   padding: 0 0.5em;
   border-radius: 4px;
 }
@@ -1505,7 +1509,6 @@ span.wpcf7-not-valid-tip::before {
 .prev a:hover,
 .next a:hover {
   background: #FFD54D;
-  color: #333;
 }
 
 @media (min-width: 768px) {
@@ -1781,8 +1784,8 @@ span.wpcf7-not-valid-tip::before {
   width: 100%;
   height: auto;
   overflow: hidden;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
   margin-bottom: 16px;
   border: 1px solid #dfdfdf;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -1820,8 +1823,6 @@ span.wpcf7-not-valid-tip::before {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 .close::before,
