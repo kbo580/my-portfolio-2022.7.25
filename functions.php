@@ -26,3 +26,32 @@ function my_files() {
 
 add_action('wp_enqueue_scripts', 'my_files');
 
+//サムネイル
+add_theme_support('post-thumbnails');
+
+//アーカイブページの作成
+function post_has_archive($args, $post_type){
+  if('post'== $post_type){
+    $args['rewrite']=true;
+    $args ["label"] = '制作物'; 
+    $args['has_archive']='works'; 
+  }
+  return $args;
+}
+
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+
+//topページの抜粋の文字数関連
+function custom_excerpt_length( $length ) {
+  return 60;
+} 
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function custom_excerpt_more(){
+  return '[...]';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
+//タイトルタグ関連
+add_theme_support('title-tag');

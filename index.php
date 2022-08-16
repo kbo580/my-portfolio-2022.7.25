@@ -39,50 +39,32 @@
   
             <div class="swiper">
               <div class="swiper-wrapper works-top__item-wrapper">
+              <?php if(have_posts()) : ?>
+                <?php while(have_posts()) : the_post(); ?> 
                 <div class="swiper-slide works-top__item-list">
                   <ul class="works-top__item">
-                    <li class="works-top__item-title">タイトルが入るタイトルが入る</li>
-                    <li class="works-top__item-img thum"><img src="<?php echo get_template_directory_uri(); ?>/images/k-create-top-image.png" alt="画像"></li>
-                    <li class="works-top__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
-                    <li class="works-top__item-btn"><a href="single-temp.html" class="btn btn--more">詳しく見る</a></li>
+                    <li class="works-top__item-title"><?php the_title()?></li>
+
+                    <li class="works-top__item-img thum">
+                      <?php if (has_post_thumbnail()) : ?> 
+                        <?php the_post_thumbnail(); ?>
+                      <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png"> 
+                      <?php endif ?>
+                    </li>
+
+                    <li class="works-top__item-content"><?php the_excerpt(); ?></li>
+                    <li class="works-top__item-btn"><a href="<?php the_permalink(); ?>" class="btn btn--more">詳しく見る</a></li>
                   </ul>
                   <!-- /works-top__item -->
                 </div>
                 <!-- /swiper-slide -->
-    
-                <div class="swiper-slide works-top__item-list">
-                  <ul class="works-top__item">
-                    <li class="works-top__item-title">タイトルが入るタイトルが入る</li>
-                    <li class="works-top__item-img thum"><img src="<?php echo get_template_directory_uri(); ?>/images/huvest-top-image.png" alt="画像"></li>
-                    <li class="works-top__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
-                    <li class="works-top__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
-                  </ul>
-                  <!-- /works-top__item -->
-                </div>
-                <!-- /swiper-slide -->
-  
-                <div class="swiper-slide works-top__item-list">
-                  <ul class="works-top__item">
-                    <li class="works-top__item-title">タイトルが入るタイトルが入る</li>
-                    <li class="works-top__item-img thum"><img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="画像"></li>
-                    <li class="works-top__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
-                    <li class="works-top__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
-                  </ul>
-                  <!-- /works-top__item -->
-                </div>
-                <!-- /swiper-slide -->
-  
-                <div class="swiper-slide works-top__item-list">
-                  <ul class="works-top__item">
-                    <li class="works-top__item-title">タイトルが入るタイトルが入る</li>
-                    <li class="works-top__item-img thum"><img src="<?php echo get_template_directory_uri(); ?>/images/clinic-top.png" alt="画像"></li>
-                    <li class="works-top__item-content">猫を飼い始めることになったら、まず何が必要なのでしょうか？ 必ず必要になるグッズと、あると便利な猫グッズを紹介します。</li>
-                    <li class="works-top__item-btn"><a href="" class="btn btn--more">詳しく見る</a></li>
-                  </ul>
-                  <!-- /works-top__item -->
-                </div>
-                <!-- /swiper-slide -->
-    
+                  
+                <?php endwhile; ?>
+              <?php else : ?> 
+                <p>記事がありません</p>
+              <?php endif; ?>
+
               </div>
               <!-- /swiper-wrapper works-top__item-wrapper -->
     
@@ -93,7 +75,7 @@
           </div>
           <!-- /swiper-area -->
 
-          <a href="works.html" class="btn btn--pageChange mt-70">制作物一覧へ</a>
+          <a href="<?php echo home_url(); ?>/works" class="btn btn--pageChange mt-70">制作物一覧へ</a>
         </div>
         <!-- /works-top__wrapper -->
 
@@ -130,7 +112,7 @@
               <!-- /slider -->
             </li>
             <!-- /sliderarea -->
-            <li><a href="archive-practice.html" class="btn btn--more">詳しく見る</a></li>
+            <li><a href="<?php echo home_url(); ?>/practice" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
 
@@ -155,7 +137,7 @@
               <!-- /slider -->
             </li>
             <!-- /sliderarea -->
-            <li><a href="archive-banners.html" class="btn btn--more">詳しく見る</a></li>
+            <li><a href="<?php echo home_url(); ?>/archive-banners" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
 
@@ -203,7 +185,7 @@
               <li class="about-body__content">趣味は野球観戦、音楽制作、御朱印集め</li>
             </ul>
     
-            <a href="profile.html" class="btn btn--pageChange mt-70 mla">プロフィールへ</a>
+            <a href="<?php echo home_url(); ?>/profile" class="btn btn--pageChange mt-70 mla">プロフィールへ</a>
 
           </div>
           <!-- /about-body__wrapper -->
@@ -221,7 +203,7 @@
         <div class="padding-container">
           <p>お忙しい中ご覧いただきありがとうございます。<br>お仕事の話はもちろん、サイトの感想など何でもお聞かせください。</p>
   
-          <a href="contact.html" class="btn btn--pageChange mt-70">お問い合わせへ</a>
+          <a href="<?php echo home_url(); ?>/contact" class="btn btn--pageChange mt-70">お問い合わせへ</a>
 
         </div>
         <!-- /padding-container -->
@@ -232,5 +214,5 @@
     
   </main>
   
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
   

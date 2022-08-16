@@ -54,9 +54,9 @@ jQuery(function($){
 
   // worksのitemにカーソルが乗った時の動き
   $('.works__item--link').hover(function(){
-    $(this).find('.works__item-image').css('transform','scale(1.1, 1.1)');
+    $(this).find('img').css('transform','scale(1.1, 1.1)');
   },function(){
-    $(this).find('.works__item-image').css('transform','scale(1, 1)');
+    $(this).find('img').css('transform','scale(1, 1)');
   });
 
   //メインビジュアルのタイピング
@@ -107,7 +107,17 @@ jQuery(function($){
     $('.TextTyping span:nth-child(14)').append('<br>');
   });
 
-    //バナー一覧のモーダル
+  $('#pcToggle').click(function(){ 
+    $('.pc-image').slideToggle(400);
+    return false;
+  });
+
+  $('#spToggle').click(function(){ 
+    $('.sp-image').slideToggle(400);
+    return false;
+  });
+
+  //バナー一覧のモーダル
   $('#modal-wrapper').hide();
 
   $('.banners__item > a').on('click', function(){

@@ -923,6 +923,7 @@ body.active{
     line-height: 1.6;
     font-size: 14px;
     letter-spacing: 0.15em;
+    min-height: 110px;
   }
 }
 
@@ -1102,6 +1103,10 @@ body.active{
     &__item-title{
       font-size: rem(20);
       padding: 30px 20px;
+    }
+
+    &__item-content{
+      min-height: 90px;
     }
   }
   
@@ -1392,6 +1397,9 @@ body.active{
     aspect-ratio: 4 / 3;
     img{
       transition: transform .4s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -1616,6 +1624,51 @@ span.wpcf7-not-valid-tip {
       letter-spacing: 0.15em;
     }
   }
+
+  &__site-image-wrapper{
+    margin-top: 60px;
+
+    /* pcでのイメージ */
+    .pc-image-wrapper{
+      margin-bottom: 30px;
+      .pc-image{
+        width: 100%;
+        display: none;
+      }
+    }
+
+    /* spでのイメージ */
+    .sp-image-wrapper{
+      .sp-image{
+        display: none;
+        width: 100%;
+      }
+    }
+
+    /* トグルボタン */
+    .toggle-btn{
+      cursor: pointer;
+      color: #333;
+      background-color: #fff;
+      border: 2px solid #000;
+      padding: 8px;
+      display: inline-block;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-bottom: 8px;
+
+      i{
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+/* 注釈 */
+.click-open{
+  font-size: rem(12);
+  margin-bottom: 16px;
+  color:#808080;
 }
 
 .single-content{
@@ -1638,6 +1691,10 @@ span.wpcf7-not-valid-tip {
 
   &__text{
     letter-spacing: 0.15em;
+
+    &.--list::before{
+      content: "・";
+    }
   }
 }
 
@@ -1701,6 +1758,24 @@ span.wpcf7-not-valid-tip {
         font-size: rem(20)
       }
     }
+
+    &__site-image-wrapper{
+    
+      /* pcでのイメージ */
+      .sp-image-wrapper{
+        width: 50%;
+      }
+
+      /* トグルボタン */
+      .toggle-btn{
+        transition: background-color .4s, color .4s;
+      
+        &:hover{
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
   }
 
   .single-content{
@@ -1723,6 +1798,34 @@ span.wpcf7-not-valid-tip {
 
   .pagination{
     margin: 80px auto 0;
+  }
+
+  /* 注釈 */
+  .click-open{
+    font-size: rem(14);
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 992px){
+  .single{
+    &__site-image-wrapper{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+
+      /* pcでのイメージ */
+      .pc-image-wrapper{
+        margin-bottom: 0px;
+        width: 70%;
+      }
+    
+      /* spでのイメージ */
+      .sp-image-wrapper{
+        margin-bottom: 0px;
+        width: 28%;
+      }
+    }
   }
 }
 
