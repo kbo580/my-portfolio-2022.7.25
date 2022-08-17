@@ -346,6 +346,11 @@ footer {
   height: 40px;
   display: flex;
   align-items: center;
+  font-size: rem(14);
+
+  i{
+    padding: 0 4px;
+  }
 }
 
 @media (min-width: 768px){
@@ -457,7 +462,7 @@ footer {
     width: 100%;
     animation: fadein .4s ease;
     height: 50px;
-    z-index: 10000;
+    z-index: 10;
   }
 
   &__wrapper{
@@ -1000,6 +1005,9 @@ body.active{
   &__explain{
     margin-top: 10px;
     min-height: 48px;
+    .fa-solid{
+      margin-left: 8px;
+    }
   }
 
   &__image{
@@ -1007,9 +1015,7 @@ body.active{
   }
 }
 
-.fa-solid{
-  margin-left: 8px;
-}
+
 
 .swiper-area{
   position: relative;
@@ -1698,12 +1704,50 @@ span.wpcf7-not-valid-tip {
   }
 }
 
+//固定ページネーション
+.pagination-btn{
+  width: 40px;
+	height: 100px;
+  position: fixed;
+  top: 50%;
+
+  &.left{
+    left: 0;
+  }
+
+  &.right{
+    right: 0;
+  }
+}
+
+.pagination-btn a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($mainColor, 0.5);
+  top: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.pagination-btn.left a{
+  border-radius: 0% 60% 60% 0%;
+}
+.pagination-btn.right a{
+  border-radius: 60% 0% 0% 60%;
+}
+
+//ページネーション
 .pagination{
   display: flex;
   justify-content: space-between;
   min-width: 270px;
   width: 60%;
   margin: 40px auto 0;
+
+  i{
+    padding: 0 4px;
+  }
 }
 
 .to-works,
@@ -2137,7 +2181,7 @@ span.wpcf7-not-valid-tip {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 
@@ -2182,6 +2226,7 @@ span.wpcf7-not-valid-tip {
 .modal-image-wrapper img{
   max-width: 70%;
   max-height: 70%;
+  height: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
