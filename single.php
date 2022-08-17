@@ -3,13 +3,7 @@
   <main>
     <h2 class="heading-common page-heading en-text"><?php the_title()?></h2>
 
-    <div class="breadcrumbs">
-      <div class="breadcrumb_inner inner">
-        <span><a href="/">HOME</a></span> >
-        <span><a href="/">ページ名</a></span> >
-        <span>ページ名</span> 
-      </div>
-    </div>
+    <?php get_template_part('template-parts/breadcrumbs') ?>
     <!-- /breadcrumbs -->
 
     <section class="single padding-container">
@@ -128,7 +122,7 @@
                 <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>パソコンでのイメージ</div>
                 <p class="click-open">※クリックで開閉できます</p>
                 <div class="pc-image">
-                  <img src="<?php echo CFS()->get('works-sp-image	');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy">
+                  <img src="<?php echo CFS()->get('works-pc-image');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy">
                 </div>
               </div>
               <!-- /pc-image-wrapper -->
@@ -136,9 +130,8 @@
               <div class="sp-image-wrapper">
                 <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>スマホでのイメージ</div>
                 <p class="click-open">※クリックで開閉できます</p>
-  
                 <div class="sp-image">
-                  <img src="<?php echo CFS()->get('works-pc-image	');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy">
+                  <img src="<?php echo CFS()->get('works-sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy">
                 </div>
               </div>
               <!-- /sp-image-wrapper -->
@@ -183,10 +176,23 @@
         </div>
         <!-- /single-point -->
 
+        <div class="pagination-btn-wrapper" id="paginationFade">
+          <div class="pagination-btn left">
+            <?php previous_post_link('%link', '<img src="'.get_template_directory_uri().'/images/svg/arrow-left.svg" alt="前の記事へ">'); ?>
+          </div>
+
+          <div class="pagination-btn right">
+            <?php next_post_link('%link', '<img src="'.get_template_directory_uri().'/images/svg/arrow-right.svg" alt="次の記事へ">'); ?>
+          </div>
+        </div>
+        <!-- /pagination-btn-wrapper -->
+
         <ul class="pagination">
-          <li class="prev"><a href="" class="">PREV</a></li>
-          <li class="to-works"><a href="" class="">WORKS</a></li>
-          <li class="next"><a href="" class="">NEXT</a></li>
+            <li class="prev"><?php previous_post_link('%link', '<i class="fas fa-angle-left"></i>PREV'); ?></li>
+
+            <li class="to-works"><a href="<?php echo home_url(); ?>/works" class="pagination-link"><i class="fa-solid fa-table-cells-large"></i>WORKS</a></li>
+            
+            <li class="next"><?php next_post_link('%link','NEXT<i class="fas fa-angle-right"></i>'); ?></li>
         </ul>
 
       </div>

@@ -55,3 +55,31 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 
 //タイトルタグ関連
 add_theme_support('title-tag');
+
+//パンクズにアーカイブページを追加
+function bcn_add($bcnObj) {
+	if (is_post_type_archive('post')) {
+		$bcnObj->add(new bcn_breadcrumb('製作物一覧', null, array('archive', 'post-clumn-archive', 'current-item')));
+		$trail_tmp = clone $bcnObj->trail[1];
+		$bcnObj->trail[1] = clone $bcnObj->trail[0];
+		$bcnObj->trail[0] = $trail_tmp;
+	}
+	return $bcnObj;
+}
+add_action('bcn_after_fill', 'bcn_add');
+
+//それぞれのアーカイブページの表示数
+function change_posts_per_page($query) {
+  if ( is_admin() || ! $query->is_main_query() ) 
+      return;
+
+  if ( $query->is_archive() ) { 
+    $query->set( 'posts_per_page', '6' ); 
+  }
+
+  if ( $query->is_post_type_archive('banners') ) { 
+    $query->set( 'posts_per_page', '-1' ); 
+  }
+
+}
+add_action( 'pre_get_posts', 'change_posts_per_page' );

@@ -2,13 +2,7 @@
   <main>
     <h2 class="heading-common page-heading en-text"><span class="first-letter--change">4</span>04 page</h2>
 
-    <div class="breadcrumbs">
-      <div class="breadcrumb_inner inner">
-        <span><a href="/">HOME</a></span> >
-        <span><a href="/">ページ名</a></span> >
-        <span>ページ名</span> 
-      </div>
-    </div>
+    <?php get_template_part('template-parts/breadcrumbs') ?>
     <!-- /breadcrumbs -->
 
     <section class="nf-page padding-container">

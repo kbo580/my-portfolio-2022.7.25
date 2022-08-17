@@ -40,7 +40,7 @@ jQuery(function($){
   //「topへ戻る」関連
   $('#top').hide();
   $(window).scroll(function(){
-    if($(this).scrollTop()>mvHight){
+    if($(this).scrollTop()>mvHight || $(this).scrollTop() > pageHeadingHight){
       $('#top').fadeIn(400);
     }
     else{
@@ -82,7 +82,6 @@ jQuery(function($){
     });
   }
 
-  // 画面をスクロールをしたら動かしたい場合の記述
   $(window).scroll(function () {
     TextTypingAnime();
   });
@@ -130,6 +129,16 @@ jQuery(function($){
     return false;
   });
 
+  $('.cording__item > a').on('click', function(){
+    var src = $(this).find('img').attr('src');
+    var alt = $(this).find('img').attr('alt');
+    $('#modal-image-wrapper > img').attr('src', src).attr('alt', alt);
+    $('#modal-wrapper').fadeIn(600);
+    $('body').addClass('fixed');
+    // window.addEventListener( 'touchmove' , movefun , { passive: false } );
+    return false;
+  });
+
   $('#modal-wrapper').on('click', function(){
     $('#modal-wrapper').fadeOut(600); 
     $('body').removeClass('fixed');
@@ -162,8 +171,17 @@ jQuery(function($){
 		dots: true,
   });
 
-
-
+  //記事ページの固定ページネーション
+  var pagination = $('.single-point').outerHeight(true);
+  $(window).scroll(function(){
+    if($(this).scrollTop()>pagination + 1000){
+      $('#paginationFade').fadeOut(400);
+    }
+    else{
+      $('#paginationFade').fadeIn(400);
+    }
+  });
+  
 
 
 

@@ -16,7 +16,7 @@
       <div class="film"></div>
 
       <div class="inner">
-          <h1 class="site-title en-text"><span class="first-letter--change">Y</span>uta<br><span class="first-letter--change">K</span>obayashi's<br><span class="first-letter--change">P</span>ortfolio</h1>
+        <h1 class="site-title en-text"><span class="first-letter--change">Y</span>uta<br><span class="first-letter--change">K</span>obayashi's<br><span class="first-letter--change">P</span>ortfolio</h1>
       </div>
       <!-- /inner -->
 
@@ -112,7 +112,7 @@
               <!-- /slider -->
             </li>
             <!-- /sliderarea -->
-            <li><a href="<?php echo home_url(); ?>/practice" class="btn btn--more">詳しく見る</a></li>
+            <li><a href="<?php echo home_url(); ?>/cording" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
 
@@ -137,7 +137,7 @@
               <!-- /slider -->
             </li>
             <!-- /sliderarea -->
-            <li><a href="<?php echo home_url(); ?>/archive-banners" class="btn btn--more">詳しく見る</a></li>
+            <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
 
