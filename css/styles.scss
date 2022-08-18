@@ -29,8 +29,11 @@ body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
   list-style: none;
   outline:0;
   appearance: none;
-  -webkit-appearance: none;
 	border-radius: 0;
+}
+
+.acceptance{
+  appearance: auto;
 }
 
 a { 
@@ -173,8 +176,6 @@ footer {
   background-color: $mainColor;
   color: #fff;
 }
-
-
 
 @media (min-width: 768px){
   /* 見出しの共通部分 */
@@ -400,11 +401,6 @@ footer {
   margin-top: 70px;
 }
 
-/* addClass用 */
-.marginTop{
-  margin-top: 70px;
-}
-
 .bg-color{
   background: $backgroundColor;
 }
@@ -429,16 +425,10 @@ footer {
     margin-top: 100px;
   }
 
-  /* addClass用 */
-  .marginTop{
-    margin-top:100px;
-  }
-
   .mla{
     margin-left: initial;
   }
 }
-
 
 /* -------------------------------------------- */
 /* header */
@@ -520,7 +510,7 @@ footer {
   top: 0;
   left: -150%;
   // left: 0%;
-  z-index: 2;
+  z-index: 10;
   transition: all .5s;
   overflow-y: scroll;
 
@@ -792,7 +782,7 @@ body.active{
   position:absolute;
   bottom: 1%;
   right: 30%;
-  z-index: 10;
+  z-index: 3;
 
   &::before,
   &::after{
@@ -921,6 +911,7 @@ body.active{
   &__item-title{
     font-size: rem(18);
     padding: 20px;
+    text-align: center;
   }
 
   &__item-content{
@@ -938,7 +929,7 @@ body.active{
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
-  z-index: 100;
+  z-index: 1;
 
   &--left{ 
     left: -12px;
@@ -1519,8 +1510,10 @@ body.active{
   height: 200px;
 }
 
+//承諾確認
 .acceptance{
   margin-top: 40px;
+  appearance: auto;
 }
 
 .form-btn{
@@ -1539,21 +1532,17 @@ body.active{
 /* エラーメッセージを見やすくする */
 span.wpcf7-not-valid-tip {
   padding-top: 0.5em;
-  font-weight: 600;
 
   &::before{
     content: "※";
   }
 }
 
-.cf7-submit-btn{
-  // margin-top: 80px;
-}
-
 .wpcf7 form .wpcf7-response-output{
   color: #DD3232;
   font-weight: bold;
   margin: 0;
+  border: none;
 }
 
 .wpcf7-spinner{

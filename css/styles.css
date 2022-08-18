@@ -16,10 +16,16 @@ body, h1, h2, h3, h4, h5, p, ul, li, ol, dl, dt, dd, figure, input, textarea {
   -webkit-text-size-adjust: 100%;
   list-style: none;
   outline: 0;
-  -moz-appearance: none;
-       appearance: none;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 0;
+}
+
+.acceptance {
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
 }
 
 a {
@@ -363,11 +369,6 @@ footer {
   margin-top: 70px;
 }
 
-/* addClass用 */
-.marginTop {
-  margin-top: 70px;
-}
-
 .bg-color {
   background: #FFFEF8;
 }
@@ -390,10 +391,6 @@ footer {
 
 @media (min-width: 768px) {
   .mt-70 {
-    margin-top: 100px;
-  }
-  /* addClass用 */
-  .marginTop {
     margin-top: 100px;
   }
   .mla {
@@ -493,7 +490,7 @@ footer {
   position: fixed;
   top: 0;
   left: -150%;
-  z-index: 2;
+  z-index: 10;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   overflow-y: scroll;
@@ -758,7 +755,7 @@ body.active {
   position: absolute;
   bottom: 1%;
   right: 30%;
-  z-index: 10;
+  z-index: 3;
   /* スクロールバーの棒 */
   /* スクロールバーの光 */
 }
@@ -899,6 +896,7 @@ body.active {
 .works-top__item-title {
   font-size: 1.125rem;
   padding: 20px;
+  text-align: center;
 }
 .works-top__item-content {
   padding: 20px 20px 0 20px;
@@ -915,7 +913,7 @@ body.active {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
-  z-index: 100;
+  z-index: 1;
 }
 .slideBtn--left {
   left: -12px;
@@ -1429,6 +1427,9 @@ body.active {
 
 .acceptance {
   margin-top: 40px;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
 }
 
 .form-btn {
@@ -1448,7 +1449,6 @@ body.active {
 /* エラーメッセージを見やすくする */
 span.wpcf7-not-valid-tip {
   padding-top: 0.5em;
-  font-weight: 600;
 }
 span.wpcf7-not-valid-tip::before {
   content: "※";
@@ -1458,6 +1458,7 @@ span.wpcf7-not-valid-tip::before {
   color: #DD3232;
   font-weight: bold;
   margin: 0;
+  border: none;
 }
 
 .wpcf7-spinner {
