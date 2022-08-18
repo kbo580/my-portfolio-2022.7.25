@@ -13,7 +13,7 @@
           <div class="single-top__thum thum">
           <?php the_post_thumbnail(); ?>
           </div>
-          <p class="single-top__explain"><?php the_content(); ?></p>
+          <div class="single-top__explain"><?php the_content(); ?></div>
 
           <ul class="single-content">
             <li class="single-content__list">
