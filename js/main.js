@@ -25,15 +25,11 @@ jQuery(function($){
     if(scrollTop > mvHight || scrollTop > pageHeadingHight){ 
       $('.header').addClass('fadein');
       $('.logo').addClass('fontChang');
-      $('.mv').addClass('marginTop');
-      $('.page-heading').addClass('marginTop');
     }
 
     else{
       $('.header').removeClass('fadein');
       $('.logo').removeClass('fontChang');
-      $('.mv').removeClass('marginTop');
-      $('.page-heading').removeClass('marginTop');
     }
   });
 
@@ -106,6 +102,7 @@ jQuery(function($){
     $('.TextTyping span:nth-child(14)').append('<br>');
   });
 
+  //記事ページをくりっくで表示
   $('#pcToggle').click(function(){ 
     $('.pc-image').slideToggle(400);
     return false;
@@ -129,6 +126,7 @@ jQuery(function($){
     return false;
   });
 
+  //コーディング練習一覧のモーダル
   $('.cording__item > a').on('click', function(){
     var src = $(this).find('img').attr('src');
     var alt = $(this).find('img').attr('alt');
@@ -144,24 +142,6 @@ jQuery(function($){
     $('body').removeClass('fixed');
     // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
   });
-
-  // //Vegas全体の設定
-  // $('#slider').vegas({
-  // slides: [
-  //   { src: '../images/k-create-top-image.png'},
-  //   { src: '../images/huvest-top-image.png' },
-  //   { src: '../images/LPサイト-top-screen.png' },
-  //   { src: '../images/blog-image.png' },
-  //   ],
-
-  //   delay: 7000,
-  //   timer: false,
-  //   shuffle: true,
-  //   firstTransition: 'fade',
-  //   firstTransitionDuration: 5000,
-  //   transitionDuration: 2000,
-	// 	transition: 'fade',
-	// });
 
   //slick
   $('.slider').slick({
