@@ -36,8 +36,8 @@
           <p class="works-top__explain">架空の案件を想定して作成したサイトです。</p>
 
           <div class="swiper-area">
-  
-            <div class="swiper">
+        
+            <div class="worksSwiper swiper">
               <div class="swiper-wrapper works-top__item-wrapper">
               <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?> 
