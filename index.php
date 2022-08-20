@@ -4,10 +4,10 @@
     <div class="mv">
       <div class="mvSwiper">
         <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt=""></div>
           <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images/clinic-top.png" alt=""></div>
           <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images/huvest-top-image.png" alt=""></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt=""></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images/k-create-top-image.png" alt=""></div>
+          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/images//K-CREATE-thumbnail.png" alt=""></div>
         </div>
         <!-- /swiper-wrapper -->
       </div>

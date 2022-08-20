@@ -99,8 +99,8 @@ footer {
   background: linear-gradient(to bottom, #3f4c88, #262f57);
 }
 .sec-heading__works {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url(../images/mv.jpeg) center/cover no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.5)), url(../images/mv.jpeg) center/cover no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url(../images/mv.jpeg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5)), url(../images/mv.jpeg) center no-repeat;
   background-attachment: fixed;
   padding: 80px 0 150px;
   margin-bottom: 0;
