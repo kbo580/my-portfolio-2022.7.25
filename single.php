@@ -67,7 +67,7 @@
                 <p class="single-content__title">サイト制作の概要</p>
   
                 <ul class="single-content__text-wrapper"> 
-                  <li class="single-content__text"><?php echo CFS()->get('');?></li>
+                  <li class="single-content__text"><?php echo CFS()->get('works_concept');?></li>
                 </ul>
               </li>
               <!-- /single-content__list -->
@@ -172,7 +172,7 @@
 
                     <div class="single-point__flex">
                       <div class="single-point__image">
-                        <img src="<?php echo $field['point-image']; ?>" alt="" loading="lazy">
+                        <img src="<?php echo $field['point-image']; ?>" alt="<?php echo $field['point-page']; ?>" loading="lazy">
                       </div>
 
                       <div class="single-point__list">
