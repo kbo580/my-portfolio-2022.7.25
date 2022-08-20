@@ -10,6 +10,9 @@
       <div class="inner">
         <div class="single-top">
 
+          <?php if(have_posts()) : ?>
+          <?php while(have_posts()) : the_post(); ?> 
+
           <div class="single-top__thum thum">
           <?php the_post_thumbnail(); ?>
           </div>
@@ -119,7 +122,7 @@
             <div class="single__site-image-wrapper">
   
               <div class="pc-image-wrapper">
-                <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>パソコンでのイメージ</div>
+                <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>PCでのTopページ</div>
                 <p class="click-open">※クリックで開閉できます</p>
                 <div class="pc-image">
                   <img src="<?php echo CFS()->get('works-pc-image');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy">
@@ -128,7 +131,7 @@
               <!-- /pc-image-wrapper -->
     
               <div class="sp-image-wrapper">
-                <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>スマホでのイメージ</div>
+                <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>SPでのTopページ</div>
                 <p class="click-open">※クリックで開閉できます</p>
                 <div class="sp-image">
                   <img src="<?php echo CFS()->get('works-sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy">
@@ -150,42 +153,77 @@
             <p class="heading-common en-text sub-heading-en">points</p>
           </div>
 
-          <div class="single-point__wrapper">
-            <div class="single-point__image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/k-create-screen .png" alt="" loading="lazy">
-            </div>
+          <div class="swiper-area">
+            <div class="pointSwiper swiper">
+              <div class="swiper-pagination pointSwiper__pagination"></div>
+              <div class="swiper-button-prev pointSwiper__btn --left">前のポイント</div>
+              <div class="swiper-button-next pointSwiper__btn --right">次のポイント</div>
 
-            <div class="single-point__list">
-              <?php
-                $fields = $cfs->get('point-list'); 
-                foreach ((array)$fields as $field) :
-              ?>
+              <div class="swiper-wrapper">
 
-              <div class="single-point__item">
-                <p class="single-point__heading"><?php echo $field['point-place']; ?></p> 
-                <p class="single-point__content"><?php echo $field['point-text']; ?></p> 
+                <?php
+                  $fields = $cfs->get('point-container'); 
+                  foreach ((array)$fields as $field) :
+                ?>
+
+                <div class="swiper-slide pointSwiper__swiper-slide">
+                  <div class="single-point__wrapper">
+                    <p class="single-point__page-title"><?php echo $field['point-page']; ?></p>
+
+                    <div class="single-point__flex">
+                      <div class="single-point__image">
+                        <img src="<?php echo $field['point-image']; ?>" alt="" loading="lazy">
+                      </div>
+
+                      <div class="single-point__list">
+
+                        <?php
+                          $fields = $field['point-list']; 
+                          foreach ((array)$fields as $field) :
+                        ?>
+          
+                        <div class="single-point__item">
+                          <p class="single-point__heading"><?php echo $field['point-place']; ?></p> 
+                          <p class="single-point__content"><?php echo $field['point-text']; ?></p> 
+                        </div>
+                        <!-- /single-point__item -->
+          
+                        <?php endforeach; ?>
+          
+                      </div>
+                      <!-- /single-point__list -->
+
+                    </div>
+                    <!-- /single-point__flex -->
+
+                  </div>
+                  <!-- /single-point__wrapper -->
+
+                </div>
+                <!-- /swiper-slide -->
+                <?php endforeach; ?>
               </div>
-              <!-- /single-point__item -->
-
-              <?php endforeach; ?>
-
+              <!-- /swiper-wrapper -->
             </div>
-            <!-- /single-point__list -->
+            <!-- /pointSwiper swiper -->
+
+
           </div>
-          <!-- /single-point__wrapper -->
+          <!-- /swiper-area -->
+
         </div>
         <!-- /single-point -->
 
-        <div class="pagination-btn-wrapper" id="paginationFade">
-          <div class="pagination-btn left">
+        <div class="fixed-pagination-btn__wrapper" id="paginationFade">
+          <div class="fixed-pagination-btn left">
             <?php previous_post_link('%link', '<img src="'.get_template_directory_uri().'/images/svg/arrow-left.svg" alt="前の記事へ">'); ?>
           </div>
 
-          <div class="pagination-btn right">
+          <div class="fixed-pagination-btn right">
             <?php next_post_link('%link', '<img src="'.get_template_directory_uri().'/images/svg/arrow-right.svg" alt="次の記事へ">'); ?>
           </div>
         </div>
-        <!-- /pagination-btn-wrapper -->
+        <!-- /fixed-pagination-btn__wrapper -->
 
         <ul class="pagination">
             <li class="prev"><?php previous_post_link('%link', '<i class="fas fa-angle-left"></i>PREV'); ?></li>
@@ -194,6 +232,11 @@
             
             <li class="next"><?php next_post_link('%link','NEXT<i class="fas fa-angle-right"></i>'); ?></li>
         </ul>
+
+        <?php endwhile; ?>
+        <?php else : ?> 
+          <p>記事がありません</p>
+        <?php endif; ?>
 
       </div>
       <!-- /inner -->

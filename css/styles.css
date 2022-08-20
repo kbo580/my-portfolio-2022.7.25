@@ -1490,45 +1490,14 @@ span.wpcf7-not-valid-tip::before {
   max-width: 600px;
   margin: 40px auto 0;
 }
+
 .single-detail {
   background-color: #FAFAFB;
 }
-.single-point__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 40px;
-}
-.single-point__image {
-  width: 100%;
-}
-.single-point__list {
-  background-color: #FAFAFA;
-  width: 100%;
-  margin-top: 30px;
-}
-.single-point__item {
-  padding: 20px 16px;
-}
-.single-point__heading {
-  border-bottom: 1px solid #FFD54D;
-  display: inline-block;
-  font-size: 1.125rem;
-  font-weight: bold;
-}
-.single-point__content {
-  margin-top: 20px;
-  letter-spacing: 0.15em;
-}
+
 .single__site-image-wrapper {
   margin-top: 60px;
-  /* pcでのイメージ */
   /* spでのイメージ */
-  /* トグルボタン */
 }
 .single__site-image-wrapper .pc-image-wrapper {
   margin-bottom: 30px;
@@ -1556,7 +1525,116 @@ span.wpcf7-not-valid-tip::before {
   margin-right: 4px;
 }
 
-/* 注釈 */
+.single-point__page-title {
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.single-point__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.single-point__image {
+  width: 100%;
+}
+.single-point__list {
+  background-color: #FAFAFA;
+  width: 100%;
+  margin-top: 30px;
+}
+.single-point__item {
+  padding: 20px 16px;
+}
+.single-point__heading {
+  border-bottom: 1px solid #FFD54D;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.single-point__content {
+  margin-top: 20px;
+  letter-spacing: 0.15em;
+}
+
+.pointSwiper {
+  margin-top: 40px;
+  padding-bottom: 100px;
+}
+.pointSwiper__btn {
+  z-index: 100;
+  position: absolute;
+  text-align: center;
+  display: block;
+  padding: 0 20px;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+  top: auto;
+  bottom: 2%;
+  width: 30%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.pointSwiper__btn.--left::before, .pointSwiper__btn.--left::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #333;
+}
+.pointSwiper__btn.--left::before {
+  bottom: -5px;
+  width: 85%;
+  left: 5%;
+}
+.pointSwiper__btn.--left::after {
+  bottom: 0px;
+  -webkit-transform: rotate(145deg);
+          transform: rotate(145deg);
+  width: 15px;
+  left: 5%;
+}
+.pointSwiper__btn.--left:hover::before {
+  left: 0%;
+}
+.pointSwiper__btn.--left:hover::after {
+  left: 0%;
+}
+.pointSwiper__btn.--right::before, .pointSwiper__btn.--right::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #333;
+  -webkit-transition: left 0.3s, right 0.3s;
+  transition: left 0.3s, right 0.3s;
+}
+.pointSwiper__btn.--right::before {
+  bottom: -5px;
+  left: 10%;
+  width: 85%;
+}
+.pointSwiper__btn.--right::after {
+  bottom: 0px;
+  right: 5%;
+  width: 15px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+.pointSwiper__btn.--right:hover::before {
+  left: 15%;
+}
+.pointSwiper__btn.--right:hover::after {
+  right: 0%;
+}
+
 .click-open {
   font-size: 0.75rem;
   margin-bottom: 16px;
@@ -1582,20 +1660,21 @@ span.wpcf7-not-valid-tip::before {
   content: "・";
 }
 
-.pagination-btn {
+.fixed-pagination-btn {
   width: 40px;
   height: 100px;
   position: fixed;
   top: 50%;
+  z-index: 1;
 }
-.pagination-btn.left {
+.fixed-pagination-btn.left {
   left: 0;
 }
-.pagination-btn.right {
+.fixed-pagination-btn.right {
   right: 0;
 }
 
-.pagination-btn a {
+.fixed-pagination-btn a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1611,11 +1690,11 @@ span.wpcf7-not-valid-tip::before {
   height: 100%;
 }
 
-.pagination-btn.left a {
+.fixed-pagination-btn.left a {
   border-radius: 0% 60% 60% 0%;
 }
 
-.pagination-btn.right a {
+.fixed-pagination-btn.right a {
   border-radius: 60% 0% 0% 60%;
 }
 
@@ -1659,41 +1738,6 @@ span.wpcf7-not-valid-tip::before {
   .single-top {
     padding-bottom: 80px;
   }
-  .single-point__wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-top: 60px;
-  }
-  .single-point__image {
-    width: 38%;
-  }
-  .single-point__list {
-    margin-top: 0;
-    width: 60%;
-  }
-  .single-point__heading {
-    font-size: 1.25rem;
-  }
-  .single__site-image-wrapper {
-    /* pcでのイメージ */
-    /* トグルボタン */
-  }
-  .single__site-image-wrapper .sp-image-wrapper {
-    width: 50%;
-  }
-  .single__site-image-wrapper .toggle-btn {
-    -webkit-transition: background-color 0.4s, color 0.4s;
-    transition: background-color 0.4s, color 0.4s;
-  }
-  .single__site-image-wrapper .toggle-btn:hover {
-    background: #000;
-    color: #fff;
-  }
   .single-content {
     margin-top: 60px;
   }
@@ -1712,13 +1756,59 @@ span.wpcf7-not-valid-tip::before {
         -ms-flex: 1;
             flex: 1;
   }
-  .pagination {
-    margin: 80px auto 0;
+  .single__site-image-wrapper .sp-image-wrapper {
+    width: 50%;
   }
-  /* 注釈 */
+  .single__site-image-wrapper .toggle-btn {
+    -webkit-transition: background-color 0.4s, color 0.4s;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  .single__site-image-wrapper .toggle-btn:hover {
+    background: #000;
+    color: #fff;
+  }
+  .single-point__flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-height: 400px;
+  }
+  .single-point__image {
+    width: 48%;
+  }
+  .single-point__list {
+    margin-top: 0;
+    width: 50%;
+  }
+  .single-point__heading {
+    font-size: 1.25rem;
+  }
+  .pointSwiper {
+    margin-top: 60px;
+    padding-bottom: 100px;
+  }
+  .pointSwiper__btn.--left::before {
+    bottom: 15px;
+  }
+  .pointSwiper__btn.--left::after {
+    bottom: 20px;
+  }
+  .pointSwiper__btn.--right::before {
+    bottom: 15px;
+  }
+  .pointSwiper__btn.--right::after {
+    bottom: 20px;
+  }
   .click-open {
     font-size: 0.875rem;
     margin-bottom: 24px;
+  }
+  .pagination {
+    margin: 80px auto 0;
   }
 }
 @media (min-width: 992px) {

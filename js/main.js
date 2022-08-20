@@ -152,9 +152,10 @@ jQuery(function($){
   });
 
   //記事ページの固定ページネーション
-  var pagination = $('.single-point').outerHeight(true);
+  var pagination = $('.single-point').offset().top;
+  console.log(pagination);
   $(window).scroll(function(){
-    if($(this).scrollTop()>pagination + 1000){
+    if($(this).scrollTop()>pagination){
       $('#paginationFade').fadeOut(400);
     }
     else{

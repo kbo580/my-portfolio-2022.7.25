@@ -1581,85 +1581,181 @@ span.wpcf7-not-valid-tip {
       margin: 40px auto 0;
     }
   }
+}
 
-  &-detail{
-    background-color: #FAFAFB;
-  }
+//サイトの詳細
+.single-detail{
+  background-color: #FAFAFB;
+}
 
-  &-point{
-    &__wrapper{
-      display: flex;
-      flex-direction: column;
-      margin-top: 40px;
-    }
-  
-    &__image{
+.single__site-image-wrapper{
+  margin-top: 60px;
+
+  // pcでのイメージ
+  .pc-image-wrapper{
+    margin-bottom: 30px;
+    .pc-image{
       width: 100%;
-    }
-  
-    &__list{
-      background-color: #FAFAFA;
-      width: 100%;
-      margin-top: 30px;
-    }
-
-    &__item{
-      padding: 20px 16px;
-    }
-
-    &__heading{
-      border-bottom: 1px solid $accentColor;
-      display: inline-block;
-      font-size: rem(18);
-      font-weight: bold;
-    }
-
-    &__content{
-      margin-top: 20px;
-      letter-spacing: 0.15em;
+      display: none;
     }
   }
 
-  &__site-image-wrapper{
-    margin-top: 60px;
+  /* spでのイメージ */
+  .sp-image-wrapper{
+    .sp-image{
+      display: none;
+      width: 100%;
+    }
+  }
 
-    /* pcでのイメージ */
-    .pc-image-wrapper{
-      margin-bottom: 30px;
-      .pc-image{
-        width: 100%;
-        display: none;
+  // トグルボタン 
+  .toggle-btn{
+    cursor: pointer;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 8px;
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+    i{
+      margin-right: 4px;
+    }
+  }
+}
+
+//制作のpoint
+.single-point{
+
+  &__page-title{
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: rem(20);
+  }
+
+  &__flex{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image{
+    width: 100%;
+  }
+
+  &__list{
+    background-color: #FAFAFA;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__item{
+    padding: 20px 16px;
+  }
+
+  &__heading{
+    border-bottom: 1px solid $accentColor;
+    display: inline-block;
+    font-size: rem(18);
+    font-weight: bold;
+  }
+
+  &__content{
+    margin-top: 20px;
+    letter-spacing: 0.15em;
+  }
+}
+
+//pointのスライド
+.pointSwiper{
+  // border: 1px solid #000;
+  margin-top: 40px;
+  padding-bottom: 100px;
+  
+  // ポイントのボタン
+  &__btn{
+    z-index: 100;
+    position: absolute;
+    text-align: center;
+    display: block;
+    padding: 0 20px;
+    color: #333;
+    text-decoration: none;
+    outline: none;
+    top: auto;
+    bottom: 2%;
+    width: 30%;
+    user-select: none;
+
+    &.--left{
+      &::before,
+      &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        transition: all .3s;
+        background:#333;
+      }
+
+      &::before{
+        bottom: -5px;
+        width: 85%;
+        left: 5%;
+      }
+
+      &::after{
+        bottom: 0px;
+        transform: rotate(145deg);
+        width: 15px;
+        left: 5%;
+      }
+
+      //hover
+      &:hover::before{
+        left: 0%;
+      }
+      &:hover::after{
+        left: 0%;
       }
     }
+    
+    &.--right{
 
-    /* spでのイメージ */
-    .sp-image-wrapper{
-      .sp-image{
-        display: none;
-        width: 100%;
+      &::before,
+      &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        background:#333;
+        transition: left .3s, right .3s; 
       }
-    }
 
-    /* トグルボタン */
-    .toggle-btn{
-      cursor: pointer;
-      color: #333;
-      background-color: #fff;
-      border: 2px solid #000;
-      padding: 8px;
-      display: inline-block;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-bottom: 8px;
+      &::before{
+        bottom: -5px;
+        left:10%;
+        width: 85%;
+      }
 
-      i{
-        margin-right: 4px;
+      &::after{
+        bottom: 0px;
+        right: 5%;
+        width: 15px;
+        transform: rotate(35deg);
+      }
+
+      //hover
+      &:hover::before{
+        left: 15%;
+      }
+      &:hover::after{
+        right: 0%;
       }
     }
   }
 }
 
-/* 注釈 */
+// 注釈 
 .click-open{
   font-size: rem(12);
   margin-bottom: 16px;
@@ -1693,12 +1789,13 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-//固定ページネーション
-.pagination-btn{
+//追随するページネーション
+.fixed-pagination-btn{
   width: 40px;
 	height: 100px;
   position: fixed;
   top: 50%;
+  z-index: 1;
 
   &.left{
     left: 0;
@@ -1709,7 +1806,7 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-.pagination-btn a{
+.fixed-pagination-btn a{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1719,10 +1816,10 @@ span.wpcf7-not-valid-tip {
   height: 100%;
 }
 
-.pagination-btn.left a{
+.fixed-pagination-btn.left a{
   border-radius: 0% 60% 60% 0%;
 }
-.pagination-btn.right a{
+.fixed-pagination-btn.right a{
   border-radius: 60% 0% 0% 60%;
 }
 
@@ -1770,45 +1867,6 @@ span.wpcf7-not-valid-tip {
     &-top{
       padding-bottom: 80px;
     }
-
-    &-point{
-      &__wrapper{
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 60px;
-      }
-  
-      &__image{
-        width: 38%;
-      }
-    
-      &__list{
-        margin-top: 0;
-        width: 60%;
-      }
-
-      &__heading{
-        font-size: rem(20)
-      }
-    }
-
-    &__site-image-wrapper{
-    
-      /* pcでのイメージ */
-      .sp-image-wrapper{
-        width: 50%;
-      }
-
-      /* トグルボタン */
-      .toggle-btn{
-        transition: background-color .4s, color .4s;
-      
-        &:hover{
-          background: #000;
-          color: #fff;
-        }
-      }
-    }
   }
 
   .single-content{
@@ -1829,14 +1887,88 @@ span.wpcf7-not-valid-tip {
     }
   }
 
-  .pagination{
-    margin: 80px auto 0;
+  .single__site-image-wrapper{
+    
+    // pcでのイメージ 
+    .sp-image-wrapper{
+      width: 50%;
+    }
+
+    // トグルボタン 
+    .toggle-btn{
+      transition: background-color .4s, color .4s;
+    
+      &:hover{
+        background: #000;
+        color: #fff;
+      }
+    }
   }
 
-  /* 注釈 */
+  //制作のpoint
+  .single-point{
+    
+    &__flex{
+      flex-direction: row;
+      justify-content: space-between;
+      min-height: 400px;
+    }
+
+    &__image{
+      width: 48%;
+    }
+  
+    &__list{
+      margin-top: 0;
+      width: 50%;
+    }
+
+    &__heading{
+      font-size: rem(20)
+    }
+  }
+  
+  //pointのスライド
+  .pointSwiper{
+    margin-top: 60px;
+    padding-bottom: 100px;
+    
+    // ポイントのボタン
+    &__btn{
+
+      &.--left{
+
+        &::before{
+          bottom:15px;
+        }
+
+        &::after{
+          bottom:20px;
+        }
+      }
+      
+      &.--right{
+
+        &::before{
+          bottom:15px;
+        }
+
+        &::after{
+          bottom: 20px;
+        }
+      }
+    }
+  }
+
+  // 注釈 
   .click-open{
     font-size: rem(14);
     margin-bottom: 24px;
+  }
+
+  //ページネーション
+  .pagination{
+    margin: 80px auto 0;
   }
 }
 
