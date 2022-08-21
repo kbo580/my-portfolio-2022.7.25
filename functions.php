@@ -1,12 +1,4 @@
 <?php
-// slickの読み込み
-function slick_slider() {
-  wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
-  wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css');
-  wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery') );
-}
-
-add_action('wp_enqueue_scripts', 'slick_slider');
 
 // swiperの読み込み
 function swiper_slider() {

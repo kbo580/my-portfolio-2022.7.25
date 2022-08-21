@@ -143,14 +143,6 @@ jQuery(function($){
     // window.removeEventListener( 'touchmove' , movefun, { passive: false }   );
   });
 
-  //slick
-  $('.slider').slick({
-		arrows: true,
-		prevArrow: '<div class="prev-arrow slideBtn"></div>',
-		nextArrow: '<div class="next-arrow slideBtn"></div>',
-		dots: true,
-  });
-
   //記事ページの固定ページネーション
   var pagination = $('.single-point').offset().top;
   console.log(pagination);
