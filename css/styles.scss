@@ -1006,8 +1006,7 @@ body.active{
   }
 }
 
-
-
+//スライド関連
 .swiper-area{
   position: relative;
   max-width: 1280px;
@@ -1018,67 +1017,61 @@ body.active{
   overflow: hidden;
 }
 
-/* スライダー */
-.slider{
-  position: relative;
+.swiper-slide .banners__item-image{
+  object-fit: contain;
 }
 
-/*矢印*/
-.prev-arrow, 
-.next-arrow {
-  position:  absolute;
+//スライドのボタン
+.my-swiper-button-prev,
+.my-swiper-button-next{
+  width: 30px;
+  height: 70px;
+  background-color: rgba($mainColor, 0.5);
+  position: absolute;
+  top: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   z-index: 1;
-  top: 40%;
-  cursor: pointer;
-  outline: none;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  &::after{
+    content:"";
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    border-top: 2px solid #fff;
+  }
 }
 
-.prev-arrow {
+//次へ
+.my-swiper-button-prev{
+  border-radius: 60% 0% 0% 60%;
   left: 0;
-  border-radius: 8px 0 0 8px;
+  
+  &::after{
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    margin-left: 4px;
+  }
+  
+  //topのworksのみ
+  &.--only-topWorks{
+    left: -12px;
+  }
 }
 
-.next-arrow {
+//前へ
+.my-swiper-button-next{
+  border-radius: 0% 60% 60% 0%;
   right: 0;
-  border-radius: 0 8px 8px 0;
-}
 
-.prev-arrow::before{
-  content: "";
-  display: inline-block;
-  border-top: 2px solid #000;
-  border-left: 2px solid #000;
-  transform: rotate(-45deg);
-  width: 6px;
-  height: 6px;
-}
-
-.next-arrow::before{
-  content: "";
-  display: inline-block;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
-  transform: rotate(45deg);
-  width: 6px;
-  height: 6px;
-}
-
-/* ドット */
-.slick-dots{
-	position:absolute;
-	bottom:1% !important;
-  text-align: right !important;
-
-  li.slick-active button:before {
-    // color: $accentColor;
+  &::after{
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    margin-left: -4px;
   }
 
-  li button:before{
-    color: $accentColor
+  //topのworksのみ
+  &.--only-topWorks{
+    right: -12px;
   }
 }
 
@@ -1106,41 +1099,39 @@ body.active{
       min-height: 90px;
     }
   }
-  
-  .slideBtn{
+
+  //スライドのボタン
+  .my-swiper-button-prev,
+  .my-swiper-button-next{
     width: 40px;
-    height: 70px;
-  
-    &--left{ 
-      left: -20px;
-  
-      &::after{
-        width: 10px;
-        height: 10px;
-      }
+
+    &::after{
+      content:"";
+      height: 10px;
+      width: 10px;
+      display: inline-block;
+      border-top: 2px solid #fff;
     }
-  
-    &--right{
-      right: -20px;
-  
-      &::after{
-        width: 10px;
-        height: 10px;
-      }
-    }
-  
   }
 
-  .prev-arrow::before{
-    width: 10px;
-    height: 10px;
-    margin-left: 6px;
+  //次へ
+  .my-swiper-button-prev{
+
+    //topのworksのみ
+    &.--only-topWorks{
+      left: -12px;
+      height: 100px;
+    }
   }
-  
-  .next-arrow::before{
-    width: 10px;
-    height: 10px;
-    // margin-right: 6px;
+
+  //前へ
+  .my-swiper-button-next{
+
+    //topのworksのみ
+    &.--only-topWorks{
+      right: -12px;
+      height: 100px;
+    }
   }
 
   .practice{
@@ -1788,6 +1779,7 @@ span.wpcf7-not-valid-tip {
     }
   }
 }
+
 
 //追随するページネーション
 .fixed-pagination-btn{
