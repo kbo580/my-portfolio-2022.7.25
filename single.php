@@ -214,6 +214,7 @@
         </div>
         <!-- /single-point -->
 
+        <!-- 固定ページネーション -->
         <div class="fixed-pagination-btn__wrapper" id="paginationFade">
           <div class="fixed-pagination-btn left">
             <?php previous_post_link('%link', '<img src="'.get_template_directory_uri().'/images/svg/arrow-left.svg" alt="前の記事へ">'); ?>
