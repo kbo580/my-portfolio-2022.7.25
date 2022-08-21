@@ -39,7 +39,7 @@
           <li class="gnav--sp__item"><a href="profile.html" class="gnav--sp__link">profile</a></li>
           <li class="gnav--sp__item"><a href="contact.html" class="gnav--sp__link">contact</a></li>
           <li class="gnav--sp__item"><a href="https://kbyt-programming.com/" target="_blank"class="gnav--sp__link">blog<i class="fa-solid fa-up-right-from-square"></i></a></li>
-          <li class="gnav--sp__item"><a href="404.html" class="gnav--sp__link">404<i class="fa-solid fa-up-right-from-square"></i></a></li>
+          <!-- <li class="gnav--sp__item"><a href="404.html" class="gnav--sp__link">404<i class="fa-solid fa-up-right-from-square"></i></a></li> -->
         </ul>
       </nav>
       <!-- /sp用ナビメニュー -->
@@ -52,7 +52,7 @@
           <li class="gnav--pc__item"><a href="profile.html" class="gnav--pc__link">profile</a></li>
           <li class="gnav--pc__item"><a href="contact.html" class="gnav--pc__link">contact</a></li>
           <li class="gnav--pc__item"><a href="https://kbyt-programming.com/" target="_blank" class="gnav--pc__link">blog<i class="fa-solid fa-up-right-from-square"></i></a></li>
-          <li class="gnav--pc__item"><a href="404.html" class="gnav--pc__link">404<i class="fa-solid fa-up-right-from-square"></i></a></li>
+          <!-- <li class="gnav--pc__item"><a href="404.html" class="gnav--pc__link">404<i class="fa-solid fa-up-right-from-square"></i></a></li> -->
         </ul>
       </nav>
       <!-- /pc用ナビメニュー -->
@@ -64,10 +64,10 @@
     <div class="mv">
       <div class="mvSwiper">
         <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/blog-image.png" alt=""></div>
           <div class="swiper-slide"><img src="images/clinic-top.png" alt=""></div>
           <div class="swiper-slide"><img src="images/huvest-top-image.png" alt=""></div>
-          <div class="swiper-slide"><img src="images/blog-image.png" alt=""></div>
-          <div class="swiper-slide"><img src="images/k-create-top-image.png" alt=""></div>
+          <div class="swiper-slide"><img src="images/K-CREATE-thumbnail.png" alt=""></div>
         </div>
         <!-- /swiper-wrapper -->
       </div>
@@ -148,8 +148,8 @@
     
             </div>
             <!-- /swiper -->
-            <div class="swiper-button-prev slideBtn slideBtn--left"></div>
-            <div class="swiper-button-next slideBtn slideBtn--right"></div>
+            <div class="swiper-button-prev my-swiper-button-prev --only-topWorks"></div>
+            <div class="swiper-button-next my-swiper-button-next --only-topWorks"></div>
           </div>
           <!-- /swiper-area -->
 
@@ -172,24 +172,27 @@
             <li class="practice__title">練習用コーディング</li>
             <li class="practice__explain">コーディングの練習で作成したサイトです。</li>
 
-            <li class="sliderarea">
-              <ul class="slider practice__image thum">
+            <li class="swiper cordingSwiper">
+              <ul class="swiper-wrapper practice__image">
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/huvest-top-image.png" alt="模写コーディングその１"  loading="lazy">
                 </li>
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/LPサイト-top-screen.png" alt="模写コーディングその２">
                 </li>
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/k-create-top-image.png" alt="模写コーディングその３">
                 </li>
               </ul>
-              <!-- /slider -->
+              <!-- /swiper-wrapper -->
+              <div class="swiper-button-prev my-swiper-button-prev"></div>
+              <div class="swiper-button-next my-swiper-button-next"></div>
+              <div class="swiper-pagination pointSwiper__pagination"></div>
             </li>
-            <!-- /sliderarea -->
+            <!-- /swiper cordingSwiper -->
             <li><a href="archive-practice.html" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
@@ -197,22 +200,26 @@
           <ul class="practice__list practice__list--even">
             <li class="practice__title">バナー制作</li>
             <li class="practice__explain">バナー制作の練習です</li>
-            <li class="sliderarea">
-              <ul class="slider practice__image thum">
+
+            <li class="swiper cordingSwiper">
+              <ul class="swiper-wrapper practice__image">
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/k-create-banner-300×250.jpg" alt="画像"  loading="lazy">
                 </li>
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/LPサイト-top-screen.png" alt="模写コーディングその２">
                 </li>
   
-                <li class="slider-item">
+                <li class="swiper-slide thum">
                   <img src="images/k-create-top-image.png" alt="模写コーディングその３">
                 </li>
               </ul>
-              <!-- /slider -->
+              <!-- /swiper-wrapper -->
+              <div class="swiper-button-prev my-swiper-button-prev"></div>
+              <div class="swiper-button-next my-swiper-button-next"></div>
+              <div class="swiper-pagination pointSwiper__pagination"></div>
             </li>
             <!-- /sliderarea -->
             <li><a href="archive-banners.html" class="btn btn--more">詳しく見る</a></li>
@@ -229,7 +236,7 @@
           </ul>
           <!-- practice__list -->
         </div>
-        <!-- /practice__flex-con -->
+        <!-- /practice__list-wrapper -->
 
       </div>
       <!-- /practice__wrapper -->

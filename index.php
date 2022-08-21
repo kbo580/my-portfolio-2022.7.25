@@ -70,8 +70,8 @@
     
             </div>
             <!-- /swiper -->
-            <div class="swiper-button-prev slideBtn slideBtn--left"></div>
-            <div class="swiper-button-next slideBtn slideBtn--right"></div>
+            <div class="swiper-button-prev my-swiper-button-prev --only-topWorks"></div>
+            <div class="swiper-button-next my-swiper-button-next --only-topWorks"></div>
           </div>
           <!-- /swiper-area -->
 
@@ -94,24 +94,35 @@
             <li class="practice__title">練習用コーディング</li>
             <li class="practice__explain">コーディングの練習で作成したサイトです。</li>
 
-            <li class="sliderarea">
-              <ul class="slider practice__image thum">
-  
-                <li class="slider-item">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/huvest-top-image.png" alt="模写コーディングその１"  loading="lazy">
-                </li>
-  
-                <li class="slider-item">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/LPサイト-top-screen.png" alt="模写コーディングその２">
-                </li>
-  
-                <li class="slider-item">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/k-create-top-image.png" alt="模写コーディングその３">
-                </li>
+            <li class="swiper cordingSwiper">
+              <ul class="swiper-wrapper practice__image">
+                <?php 
+                  $query = new WP_Query(
+                    array(
+                      'post_type' => 'cording', 
+                      'posts_per_page' => 3, 
+                    )
+                  );
+                ?>
+
+                <?php if($query -> have_posts()) : ?> 
+                <?php while($query -> have_posts()) : $query -> the_post(); ?> 
+                  <li class="swiper-slide thum">
+                    <img src="<?php echo CFS()->get('image');?>" alt="<?php the_title(); ?>" loading="lazy">
+                  </li>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?> 
+                <?php else : ?>
+                  <h2>記事がありません</h2>
+                <?php endif; ?>
               </ul>
-              <!-- /slider -->
+              <!-- /swiper-wrapper -->
+              <div class="swiper-button-prev my-swiper-button-prev"></div>
+              <div class="swiper-button-next my-swiper-button-next"></div>
+              <div class="swiper-pagination pointSwiper__pagination"></div>
             </li>
-            <!-- /sliderarea -->
+            <!-- /cordingSwiper -->
+    
             <li><a href="<?php echo home_url(); ?>/cording" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
@@ -119,24 +130,39 @@
           <ul class="practice__list practice__list--even">
             <li class="practice__title">バナー制作</li>
             <li class="practice__explain">バナー制作の練習です</li>
-            <li class="sliderarea">
-              <ul class="slider practice__image thum">
-  
-                <li class="slider-item">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/k-create-banner-300×250.jpg" alt="画像"  loading="lazy">
-                </li>
-  
-                <li class="slider-item">
-                  <img src="images/LPサイト-top-screen.png" alt="模写コーディングその２">
-                </li>
-  
-                <li class="slider-item">
-                  <img src="images/k-create-top-image.png" alt="模写コーディングその３">
-                </li>
+
+            <li class="swiper cordingSwiper">
+              <ul class="swiper-wrapper practice__image">
+                <!-- サブループ -->
+                <?php 
+                  $query = new WP_Query(
+                    array(
+                      'post_type' => 'banners', 
+                      'posts_per_page' => -1, 
+                    )
+                  );
+                ?>
+                
+                <?php if($query -> have_posts()) : ?> 
+                <?php while($query -> have_posts()) : $query -> the_post(); ?> 
+                  <li class="swiper-slide thum">
+                    <img src="<?php echo CFS()->get('banner');?>" alt="<?php the_title(); ?>" loading="lazy" class="banners__item-image">
+                  </li>
+
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?> 
+                <?php else : ?>
+                  <h2>記事がありません</h2>
+                <?php endif; ?>
+
               </ul>
-              <!-- /slider -->
+              <!-- /swiper-wrapper -->
+              <div class="swiper-button-prev my-swiper-button-prev"></div>
+              <div class="swiper-button-next my-swiper-button-next"></div>
+              <div class="swiper-pagination pointSwiper__pagination"></div>
             </li>
-            <!-- /sliderarea -->
+            <!-- /cordingSwiper -->
+
             <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">詳しく見る</a></li>
           </ul>
           <!-- practice__list -->
@@ -151,7 +177,7 @@
           </ul>
           <!-- practice__list -->
         </div>
-        <!-- /practice__flex-con -->
+        <!-- /practice__list-wrapper -->
 
       </div>
       <!-- /practice__wrapper -->
