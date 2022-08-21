@@ -5,7 +5,7 @@ jQuery(function($){
 
 
 
-    //メインビジュアルのswiper
+    /* メインビジュアルのswiper */
     var mvSwiper = new Swiper('.mvSwiper', {
       loop: true,
       loopAdditionalSlides: 1,
@@ -20,7 +20,7 @@ jQuery(function($){
       },
     });
 
-    //worksのswiper
+    /* topページの制作物のswiper */
     var worksSwiper = new Swiper('.worksSwiper', {
       loop: true,
       loopAdditionalSlides: 1,
@@ -54,7 +54,51 @@ jQuery(function($){
         effect: 'slide'
     });
 
-    //singleのpointのswiper
+    /* topのcordingのスライド */
+    var cordingSwiper = new Swiper('.cordingSwiper', {
+      loop: true,
+      loopAdditionalSlides: 1,
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      //ページネーション
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+
+      slidesPerView: 1,
+      speed: 500,
+      effect: 'slide'
+    });
+
+    /* topのbannerのスライド */
+    var cordingSwiper = new Swiper('.cordingSwiper', {
+      loop: true,
+      loopAdditionalSlides: 1,
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      //ページネーション
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+
+      slidesPerView: 1,
+      speed: 500,
+      effect: 'slide'
+    });
+
+    /* singleのpointのswiper */
     var pointSwiper = new Swiper('.pointSwiper', {
       loop: true,
       loopAdditionalSlides: 1,
