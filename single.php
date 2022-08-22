@@ -48,9 +48,16 @@
 
           </ul>
           <!-- /single-content -->
-  
-          <a href="<?php echo CFS()->get('works_url');?>" target="_blank" class="btn btn--pageChange mt-70">サイトへ<i class="fa-solid fa-up-right-from-square"></i></a>
-          <p  class="single-top__attention">※BASIC認証をかけてあります。<br>お手数ですがid”<?php echo CFS()->get('works_id');?>”, パスワード”<?php echo CFS()->get('works_pass');?>”を入力してご覧ください</p>
+
+          <?php if(is_single(array(14, 210, 214))):?>
+
+          <p class="single-top__attention" style="text-align: center;">ポートフォリオに関してはリンクありません。</p>
+
+          <?php else:?>
+            <a href="<?php echo CFS()->get('works_url');?>" target="_blank" class="btn btn--pageChange mt-70">サイトへ<i class="fa-solid fa-up-right-from-square"></i></a>
+
+          <p class="single-top__attention">※BASIC認証をかけてあります。<br>お手数ですがid”<?php echo CFS()->get('works_id');?>”, パスワード”<?php echo CFS()->get('works_pass');?>”を入力してご覧ください</p>
+          <?php endif;?> 
         </div>
         <!-- /single-top -->
 
