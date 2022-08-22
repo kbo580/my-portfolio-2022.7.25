@@ -77,7 +77,7 @@ jQuery(function($){
     });
 
     /* topのbannerのスライド */
-    var cordingSwiper = new Swiper('.cordingSwiper', {
+    var bannerSwiper = new Swiper('.bannerSwiper', {
       loop: true,
       loopAdditionalSlides: 1,
 
