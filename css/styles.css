@@ -315,6 +315,10 @@ footer {
   height: 100%;
 }
 
+.item--responsive {
+  width: 100%;
+}
+
 /*  パンクズ  */
 .breadcrumbs {
   background-color: #CED7DC;
@@ -903,7 +907,7 @@ body.active {
   line-height: 1.6;
   font-size: 14px;
   letter-spacing: 0.15em;
-  min-height: 110px;
+  min-height: 70px;
 }
 
 .slideBtn {
@@ -1059,9 +1063,6 @@ body.active {
   .works-top__item-title {
     font-size: 1.25rem;
     padding: 30px 20px;
-  }
-  .works-top__item-content {
-    min-height: 90px;
   }
   .my-swiper-button-prev,
 .my-swiper-button-next {
