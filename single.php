@@ -125,7 +125,7 @@
                 <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>PCでのTopページ</div>
                 <p class="click-open">※クリックで開閉できます</p>
                 <div class="pc-image">
-                  <img src="<?php echo CFS()->get('works-pc-image');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy">
+                  <img src="<?php echo CFS()->get('works_pc-image');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy">
                 </div>
               </div>
               <!-- /pc-image-wrapper -->
@@ -134,7 +134,7 @@
                 <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>SPでのTopページ</div>
                 <p class="click-open">※クリックで開閉できます</p>
                 <div class="sp-image">
-                  <img src="<?php echo CFS()->get('works-sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy">
+                  <img src="<?php echo CFS()->get('works_sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy">
                 </div>
               </div>
               <!-- /sp-image-wrapper -->
