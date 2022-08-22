@@ -131,7 +131,7 @@
             <li class="practice__title">バナー制作</li>
             <li class="practice__explain">バナー制作の練習です</li>
 
-            <li class="swiper cordingSwiper">
+            <li class="swiper bannerSwiper">
               <ul class="swiper-wrapper practice__image">
                 <!-- サブループ -->
                 <?php 
@@ -161,7 +161,7 @@
               <div class="swiper-button-next my-swiper-button-next"></div>
               <div class="swiper-pagination pointSwiper__pagination"></div>
             </li>
-            <!-- /cordingSwiper -->
+            <!-- /bannerSwiper -->
 
             <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">詳しく見る</a></li>
           </ul>
@@ -206,7 +206,7 @@
             <ul class="about-body__content-list">
             <li class="about-body__content">大学を卒業後、実家の飲食店で勤務。その後、書店にて正社員として接客販売を中心に勤めてきました。</li>
               <li class="about-body__content">その時の業務の一つであった店内のレイアウト用にデザインを学んでいたところ、Webデザインに興味を持ち独学で学習を始めました。</li>
-              <li class="about-body__content">趣味は野球観戦、音楽制作、御朱印集め</li>
+              <li class="about-body__content">趣味は野球観戦、音楽作成ソフト「Logic」を使用した音楽制作、御朱印集め</li>
             </ul>
     
             <a href="<?php echo home_url(); ?>/profile" class="btn btn--pageChange mt-70 mla">プロフィールへ</a>

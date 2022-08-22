@@ -36,7 +36,7 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 //topページの抜粋の文字数関連
 function custom_excerpt_length( $length ) {
-  return 50;
+  return 34;
 } 
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
