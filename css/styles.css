@@ -93,7 +93,7 @@ footer {
 /* セクションの見出し */
 .sec-heading {
   position: relative;
-  padding: 40px 0;
+  padding: 30px 0;
   color: #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(#3f4c88), to(#262f57));
   background: linear-gradient(to bottom, #3f4c88, #262f57);
@@ -102,11 +102,8 @@ footer {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url(../images/mv.jpeg) center no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.5)), url(../images/mv.jpeg) center no-repeat;
   background-attachment: fixed;
-  padding: 80px 0 150px;
-  margin-bottom: 0;
-  position: relative;
+  padding: 80px 0 80px;
   text-align: center;
-  color: #fff;
 }
 .sec-heading.--left {
   text-align: left;
@@ -128,26 +125,18 @@ footer {
 }
 
 .sub-heading {
-  font-size: 1.375rem;
+  font-size: min(max(22px, 1.375rem + (1vw - 3.75px) * 2.1818), 40px);
   text-align: center;
 }
 .sub-heading.--top {
   position: relative;
   text-align: center;
 }
-.sub-heading.--top.--daikei {
-  background-color: #FFFEF8;
-  padding: 18px 0;
-  max-width: 480px;
-  width: 70%;
-  margin: -65px auto 0;
-  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-}
 .sub-heading-en {
   color: #ddd;
   letter-spacing: 0.15em;
-  font-size: 3.75rem;
+  line-height: 1;
+  font-size: min(max(40px, 2.5rem + (1vw - 3.75px) * 6.0606), 90px);
 }
 .sub-heading.--ja {
   position: absolute;
@@ -173,32 +162,21 @@ footer {
   /* セクションの見出し */
   .sec-heading {
     font-size: 5.625rem;
-    padding-top: 130px;
-    padding: 90px 0;
+    padding: 40px 0;
   }
   .sec-heading::after {
     height: 210px;
   }
   .sec-heading__works {
-    padding: 200px 0 328px;
+    padding: 200px 0 200px;
   }
   .sec-heading--ja {
     font-size: 1.25rem;
   }
   /* セクションの小見出し(h3) */
-  .sub-heading {
-    font-size: 2rem;
-  }
   .sub-heading.--top {
     position: relative;
     text-align: center;
-  }
-  .sub-heading.--top.--daikei {
-    margin: -128px auto 0;
-    padding: 40px 0;
-  }
-  .sub-heading-en {
-    font-size: 6.75rem;
   }
   /* 下層ページのページタイトル */
   .page-heading {
@@ -222,7 +200,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   background-color: transparent;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 .btn--more {
   font-size: 0.875rem;
@@ -749,7 +727,7 @@ body.active {
   font-size: 33px;
   font-size: min(max(33px, 2.0625rem + (1vw - 3.75px) * 5.1934), 80px);
   padding: 200px 0px;
-  padding: 270px 0px 200px;
+  padding: 300px 0px 200px;
   position: relative;
   z-index: 2;
 }
@@ -871,7 +849,7 @@ body.active {
   padding-bottom: 80px;
 }
 .works-top__wrapper {
-  padding-bottom: 70px;
+  padding: 70px 0;
 }
 .works-top__explain {
   padding-top: 20px;
@@ -883,23 +861,26 @@ body.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
 }
 .works-top__item-list {
   padding: 10px 0;
+  height: 100%;
 }
 .works-top__item {
   text-align: left;
   padding-bottom: 30px;
   background-color: #fff;
+  -webkit-box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   border: 1px solid #dedede;
-  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.works-top__item-img {
+  border-radius: 6px;
 }
 .works-top__item-title {
   font-size: 1.125rem;
-  padding: 20px;
+  padding: 20px 20px 0;
   text-align: center;
 }
 .works-top__item-content {
@@ -920,7 +901,6 @@ body.active {
   z-index: 1;
 }
 .slideBtn--left {
-  left: -12px;
   border-radius: 8px 0 0 8px;
 }
 .slideBtn--left::after {
@@ -935,7 +915,6 @@ body.active {
   margin-left: 6px;
 }
 .slideBtn--right {
-  right: -12px;
   border-radius: 0 8px 8px 0;
 }
 .slideBtn--right::after {
@@ -950,22 +929,13 @@ body.active {
   margin-right: 6px;
 }
 
-.practice__wrapper {
-  margin-top: 80px;
-}
-.practice__list-wrapper {
-  margin-top: 40px;
-}
 .practice__list {
-  padding: 30px 20px 50px;
   position: relative;
   text-align: center;
+  width: 100%;
 }
-.practice__list--odd {
-  background-color: #f7f7f7;
-}
-.practice__list--even {
-  background-color: #fbfbfb;
+.practice__list.--blog {
+  margin-top: 70px;
 }
 .practice__title {
   font-size: 1.25rem;
@@ -984,12 +954,22 @@ body.active {
 
 .swiper-area {
   position: relative;
-  max-width: 1280px;
+  width: 100%;
 }
 
 .mainswiper {
   max-width: 100%;
   overflow: hidden;
+}
+
+.worksSwiper {
+  max-width: 100%;
+}
+.worksSwiper .swiper-slide {
+  opacity: 0.6;
+}
+.worksSwiper .swiper-slide.swiper-slide-active {
+  opacity: 1;
 }
 
 .swiper-slide .banners__item-image {
@@ -1028,7 +1008,7 @@ body.active {
   margin-left: 4px;
 }
 .my-swiper-button-prev.--only-topWorks {
-  left: -12px;
+  left: 10px;
 }
 
 .my-swiper-button-next {
@@ -1042,12 +1022,15 @@ body.active {
   margin-left: -4px;
 }
 .my-swiper-button-next.--only-topWorks {
-  right: -12px;
+  right: 10px;
 }
 
 @media (min-width: 768px) {
   .works-top {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+  }
+  .works-top__wrapper {
+    padding: 100px 0;
   }
   .works-top__item-wrapper {
     width: 100%;
@@ -1056,13 +1039,8 @@ body.active {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .works-top__item-list {
-    width: 31.66%;
-    padding: 10px;
-  }
   .works-top__item-title {
     font-size: 1.25rem;
-    padding: 30px 20px;
   }
   .my-swiper-button-prev,
 .my-swiper-button-next {
@@ -1077,25 +1055,26 @@ body.active {
     border-top: 2px solid #fff;
   }
   .my-swiper-button-prev.--only-topWorks {
-    left: -12px;
+    left: 20px;
     height: 100px;
   }
   .my-swiper-button-next.--only-topWorks {
-    right: -12px;
+    right: 20px;
     height: 100px;
-  }
-  .practice__wrapper {
-    margin-top: 80px;
   }
   .practice__list-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 60px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .practice__list {
-    padding: 50px 20px 50px;
-    width: 33.3333333333%;
+    width: 49%;
+  }
+  .practice__list.--blog {
+    margin-top: 0px;
   }
   .practice__title {
     font-size: 1.75rem;

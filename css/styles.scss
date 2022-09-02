@@ -101,18 +101,15 @@ footer {
 /* セクションの見出し */
 .sec-heading{
   position: relative;
-  padding: 40px 0;
+  padding: 30px 0;
   color: #fff;
   background: linear-gradient(to bottom, #3f4c88,$mainColor);
 
   &__works{
     background: linear-gradient(rgba(0, 0, 0, 0.5))  ,url(../images/mv.jpeg) center no-repeat;
     background-attachment: fixed;
-    padding: 80px 0 150px;
-    margin-bottom: 0;
-    position: relative;
+    padding: 80px 0 80px;
     text-align: center;
-    color: #fff;
   }
 
   &.--left{
@@ -136,28 +133,20 @@ footer {
 }
 
 .sub-heading{
-  font-size: rem(22);
+  font-size: min(max(22px, calc(1.375rem + ((1vw - 3.75px) * 2.1818))), 40px);
   text-align: center;
 
   &.--top{
     position: relative;
     text-align: center;
-    
-    &.--daikei{
-      background-color: $backgroundColor;
-      // padding: 1.25em 0;
-      padding: 18px 0;
-      max-width: 480px;
-      width: 70%;
-      margin: -65px auto 0;
-      clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    }
   }
 
   &-en{
     color: #ddd;
     letter-spacing: 0.15em;
-    font-size: rem(60);
+    line-height: 1; 
+    font-size: min(max(40px, calc(2.5rem + ((1vw - 3.75px) * 6.0606))), 90px);
+
   }
 
   &.--ja{
@@ -186,15 +175,14 @@ footer {
   /* セクションの見出し */
   .sec-heading{
     font-size: rem(90);
-    padding-top: 130px;
-    padding: 90px 0;
+    padding: 40px 0;
 
     &::after{
       height: 210px;
     }
 
     &__works{
-      padding: 200px 0 328px;
+      padding: 200px 0 200px;
     }
   }
 
@@ -204,20 +192,10 @@ footer {
 
   /* セクションの小見出し(h3) */
   .sub-heading{
-    font-size: rem(32);
 
     &.--top{
       position: relative;
       text-align: center;
-      
-      &.--daikei{
-        margin: -128px auto 0;
-        padding: 40px 0;
-      }
-    }
-  
-    &-en{
-      font-size: rem(108);
     }
   }
 
@@ -244,7 +222,7 @@ footer {
   margin-left: auto; 
   margin-right: auto;
   background-color: transparent;
-  margin-top: 60px;
+  margin-top: 30px;
   
   &--more{
     font-size: rem(14);
@@ -776,7 +754,7 @@ body.active{
   font-size: 33px;
   font-size: min(max(33px, calc(2.0625rem + ((1vw - 3.75px) * 5.1934))), 80px);
   padding: 200px 0px;
-  padding: 270px 0px 200px;
+  padding: 300px 0px 200px;
   position: relative;
   z-index: 2;
 }
@@ -884,7 +862,7 @@ body.active{
   padding-bottom: 80px;
 
   &__wrapper{
-    padding-bottom: 70px;
+    padding: 70px 0;
   }
   
   &__explain{
@@ -896,25 +874,32 @@ body.active{
     margin-top: 30px;
     position: relative;
     display: flex;
-    width: 100%;
+    // width: 100%;
   }
   
   &__item-list{
     padding: 10px 0;
+    height: 100%;
   }
   
   &__item{
     text-align: left;
     padding-bottom: 30px;
     background-color: #fff;
+    box-shadow: 4px 4px  6px rgba(0, 0, 0, 0.16);
     border-radius: 6px;
     border: 1px solid #dedede;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+    // position: relative;
+
+  }
+
+  &__item-img{
+    border-radius: 6px;
   }
 
   &__item-title{
     font-size: rem(18);
-    padding: 20px;
+    padding: 20px 20px 0;
     text-align: center;
   }
 
@@ -936,7 +921,7 @@ body.active{
   z-index: 1;
 
   &--left{ 
-    left: -12px;
+    // left: -12px;
     border-radius: 8px 0 0 8px;
 
     &::after{
@@ -952,7 +937,7 @@ body.active{
   }
 
   &--right{
-    right: -12px;
+    // right: -12px;
     border-radius: 0 8px 8px 0;
 
     &::after{
@@ -970,25 +955,17 @@ body.active{
 }
 
 .practice{
-
-  &__wrapper{
-    margin-top: 80px;
-  }
-
-  &__list-wrapper{
-    margin-top: 40px;
-  }
   
   &__list{
-    padding: 30px 20px 50px;
     position: relative;
     text-align: center;
+    width: 100%;
 
-    &--odd{
-      background-color: #f7f7f7;
+    &.--banners{
+
     }
-    &--even{
-      background-color: #fbfbfb;
+    &.--blog{
+      margin-top: 70px;
     }
   }
 
@@ -1013,12 +990,24 @@ body.active{
 //スライド関連
 .swiper-area{
   position: relative;
-  max-width: 1280px;
+  // max-width: 1280px;
+  width: 100%;
 }
 
 .mainswiper{
   max-width: 100%;
   overflow: hidden;
+}
+
+.worksSwiper{
+  max-width: 100%;
+  .swiper-slide{
+    opacity: 0.6;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    } 
+  }
 }
 
 .swiper-slide .banners__item-image{
@@ -1058,7 +1047,7 @@ body.active{
   
   //topのworksのみ
   &.--only-topWorks{
-    left: -12px;
+    left: 10px;
   }
 }
 
@@ -1075,28 +1064,26 @@ body.active{
 
   //topのworksのみ
   &.--only-topWorks{
-    right: -12px;
+    right: 10px;
   }
 }
 
 @media (min-width: 768px){
   .works-top{
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+
+    &__wrapper{
+      padding: 100px 0;
+    }
 
     &__item-wrapper{
       width: 100%;
       margin-top: 50px;
       justify-content: space-between;
     }
-    
-    &__item-list{
-      width: 31.66%;
-      padding: 10px;
-    }
   
     &__item-title{
       font-size: rem(20);
-      padding: 30px 20px;
     }
   }
 
@@ -1119,7 +1106,7 @@ body.active{
 
     //topのworksのみ
     &.--only-topWorks{
-      left: -12px;
+      left: 20px;
       height: 100px;
     }
   }
@@ -1129,25 +1116,22 @@ body.active{
 
     //topのworksのみ
     &.--only-topWorks{
-      right: -12px;
+      right: 20px;
       height: 100px;
     }
   }
 
   .practice{
-
-    &__wrapper{
-      margin-top: 80px;
-    }
-
     &__list-wrapper{
       display: flex;
-      margin-top: 60px;
+      justify-content: space-between;
     }
     
     &__list{
-      padding: 50px 20px 50px;
-      width: calc(100%/3);
+      width: 49%;
+      &.--blog{
+        margin-top: 0px;
+      }
     }
   
     &__title{
@@ -2376,5 +2360,3 @@ span.wpcf7-not-valid-tip {
 
   
 }
-
-
