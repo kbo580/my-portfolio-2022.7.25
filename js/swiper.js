@@ -24,34 +24,31 @@ jQuery(function($){
     var worksSwiper = new Swiper('.worksSwiper', {
       loop: true,
       loopAdditionalSlides: 1,
-      pagination: {
-        el: '.swiper-pagination',
-      },
 
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-
-      slidesPerView: 1,
       spaceBetween: 10,
+      centeredSlides:true,
+      slidesPerView:1.2,
       breakpoints: {
         768: {
-          slidesPerView: 2,
-          spaceBetween: 10
+          slidesPerView: 1.5,
+          spaceBetween: 30
         },
         992: {
-          slidesPerView: 3,
-          spaceBetween: 10
+          spaceBetween: 30,
+          slidesPerView: 3.5,
         }
       },
 
-      speed: 500,
+      speed: 1000,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
       },
-        effect: 'slide'
+        watchSlidesProgress: true,
     });
 
     /* topのcordingのスライド */
@@ -95,7 +92,7 @@ jQuery(function($){
 
       slidesPerView: 1,
       speed: 500,
-      effect: 'slide'
+      effect: 'slide',
     });
 
     /* singleのpointのswiper */
@@ -119,8 +116,7 @@ jQuery(function($){
       speed: 500,
       effect: 'slide'
     });
-
-    
+ 
 
     
 
