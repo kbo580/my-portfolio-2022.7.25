@@ -75,3 +75,10 @@ function change_posts_per_page($query) {
 
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
+
+function maintenance_mode() {
+    if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+        wp_die('メンテナンス中です。しばらくお待ちください。');
+    }
+}
+// add_action('get_header', 'maintenance_mode');
