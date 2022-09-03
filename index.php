@@ -16,7 +16,11 @@
       <div class="film"></div>
 
       <div class="inner">
-        <h1 class="site-title en-text"><span class="first-letter--change">Y</span>uta<br><span class="first-letter--change">K</span>obayashi's<br><span class="first-letter--change">P</span>ortfolio</h1>
+      <h1 class="site-title en-text">
+          <span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger"><span class="first-letter--change">Y</span>uta</span></span><br>
+          <span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger"><span class="first-letter--change">K</span>obayashi's</span></span><br>
+          <span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger"><span class="first-letter--change">P</span>ortfolio</span></span>
+        </h1>
       </div>
       <!-- /inner -->
 
