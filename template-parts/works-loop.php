@@ -2,7 +2,7 @@
   <li class="works__item item--responsive">
       <h3 class="works__item-title"><?php the_title()?></h3>
 
-      <a href="<?php the_permalink(); ?>" class="works__item--link">
+      <a href="<?php the_permalink(); ?>" class="works__item--link works-image">
         <figure class="thum works--thum">
           <?php if (has_post_thumbnail()) : ?> 
             <?php the_post_thumbnail(); ?>

@@ -151,6 +151,7 @@ footer {
 
   &.--ja{
     position: absolute;
+    width: 100%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -2323,7 +2324,6 @@ span.wpcf7-not-valid-tip {
 .modal-image-wrapper img{
   max-width: 70%;
   max-height: 70%;
-  height: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -2333,15 +2333,27 @@ span.wpcf7-not-valid-tip {
   border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
+#pcImage{
+  display: none;
+}
+
 @media (min-width: 768px){
   
 }
 /* -------------------------------------------- */
-/* contact */
+/* cording */
 /* -------------------------------------------- */
-
+.cording{
+  &-archive{
+    padding-top: 50px;
+  }
+}
 @media (min-width: 768px){
-
+  .cording{
+    &-archive{
+      padding-top: 100px;
+    }
+  }
 }
 
 
