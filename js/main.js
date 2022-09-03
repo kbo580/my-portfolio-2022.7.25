@@ -49,7 +49,7 @@ jQuery(function($){
   });
 
   // worksのitemにカーソルが乗った時の動き
-  $('.works__item--link').hover(function(){
+  $('.works-image').hover(function(){
     $(this).find('img').css('transform','scale(1.1, 1.1)');
   },function(){
     $(this).find('img').css('transform','scale(1, 1)');
@@ -128,8 +128,8 @@ jQuery(function($){
 
   //コーディング練習一覧のモーダル
   $('.cording__item > a').on('click', function(){
-    var src = $(this).find('img').attr('src');
-    var alt = $(this).find('img').attr('alt');
+    var src = $(this).find('#pcImage').attr('src');
+    var alt = $(this).find('#pcImage').attr('alt');
     $('#modal-image-wrapper > img').attr('src', src).attr('alt', alt);
     $('#modal-wrapper').fadeIn(600);
     $('body').addClass('fixed');
@@ -144,23 +144,20 @@ jQuery(function($){
   });
 
   //記事ページの固定ページネーション
-  var pagination = $('.single-point').offset().top;
-  console.log(pagination);
-  $(window).scroll(function(){
-    if($(this).scrollTop()>pagination){
-      $('#paginationFade').fadeOut(400);
-    }
-    else{
-      $('#paginationFade').fadeIn(400);
-    }
-  });
+  // var pagination = $('.single-point').offset().top;
+  // console.log(pagination);
+  // $(window).scroll(function(){
+  //   if($(this).scrollTop()>pagination){
+  //     $('#paginationFade').fadeOut(400);
+  //   }
+  //   else{
+  //     $('#paginationFade').fadeIn(400);
+  //   }
+  // });
   
 
 
-
-
-
-
+// $('#pcImage').hide();
 
 
 

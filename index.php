@@ -21,29 +21,31 @@
       <!-- /inner -->
 
       <div class="scrolldown"><span>Scroll</span></div>
-      <div class="mv__bar --cross"></div>
-      <div class="mv__bar --vertical"></div>
     </div>
     <!-- /mv -->
 
     <section class="works-top section">
+      <h2 class="heading-common sec-heading en-text sec-heading__works over--inner"><p class="sec-heading--ja">制作物</p>works</h2>
+
       <div class="inner">
-        <h2 class="heading-common sec-heading en-text sec-heading__works over--inner"><p class="sec-heading--ja">制作物</p>works</h2>
-
-        <h3 class="sub-heading --top --daikei">架空案件</h3>
-
+        
         <div class="works-top__wrapper over--inner">
-          <p class="works-top__explain">架空の案件を想定して作成したサイトです。</p>
+          <div class="sub-heading__wrapper">
+            <h3 class="sub-heading  --ja">Web制作</h3>
+            <p class="en-text sub-heading-en">webdesign</p>
+          </div>
+
+          <p class="works-top__explain">架空の案件を想定して作成したサイトと練習用コーディングです。</p>
 
           <div class="swiper-area">
         
             <div class="worksSwiper swiper">
               <div class="swiper-wrapper works-top__item-wrapper">
+
               <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?> 
                 <div class="swiper-slide works-top__item-list">
-                  <ul class="works-top__item">
-                    <li class="works-top__item-title"><?php the_title()?></li>
+                  <ul class="works-top__item"> 
 
                     <li class="works-top__item-img thum">
                       <?php if (has_post_thumbnail()) : ?> 
@@ -53,8 +55,9 @@
                       <?php endif ?>
                     </li>
 
-                    <li class="works-top__item-content"><?php the_excerpt(); ?></li>
-                    <li class="works-top__item-btn"><a href="<?php the_permalink(); ?>" class="btn btn--more">詳しく見る</a></li>
+                    <li class="works-top__item-title"><?php the_title()?></li>
+
+                    <li class="works-top__item-btn"><a href="<?php the_permalink(); ?>" class="btn btn--more">More View</a></li>
                   </ul>
                   <!-- /works-top__item -->
                 </div>
@@ -79,108 +82,75 @@
         </div>
         <!-- /works-top__wrapper -->
 
+        <div class="practice__wrapper">
+  
+          <div class="practice__list-wrapper">
+  
+            <ul class="practice__list --banners">
+              <li class="sub-heading__wrapper">
+                <h3 class="sub-heading  --ja">バナー制作</h3>
+                <p class="en-text sub-heading-en">banners</p>
+              </li>
+  
+              <li class="practice__explain">バナー制作の練習です</li>
+  
+              <li class="swiper bannerSwiper">
+                <ul class="swiper-wrapper practice__image">
+                  <!-- サブループ -->
+                  <?php 
+                    $query = new WP_Query(
+                      array(
+                        'post_type' => 'banners', 
+                        'posts_per_page' => -1, 
+                      )
+                    );
+                  ?>
+                  
+                  <?php if($query -> have_posts()) : ?> 
+                  <?php while($query -> have_posts()) : $query -> the_post(); ?> 
+                    <li class="swiper-slide thum">
+                      <img src="<?php echo CFS()->get('banner');?>" alt="<?php the_title(); ?>" loading="lazy" class="banners__item-image">
+                    </li>
+  
+                  <?php endwhile; ?>
+                  <?php wp_reset_postdata(); ?> 
+                  <?php else : ?>
+                    <h2>記事がありません</h2>
+                  <?php endif; ?>
+  
+                </ul>
+                <!-- /swiper-wrapper -->
+                <div class="swiper-button-prev my-swiper-button-prev"></div>
+                <div class="swiper-button-next my-swiper-button-next"></div>
+                <div class="swiper-pagination pointSwiper__pagination"></div>
+              </li>
+              <!-- /bannerSwiper -->
+  
+              <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">More View</a></li>
+            </ul>
+            <!-- practice__list -->
+  
+            <ul class="practice__list practice__list--odd">
+              <li class="sub-heading__wrapper">
+                <h3 class="sub-heading  --ja">ブログ</h3>
+                <p class="en-text sub-heading-en">blog</p>
+              </li>
+              
+              <li class="practice__explain">学習のアウトプットのためのブログです<i class="fa-solid fa-up-right-from-square"></i><br>（外部サイトへ移動します）</li>
+              <li class="practice__image thum">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="画像"  loading="lazy">
+              </li>
+              <li><a href="" class="btn btn--more">More View</a></li>
+            </ul>
+            <!-- practice__list -->
+          </div>
+          <!-- /practice__list-wrapper -->
+  
+        </div>
+        <!-- /practice__wrapper -->
       </div>
       <!-- /inner -->
       
-      <div class="practice__wrapper">
-        <div class="sub-heading__wrapper">
-          <h3 class="sub-heading  --ja">その他の制作物</h3>
-          <p class="heading-common en-text sub-heading-en">others</p>
-        </div>
-
-        <div class="practice__list-wrapper">
-          
-          <ul class="practice__list practice__list--odd">
-            <li class="practice__title">練習用コーディング</li>
-            <li class="practice__explain">コーディングの練習で作成したサイトです。</li>
-
-            <li class="swiper cordingSwiper">
-              <ul class="swiper-wrapper practice__image">
-                <?php 
-                  $query = new WP_Query(
-                    array(
-                      'post_type' => 'cording', 
-                      'posts_per_page' => 3, 
-                    )
-                  );
-                ?>
-
-                <?php if($query -> have_posts()) : ?> 
-                <?php while($query -> have_posts()) : $query -> the_post(); ?> 
-                  <li class="swiper-slide thum">
-                    <img src="<?php echo CFS()->get('image');?>" alt="<?php the_title(); ?>" loading="lazy">
-                  </li>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?> 
-                <?php else : ?>
-                  <h2>記事がありません</h2>
-                <?php endif; ?>
-              </ul>
-              <!-- /swiper-wrapper -->
-              <div class="swiper-button-prev my-swiper-button-prev"></div>
-              <div class="swiper-button-next my-swiper-button-next"></div>
-              <div class="swiper-pagination pointSwiper__pagination"></div>
-            </li>
-            <!-- /cordingSwiper -->
-    
-            <li><a href="<?php echo home_url(); ?>/cording" class="btn btn--more">詳しく見る</a></li>
-          </ul>
-          <!-- practice__list -->
-
-          <ul class="practice__list practice__list--even">
-            <li class="practice__title">バナー制作</li>
-            <li class="practice__explain">バナー制作の練習です</li>
-
-            <li class="swiper bannerSwiper">
-              <ul class="swiper-wrapper practice__image">
-                <!-- サブループ -->
-                <?php 
-                  $query = new WP_Query(
-                    array(
-                      'post_type' => 'banners', 
-                      'posts_per_page' => -1, 
-                    )
-                  );
-                ?>
-                
-                <?php if($query -> have_posts()) : ?> 
-                <?php while($query -> have_posts()) : $query -> the_post(); ?> 
-                  <li class="swiper-slide thum">
-                    <img src="<?php echo CFS()->get('banner');?>" alt="<?php the_title(); ?>" loading="lazy" class="banners__item-image">
-                  </li>
-
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?> 
-                <?php else : ?>
-                  <h2>記事がありません</h2>
-                <?php endif; ?>
-
-              </ul>
-              <!-- /swiper-wrapper -->
-              <div class="swiper-button-prev my-swiper-button-prev"></div>
-              <div class="swiper-button-next my-swiper-button-next"></div>
-              <div class="swiper-pagination pointSwiper__pagination"></div>
-            </li>
-            <!-- /bannerSwiper -->
-
-            <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">詳しく見る</a></li>
-          </ul>
-          <!-- practice__list -->
-
-          <ul class="practice__list practice__list--odd">
-            <li class="practice__title">ブログ</li>
-            <li class="practice__explain">学習のアウトプットのためのブログです<i class="fa-solid fa-up-right-from-square"></i></li>
-            <li class="practice__image thum">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="画像"  loading="lazy">
-            </li>
-            <li><a href="" class="btn btn--more">詳しく見る</a></li>
-          </ul>
-          <!-- practice__list -->
-        </div>
-        <!-- /practice__list-wrapper -->
-
-      </div>
-      <!-- /practice__wrapper -->
 
     </section>
 
