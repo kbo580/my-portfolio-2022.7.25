@@ -152,7 +152,7 @@
             <ul class="wicd__lists">
               <li class="wicd-item wicd-item__image-wrapper thum"><img src="<?php echo get_template_directory_uri(); ?>/images/cms.png" alt="CMS化"></li>
               <li class="wicd-item wicd-item__title">CMS化</li>
-              <li class="wicd-item wicd-item__text">Word Pressなどに代表されるものでHTMLとCSSで作成されたサイトを自身で容易に管理、更新ができるようなサイトに変更することができます。</li>
+              <li class="wicd-item wicd-item__text">Word Pressなどに代表されるものでHTMLとCSSで作成されたサイトを自身で容易に管理、更新ができるようにオリジナルテーマを作成できます。</li>
             </ul>
             <!-- /wicd__lists -->
   
