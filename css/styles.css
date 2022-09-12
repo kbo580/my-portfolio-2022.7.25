@@ -1007,7 +1007,7 @@ body.active {
   border-radius: 6px;
 }
 .works-top__item-title {
-  font-size: 1.125rem;
+  font-size: 1rem;
   padding: 20px 20px 0;
   text-align: center;
 }
@@ -1168,7 +1168,7 @@ body.active {
             justify-content: space-between;
   }
   .works-top__item-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .my-swiper-button-prev,
 .my-swiper-button-next {
