@@ -49,7 +49,7 @@ jQuery(function($){
   });
 
   // worksのitemにカーソルが乗った時の動き
-  $('.works-image').hover(function(){
+  $('.works--thum').hover(function(){
     $(this).find('img').css('transform','scale(1.1, 1.1)');
   },function(){
     $(this).find('img').css('transform','scale(1, 1)');
