@@ -46,6 +46,12 @@ img{
   vertical-align: bottom;
 }
 
+header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd
+{
+  // background-color: rgba(0,200,100,0.1);
+  // border: 1px solid rgba(0,0,0,0.1);
+}
+
 
 /* -------------------------------------------- */
 /* 共通部分 */
@@ -80,6 +86,7 @@ footer {
   width: 100%;
   padding: 0 20px;
   position: relative;
+  // border: 1px dashed #000;
 }
 
 @media (min-width: 768px){
@@ -142,10 +149,11 @@ footer {
   }
 
   &-en{
-    color: #ddd;
+    color: #000;
+    opacity: .2;
     letter-spacing: 0.15em;
     line-height: 1; 
-    font-size: min(max(40px, calc(2.5rem + ((1vw - 3.75px) * 6.0606))), 90px);
+    font-size: min(max(40px, calc(2.5rem + ((1vw - 3.75px) * 2.2099))), 60px);
 
   }
 
@@ -439,7 +447,8 @@ footer {
   }
 
   &__wrapper{
-    height: 100%;
+    // height: 100%;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -932,134 +941,207 @@ body.active{
 /* -------------------------------------------- */
 .works-top{
   padding-bottom: 80px;
+}
+
+.works__explain{
+  margin-top: 20px;
+  text-align: center;
+
+  .fa-solid{
+    margin-left: 8px;
+  }
+}
+
+/* webdesign */
+.webdesign{
 
   &__wrapper{
     padding: 70px 0;
   }
-  
-  &__explain{
-    padding-top: 20px;
-    text-align: center;
-  }
 
   &__item-wrapper{
     margin-top: 30px;
-    position: relative;
-    display: flex;
-    // width: 100%;
+    width: 100%;
   }
   
+  /* webdesignのリスト */
   &__item-list{
-    padding: 10px 0;
-    height: 100%;
+    width: 100%;
+    // max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+
+    &::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
   
+  /* ひとつひとつ */
   &__item{
-    text-align: left;
-    padding-bottom: 30px;
-    background-color: #fff;
+    width: 100%;
     box-shadow: 4px 4px  6px rgba(0, 0, 0, 0.16);
     border-radius: 6px;
     border: 1px solid #dedede;
-    // position: relative;
-
-  }
-
-  &__item-img{
-    border-radius: 6px;
-  }
-
-  &__item-title{
-    font-size: rem(16);
-    padding: 20px 20px 0;
-    text-align: center;
-  }
-
-  &__item-content{
-    padding: 20px 20px 0 20px;
-    line-height: 1.6;
-    font-size: 14px;
-    letter-spacing: 0.15em;
-    min-height: 70px;
-  }
-}
-
-.slideBtn{
-  width: 25px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
-  z-index: 1;
-
-  &--left{ 
-    // left: -12px;
-    border-radius: 8px 0 0 8px;
-
-    &::after{
-      content: "";
-      display: inline-block;
-      border-top: 2px solid #000;
-      border-left: 2px solid #000;
-      transform: rotate(-45deg);
-      width: 6px;
-      height: 6px;
-      margin-left: 6px;
-    }
-  }
-
-  &--right{
-    // right: -12px;
-    border-radius: 0 8px 8px 0;
-
-    &::after{
-      content: "";
-      display: inline-block;
-      border-top: 2px solid #000;
-      border-right: 2px solid #000;
-      transform: rotate(45deg);
-      width: 6px;
-      height: 6px;
-      margin-right: 6px;
-    }
-  }
-
-}
-
-.practice{
-  
-  &__list{
     position: relative;
-    text-align: center;
+
+    /* キャプション用 */
+    .mask{
+      position: relative;
+      transition: background-color 5.3s ease-in-out;
+      display: block;
+      overflow:hidden;
+
+      &::before{
+        content:"";
+        transition: all .4s;
+      }
+    }
+  }
+
+  &__link{
+    display: block;
     width: 100%;
+  }
 
-    &.--banners{
+  /* サムネイル */
+  &__thum{
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
 
-    }
-    &.--blog{
-      margin-top: 70px;
+    img{
+      transform: scale(1);
+      filter: blur(0);
+      transition: .4s ease-in-out;
     }
   }
 
+  /* サイトの説明 */
+  &__body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity:0;
+    transition: opacity .1s ease-in-out;
+    position: absolute;
+    z-index:3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    padding: 0 20px;
+  }
+
+  /* サイトタイトル */
   &__title{
-    font-size: rem(20);
-    font-weight: bold;
+    font-size: rem(16);
   }
 
+  /* サイトの説明 */
+  &__text{
+    width: 100%;
+    margin-top: 30px;
+    font-size: rem(14);
+  }
+}
+
+/* hover時の動き */
+@media (hover: hover) {
+  .webdesign__item:hover .mask::before{
+    content:"";
+    position: absolute;
+    z-index:2;
+    top:10px;
+    left:10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background:rgba(0,0,0,0.5);
+  }
+  
+  .webdesign__item:hover img{
+    transform: scale(1.2);
+    filter: blur(2px);
+  }
+  
+  
+  .webdesign__item:hover .webdesign__body{
+    opacity:1;
+  }
+}
+
+/* バナー制作とブログ */
+.studies{
+  /* コンテナ */
+  &__wrapper{
+    width: 100%;
+  }
+
+  /* 説明文 */
   &__explain{
-    margin-top: 10px;
     min-height: 48px;
-    .fa-solid{
-      margin-left: 8px;
+  }
+
+  /* 共通部分 */
+  &-common__wrapper{
+    border-top:1px solid transparent;
+    border-bottom:1px solid transparent;
+    position: relative;
+    display: block;
+    // width: 100%;
+    z-index: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    /* ぼかし部分 */
+    &::before{
+      content: "";
+      background: inherit;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      filter: blur(5px);
+      position: absolute;
+      top: 0;
+      left: 0;
     }
+  }
+
+  &__list{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 20px;
+    margin: 30px 20px;
   }
 
   &__image{
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
-//スライド関連
+/* バナー */
+.banners{
+  &__wrapper{
+    background: url(../images/ココナラバナー01.png) center / cover no-repeat;
+  }
+}
+
+/* ブログ */
+.blog{
+  &__wrapper{
+    margin-top: 70px;
+    background: url(../images/blog-image.png) center / cover no-repeat;
+  }
+}
+
+//バナーのスライド
 .swiper-area{
   position: relative;
   // max-width: 1280px;
@@ -1143,19 +1225,52 @@ body.active{
 @media (min-width: 768px){
   .works-top{
     padding-bottom: 150px;
+  }
 
+  .webdesign{
     &__wrapper{
       padding: 100px 0;
     }
 
+    &__item-list{
+      flex-direction: row;
+      gap: 30px;
+    }
+
     &__item-wrapper{
-      width: 100%;
       margin-top: 50px;
+    }
+
+    &__item{
+      width: calc((100% - 30px) / 2);
+    }
+  }
+
+  /* バナー制作とブログ */
+  .studies{
+    /* コンテナ */
+    &__wrapper{
+      display: flex;
       justify-content: space-between;
     }
-  
-    &__item-title{
-      font-size: rem(16);
+
+    /* 共通部分 */
+    &-common__wrapper{
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__list{
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 40px 40px;
+    }
+  }
+
+  /* ブログ */
+  .blog{
+    &__wrapper{
+      margin-top: 0px;
     }
   }
 
@@ -1192,26 +1307,22 @@ body.active{
       height: 100px;
     }
   }
+}
 
-  .practice{
-    &__list-wrapper{
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    &__list{
-      width: 49%;
-      &.--blog{
-        margin-top: 0px;
+
+@media (min-width: 992px){
+  .webdesign{
+    &__item-list{
+      gap: 30px;
+      &::after{
+        content: "";
+        display: block;
+        width: calc((100% - 60px) / 3);
       }
     }
-  
-    &__title{
-      font-size: rem(28);
-    }
-  
-    &__explain{
-      margin-top: 10px;
+
+    &__item{
+      width: calc((100% - 60px) / 3);
     }
   }
 }
@@ -1408,42 +1519,13 @@ body.active{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    text-align: center;
     margin-top: 30px;
+    gap: 20px;
 
     &::after{
       content: "";
       display: block;
-      width: 31%;
-    }
-  }
-
-  &__item{
-    display: flex;
-    flex-direction: column-reverse;
-    text-align: center;
-    
-    &:not(:first-child){
-      margin-top: 40px;
-    }
-  }
-  
-  &__item-title{
-    margin-top: 20px;
-  }
-  
-  &__item--link{
-    border: 1px solid #dfdfdf;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  }
-  
-  &--thum{
-    aspect-ratio: 4 / 3;
-    img{
-      transition: transform .4s;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: calc((100% - 20px) / 3);
     }
   }
 }
@@ -1452,9 +1534,6 @@ body.active{
   .works{
     &__text{
       text-align: center;
-    }
-    &__item-list{
-      margin-top: 50px;
     }
   }
 }
@@ -2353,7 +2432,6 @@ span.wpcf7-not-valid-tip {
   z-index: 100;
 }
 
-
 /* 閉じるボタン */
 .close{
   background-color: #ddd;
@@ -2418,7 +2496,14 @@ span.wpcf7-not-valid-tip {
   &-archive{
     padding-top: 50px;
   }
+
+  &__item{
+    box-shadow: 4px 4px  6px rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    border: 1px solid #dedede;
+  }
 }
+
 @media (min-width: 768px){
   .cording{
     &-archive{
@@ -2441,3 +2526,6 @@ span.wpcf7-not-valid-tip {
 
   
 }
+
+
+

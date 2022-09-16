@@ -48,12 +48,6 @@ jQuery(function($){
     $('html,body').animate({'scrollTop':0},600);
   });
 
-  // worksのitemにカーソルが乗った時の動き
-  $('.works--thum').hover(function(){
-    $(this).find('img').css('transform','scale(1.1, 1.1)');
-  },function(){
-    $(this).find('img').css('transform','scale(1, 1)');
-  });
 
   //メインビジュアルのタイピング
   function TextTypingAnime() {

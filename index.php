@@ -29,77 +29,87 @@
     <!-- /mv -->
 
     <section class="works-top section">
-      <h2 class="heading-common sec-heading en-text sec-heading__works over--inner"><p class="sec-heading--ja">制作物</p>works</h2>
-
       <div class="inner">
-        
-        <div class="works-top__wrapper over--inner">
-          <div class="sub-heading__wrapper">
-            <h3 class="sub-heading  --ja">Web制作</h3>
-            <p class="en-text sub-heading-en">webdesign</p>
-          </div>
 
-          <p class="works-top__explain">架空の案件を想定して作成したサイトと練習用コーディングです。</p>
+        <h2 class="heading-common sec-heading en-text sec-heading__works over--inner"><p class="sec-heading--ja">制作物</p>works</h2>
+    
+          <div class="webdesign__wrapper">
+            <div class="sub-heading__wrapper">
+              <h3 class="sub-heading  --ja">Web制作</h3>
+              <p class="en-text sub-heading-en">webdesign</p>
+            </div>
 
-          <div class="swiper-area">
+            <p class="works__explain">架空の案件を想定して作成したサイトと練習用コーディングです。</p>
         
-            <div class="worksSwiper swiper">
-              <div class="swiper-wrapper works-top__item-wrapper">
+            <div class="webdesign__item-wrapper">
+              <ul class="webdesign__item-list">
 
               <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?> 
-                <div class="swiper-slide works-top__item-list">
-                  <ul class="works-top__item"> 
-
-                    <li class="works-top__item-img thum">
-                      <?php if (has_post_thumbnail()) : ?> 
-                        <?php the_post_thumbnail(); ?>
-                      <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png"> 
-                      <?php endif ?>
-                    </li>
-
-                    <li class="works-top__item-title"><?php the_title()?></li>
-
-                    <li class="works-top__item-btn"><a href="<?php the_permalink(); ?>" class="btn btn--more">More View</a></li>
-                  </ul>
-                  <!-- /works-top__item -->
-                </div>
-                <!-- /swiper-slide -->
+              
+                  <li class="webdesign__item">
                   
+                    <a href="<?php the_permalink(); ?>" class="webdesign__link">
+                      <div class="mask">
+
+                        <!-- webdesign__body -->
+                        <div class="webdesign__body">
+                          <h3 class="webdesign__title"><?php the_title() ?></h3>
+                          <p class="webdesign__text"><?php the_excerpt() ?></p>
+                        </div>
+                        <!-- /webdesign__body -->
+
+                        <!-- webdesign__thum -->
+                        <?php if (has_post_thumbnail()) : ?>
+                          <figure class="webdesign__thum thum">
+                            <img src=" <?php the_post_thumbnail(); ?>" alt="サムネ"  class="webdesign__">
+                          </figure>
+
+                        <?php else : ?> 
+                          <figure class="webdesign__thum thum">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/" alt="ない"> 
+                          </figure>
+                          
+                        <?php endif ?>
+                        <!-- /webdesign__thum-->
+
+                      </div>
+                      <!-- /mask -->
+                    </a>
+                  </li>
+
                 <?php endwhile; ?>
               <?php else : ?> 
                 <p>記事がありません</p>
               <?php endif; ?>
 
-              </div>
-              <!-- /swiper-wrapper works-top__item-wrapper -->
+              </ul>
+              <!-- /webdesign__item-list -->
     
             </div>
-            <!-- /swiper -->
-            <div class="swiper-button-prev my-swiper-button-prev --only-topWorks"></div>
-            <div class="swiper-button-next my-swiper-button-next --only-topWorks"></div>
-          </div>
-          <!-- /swiper-area -->
+            <!-- /webdesign__item-wrapper -->
+            
 
           <a href="<?php echo home_url(); ?>/works" class="btn btn--pageChange mt-70">制作物一覧へ</a>
         </div>
-        <!-- /works-top__wrapper -->
+        <!-- /webdesign__wrapper -->
 
-        <div class="practice__wrapper">
+        <div class="studies__wrapper">
   
-          <div class="practice__list-wrapper">
+          <div class="banners__wrapper studies-common__wrapper">
   
-            <ul class="practice__list --banners">
+            <ul class="studies__list">
+
               <li class="sub-heading__wrapper">
                 <h3 class="sub-heading  --ja">バナー制作</h3>
                 <p class="en-text sub-heading-en">banners</p>
               </li>
   
-              <li class="practice__explain">バナー制作の練習です</li>
+              <li class="works__explain studies__explain">バナー制作の練習です</li>
   
               <li class="swiper bannerSwiper">
-                <ul class="swiper-wrapper practice__image">
+                <ul class="swiper-wrapper studies__image">
+
                   <!-- サブループ -->
                   <?php 
                     $query = new WP_Query(
@@ -112,6 +122,7 @@
                   
                   <?php if($query -> have_posts()) : ?> 
                   <?php while($query -> have_posts()) : $query -> the_post(); ?> 
+
                     <li class="swiper-slide thum">
                       <img src="<?php echo CFS()->get('banner');?>" alt="<?php the_title(); ?>" loading="lazy" class="banners__item-image">
                     </li>
@@ -132,30 +143,36 @@
   
               <li><a href="<?php echo home_url(); ?>/banners" class="btn btn--more">More View</a></li>
             </ul>
-            <!-- practice__list -->
-  
-            <ul class="practice__list practice__list--odd">
+            <!-- studies__list -->
+          </div>
+          <!-- /banners__wrapper -->
+
+          <!-- ブログ -->
+          <div class="blog__wrapper studies-common__wrapper">
+            <ul class="studies__list">
+
               <li class="sub-heading__wrapper">
                 <h3 class="sub-heading  --ja">ブログ</h3>
                 <p class="en-text sub-heading-en">blog</p>
               </li>
               
-              <li class="practice__explain">学習のアウトプットのためのブログです<i class="fa-solid fa-up-right-from-square"></i><br>（外部サイトへ移動します）</li>
-              <li class="practice__image thum">
+              <li class="works__explain studies__explain">学習のアウトプットのためのブログです<i class="fa-solid fa-up-right-from-square"></i><br>（外部サイトへ移動します）</li>
+
+              <li class="studies__image thum">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/blog-image.png" alt="画像"  loading="lazy">
               </li>
               <li><a href="" class="btn btn--more">More View</a></li>
             </ul>
             <!-- practice__list -->
           </div>
-          <!-- /practice__list-wrapper -->
+          <!-- /blog__wrapper -->
   
         </div>
-        <!-- /practice__wrapper -->
+        <!-- /studies__wrapper -->
+
       </div>
       <!-- /inner -->
       
-
     </section>
 
     <section class="about section">
